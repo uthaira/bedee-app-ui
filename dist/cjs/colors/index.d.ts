@@ -1,19 +1,4 @@
-import React from 'react';
-import { ButtonProps as ButtonProps$1 } from '@mui/material';
-
-interface ButtonProps extends ButtonProps$1 {
-    bdType?: 'primary' | 'secondary' | 'outlined' | 'remove';
-    bdSize?: string;
-    icon?: JSX.Element;
-    text?: string;
-    loading?: boolean;
-    width?: string;
-    isRightIcon?: boolean;
-    counter?: number;
-}
-declare const Button: (props: ButtonProps) => React.JSX.Element;
-
-declare const Colors: {
+export declare const Colors: {
     success: string;
     warning: string;
     error: string;
@@ -45,5 +30,3 @@ declare const Colors: {
     black: string;
     white: string;
 };
-
-export { Button as BedeeButton, Colors };
