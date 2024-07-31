@@ -1,12 +1,12 @@
 import React from 'react';
 import { Meta } from '@storybook/react';
-import { Button } from '../../components/button';
+import { BedeeButton } from '../../components/button';
 
 export default {
   title: 'Samples/Button',
-  component: Button,
+  component: BedeeButton,
 } as Meta;
 
-const Template = (args: any) => <Button {...args} />;
+const Template = (args: any) => <BedeeButton {...args} />;
 
 export const Default = Template.bind({});
