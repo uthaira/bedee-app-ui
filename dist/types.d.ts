@@ -14,6 +14,11 @@ interface ButtonProps extends ButtonProps$1 {
 declare const Button: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
 
 declare const Colors: {
+    brandBlack: string;
+    darkBlue: string;
+    royalBlue: string;
+    cherry: string;
+    offWhite: string;
     success: string;
     warning: string;
     error: string;
@@ -46,4 +51,4 @@ declare const Colors: {
     white: string;
 };
 
-export { Button as BedeeButton, Colors };
+export { Button as BdButton, Colors };
