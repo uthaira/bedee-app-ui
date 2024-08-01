@@ -1,7 +1,6 @@
-import React from 'react'
-import { Colors } from '../../colors'
 import { Box, Button as MuiButton, ButtonProps as MuiButtonProps, Stack, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
+import { Colors } from '../../colors'
 
 export interface ButtonProps extends MuiButtonProps {
   bdType?: 'primary' | 'secondary' | 'outlined' | 'remove'
@@ -72,12 +71,29 @@ const Button = (props: ButtonProps) => {
           icon: 12,
           loading: '14px',
         }
+      case 'xs':
+        return {
+          borderRadius: '32px',
+          fontSize: '12px',
+          height: '30px',
+          icon: 12,
+          loading: '12px',
+        }
+      case 'xxs':
+        return {
+          borderRadius: '32px',
+          fontSize: '12px',
+          height: '24px',
+          icon: 12,
+          loading: '12px',
+        }
+
       default:
         return {
           borderRadius: '32px',
           fontSize: '12px',
           height: '30px',
-          icon: 16,
+          icon: 12,
           loading: '12px',
         }
     }
