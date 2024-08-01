@@ -1,1 +1,1 @@
-export { default as BedeeButton } from "./BaseBtn"
+export { default as BdButton } from './BaseBtn'
