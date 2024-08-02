@@ -1,5 +1,6 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import { ButtonProps as ButtonProps$1 } from '@mui/material';
+import { ButtonProps as ButtonProps$1, SlideProps } from '@mui/material';
+import React from 'react';
 
 interface ButtonProps extends ButtonProps$1 {
     bdType?: 'primary' | 'secondary' | 'outlined' | 'remove';
@@ -20,6 +21,42 @@ declare const SecondaryBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Elemen
 declare const OutlinedBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
 
 declare const RemoveBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
+
+interface HeadingProps {
+    text: string;
+    color?: string;
+}
+declare const H1: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
+declare const H2: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
+declare const H3: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
+declare const H4: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
+declare const H5: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
+declare const H6: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
+
+interface ParagraphProps {
+    text: string;
+    color?: string;
+}
+declare const P1: (props: ParagraphProps) => react_jsx_runtime.JSX.Element;
+declare const P2: (props: ParagraphProps) => react_jsx_runtime.JSX.Element;
+declare const Lead1: (props: ParagraphProps) => react_jsx_runtime.JSX.Element;
+declare const Lead2: (props: ParagraphProps) => react_jsx_runtime.JSX.Element;
+
+interface SmallProps {
+    text: string;
+    color?: string;
+}
+declare const Mini: (props: SmallProps) => react_jsx_runtime.JSX.Element;
+declare const Tiny: (props: SmallProps) => react_jsx_runtime.JSX.Element;
+
+interface BottomSheetProps extends SlideProps {
+    height?: string;
+    open?: boolean;
+    onClose: () => void;
+    isCloseIcon?: boolean;
+    children: React.ReactElement;
+}
+declare const BottomSheet: (props: BottomSheetProps) => react_jsx_runtime.JSX.Element;
 
 declare const Colors: {
     brandBlack: string;
@@ -47,6 +84,7 @@ declare const Colors: {
     primary003: string;
     primary004: string;
     primary005: string;
+    primary006: string;
     gray0: string;
     gray1: string;
     gray2: string;
@@ -59,4 +97,4 @@ declare const Colors: {
     white: string;
 };
 
-export { Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors };
+export { BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, H1, H2, H3, H4, H5, H6, type HeadingProps, Lead1, Lead2, Mini, P1, P2, type ParagraphProps, type SmallProps, Tiny };
