@@ -13,6 +13,14 @@ interface ButtonProps extends ButtonProps$1 {
 }
 declare const Button: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
 
+declare const PrimaryBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
+
+declare const SecondaryBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
+
+declare const OutlinedBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
+
+declare const RemoveBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
+
 declare const Colors: {
     brandBlack: string;
     darkBlue: string;
@@ -51,4 +59,4 @@ declare const Colors: {
     white: string;
 };
 
-export { Button as BdButton, Colors };
+export { Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors };
