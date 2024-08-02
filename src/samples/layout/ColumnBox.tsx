@@ -1,16 +1,14 @@
 import { Typography, styled } from '@mui/material'
 
 const Box = (props: any) => {
-  const { title, children } = props
+  const { title, children, color } = props
 
   return (
     <View>
       <Title>
-        <Typography>{title}</Typography>
+        <Typography color={color}>{title}</Typography>
       </Title>
-      <ContentView>
-        {children}
-      </ContentView>
+      <ContentView>{children}</ContentView>
     </View>
   )
 }
