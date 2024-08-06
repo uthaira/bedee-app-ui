@@ -2,7 +2,7 @@ import { Grid } from '@mui/material'
 import { ColumnBox } from '../layout'
 import { Meta } from '@storybook/react'
 import { Colors } from '../../colors'
-import { H1, H2, H3, H4, H5, H6, Lead1, Lead2, Mini, P1, P2, Tiny } from '../../components/font'
+import { Badges, BadgesBold, H1, H2, H3, H4, H5, H6, Lead1, Lead2, Mini, P1, P2, Tiny } from '../../components/font'
 
 const fontCategories = [
   {
@@ -32,6 +32,14 @@ const fontCategories = [
     items: [
       { text: '>>MD(Dest)/Small/Mini', Component: Mini },
       { text: '>>MD(Dest)/Small/Tiny', Component: Tiny },
+    ],
+    gridProps: { xs: 3, md: 3 },
+  },
+  {
+    title: 'Stylize',
+    items: [
+      { text: '>>MD(Dest)/Stylize/Badges', Component: Badges },
+      { text: '>>MD(Dest)/Stylize/Badges bold', Component: BadgesBold },
     ],
     gridProps: { xs: 3, md: 3 },
   },
