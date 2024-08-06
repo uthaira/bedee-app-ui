@@ -1,7 +1,21 @@
 import { Typography } from '@mui/material'
 import { Colors } from '../../colors'
 
-type TextType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p1' | 'p2' | 'lead1' | 'lead2' | 'mini' | 'tiny'
+type TextType =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6'
+  | 'p1'
+  | 'p2'
+  | 'lead1'
+  | 'lead2'
+  | 'mini'
+  | 'tiny'
+  | 'badges'
+  | 'badgesBold'
 
 type Style = {
   fontSize: number
@@ -69,6 +83,14 @@ export const BaseText = (props: BaseTextProps) => {
       },
       tiny: {
         fontSize: 10,
+        fontWeight: 600,
+      },
+      badges: {
+        fontSize: 12,
+        fontWeight: 500,
+      },
+      badgesBold: {
+        fontSize: 12,
         fontWeight: 600,
       },
     }
