@@ -49,6 +49,13 @@ interface SmallProps {
 declare const Mini: (props: SmallProps) => react_jsx_runtime.JSX.Element;
 declare const Tiny: (props: SmallProps) => react_jsx_runtime.JSX.Element;
 
+interface StylizeProps {
+    text: string;
+    color?: string;
+}
+declare const Badges: (props: StylizeProps) => react_jsx_runtime.JSX.Element;
+declare const BadgesBold: (props: StylizeProps) => react_jsx_runtime.JSX.Element;
+
 interface BottomSheetProps extends SlideProps {
     height?: string;
     open?: boolean;
@@ -97,4 +104,4 @@ declare const Colors: {
     white: string;
 };
 
-export { BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, H1, H2, H3, H4, H5, H6, type HeadingProps, Lead1, Lead2, Mini, P1, P2, type ParagraphProps, type SmallProps, Tiny };
+export { Badges, BadgesBold, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, H1, H2, H3, H4, H5, H6, type HeadingProps, Lead1, Lead2, Mini, P1, P2, type ParagraphProps, type SmallProps, type StylizeProps, Tiny };
