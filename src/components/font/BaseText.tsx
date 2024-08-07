@@ -28,7 +28,7 @@ type StyleDict = {
 
 interface BaseTextProps extends TypographyProps {
   text: string
-  bdType: TextType
+  bdType?: TextType
   color?: string
 }
 
@@ -95,12 +95,12 @@ export const BaseText = (props: BaseTextProps) => {
       },
     }
 
-    return map[bdType]
+    return bdType ? map[bdType] : { fontSize: 16, fontWeight: 400 }
   }
 
   const getVariant = () => {
-    const variantStr = bdType.toString()
-    if (variantStr.includes('h')) return variantStr as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+    const variantStr = bdType?.toString()
+    if (variantStr?.includes('h')) return variantStr as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 
     return 'body1'
   }
@@ -109,7 +109,7 @@ export const BaseText = (props: BaseTextProps) => {
   const v = getVariant()
 
   return (
-    <Typography {...t} color={color} variant={v} {...props}>
+    <Typography {...props} {...t} color={color} variant={v}>
       {text}
     </Typography>
   )
