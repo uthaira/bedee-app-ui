@@ -2,9 +2,11 @@ import * as react_jsx_runtime from 'react/jsx-runtime';
 import { ButtonProps as ButtonProps$1, SlideProps } from '@mui/material';
 import React from 'react';
 
+type BdType = 'primary' | 'secondary' | 'outlined' | 'remove';
+type BdSize = 'lg' | 'md' | 'sm' | 'xs' | 'xxs';
 interface ButtonProps extends ButtonProps$1 {
-    bdType?: 'primary' | 'secondary' | 'outlined' | 'remove';
-    bdSize?: string;
+    bdType?: BdType;
+    bdSize?: BdSize;
     icon?: JSX.Element;
     text?: string;
     loading?: boolean;
