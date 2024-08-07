@@ -4,7 +4,7 @@ import { Colors } from '../../colors'
 
 export interface ButtonProps extends MuiButtonProps {
   bdType?: 'primary' | 'secondary' | 'outlined' | 'remove'
-  bdSize?: string
+  bdSize?: 'lg' | 'md' | 'sm' | 'xs' | 'xxs'
   icon?: JSX.Element
   text?: string
   loading?: boolean
@@ -87,7 +87,6 @@ const Button = (props: ButtonProps) => {
           icon: 12,
           loading: '12px',
         }
-
       default:
         return {
           borderRadius: '32px',

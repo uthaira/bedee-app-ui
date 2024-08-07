@@ -1,4 +1,4 @@
-import { Typography } from '@mui/material'
+import { Typography, TypographyProps } from '@mui/material'
 import { Colors } from '../../colors'
 
 type TextType =
@@ -26,7 +26,7 @@ type StyleDict = {
   [key in TextType]: Style
 }
 
-interface BaseTextProps {
+interface BaseTextProps extends TypographyProps {
   text: string
   bdType: TextType
   color?: string
@@ -109,7 +109,7 @@ export const BaseText = (props: BaseTextProps) => {
   const v = getVariant()
 
   return (
-    <Typography {...t} color={color} variant={v}>
+    <Typography {...t} color={color} variant={v} {...props}>
       {text}
     </Typography>
   )
