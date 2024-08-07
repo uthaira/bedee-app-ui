@@ -1,5 +1,5 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import { ButtonProps as ButtonProps$1, SlideProps } from '@mui/material';
+import { ButtonProps as ButtonProps$1, TypographyProps, SlideProps } from '@mui/material';
 import React from 'react';
 
 type BdType = 'primary' | 'secondary' | 'outlined' | 'remove';
@@ -23,6 +23,14 @@ declare const SecondaryBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Elemen
 declare const OutlinedBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
 
 declare const RemoveBtn: (props: ButtonProps) => react_jsx_runtime.JSX.Element;
+
+type TextType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p1' | 'p2' | 'lead1' | 'lead2' | 'mini' | 'tiny' | 'badges' | 'badgesBold';
+interface BaseTextProps extends TypographyProps {
+    text: string;
+    bdType?: TextType;
+    color?: string;
+}
+declare const BaseText: (props: BaseTextProps) => react_jsx_runtime.JSX.Element;
 
 interface HeadingProps {
     text: string;
@@ -106,4 +114,4 @@ declare const Colors: {
     white: string;
 };
 
-export { Badges, BadgesBold, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, H1, H2, H3, H4, H5, H6, type HeadingProps, Lead1, Lead2, Mini, P1, P2, type ParagraphProps, type SmallProps, type StylizeProps, Tiny };
+export { Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, H1, H2, H3, H4, H5, H6, type HeadingProps, Lead1, Lead2, Mini, P1, P2, type ParagraphProps, type SmallProps, type StylizeProps, Tiny };
