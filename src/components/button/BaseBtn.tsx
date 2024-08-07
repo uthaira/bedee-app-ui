@@ -2,9 +2,12 @@ import { Box, Button as MuiButton, ButtonProps as MuiButtonProps, Stack, Typogra
 import { styled } from '@mui/material/styles'
 import { Colors } from '../../colors'
 
+export type BdType = 'primary' | 'secondary' | 'outlined' | 'remove'
+export type BdSize = 'lg' | 'md' | 'sm' | 'xs' | 'xxs'
+
 export interface ButtonProps extends MuiButtonProps {
-  bdType?: 'primary' | 'secondary' | 'outlined' | 'remove'
-  bdSize?: 'lg' | 'md' | 'sm' | 'xs' | 'xxs'
+  bdType?: BdType
+  bdSize?: BdSize
   icon?: JSX.Element
   text?: string
   loading?: boolean
