@@ -1,7 +1,8 @@
 import { Grid } from '@mui/material'
-import { ColumnBox } from "../layout"
-import { BdPrimaryButton, BdSecondaryButton, BdOutlinedButton, BdRemoveButton } from "../../components/button"
+import { ColumnBox } from '../layout'
+import { BdPrimaryButton, BdSecondaryButton, BdOutlinedButton, BdRemoveButton } from '../../components/button'
 import { Meta } from '@storybook/react'
+import { BdSize } from '../../components/button/BaseBtn'
 
 export const SampleButton = () => {
   const primaryList = []
@@ -24,9 +25,7 @@ export const SampleButton = () => {
       <BdOutlinedButton key={`outlined-${index}`} text={text} bdSize={bdSize} disabled={disabled} loading={loading} />
     )
 
-    removeList.push(
-      <BdRemoveButton key={`remove-${index}`} text={text} bdSize={bdSize} disabled={disabled} loading={loading} />
-    )
+    removeList.push(<BdRemoveButton key={`remove-${index}`} text={text} bdSize={bdSize} disabled={disabled} loading={loading} />)
 
     index++
   }
@@ -34,30 +33,22 @@ export const SampleButton = () => {
   return (
     <Grid container spacing={2}>
       <Grid item xs={3} md={3}>
-        <ColumnBox title="Primary Button">
-          {primaryList}
-        </ColumnBox>
+        <ColumnBox title="Primary Button">{primaryList}</ColumnBox>
       </Grid>
       <Grid item xs={3} md={3}>
-        <ColumnBox title="Secondary Button">
-          {secondaryList}
-        </ColumnBox>
+        <ColumnBox title="Secondary Button">{secondaryList}</ColumnBox>
       </Grid>
       <Grid item xs={3} md={3}>
-        <ColumnBox title="Outlined Button">
-          {outlinedList}
-        </ColumnBox>
+        <ColumnBox title="Outlined Button">{outlinedList}</ColumnBox>
       </Grid>
       <Grid item xs={3} md={3}>
-        <ColumnBox title="Remove Button">
-          {removeList}
-        </ColumnBox>
+        <ColumnBox title="Remove Button">{removeList}</ColumnBox>
       </Grid>
     </Grid>
   )
 }
 
-const list: { text: string, bdSize: string, loading?: boolean, disabled?: boolean }[] = [
+const list: { text: string; bdSize: BdSize; loading?: boolean; disabled?: boolean }[] = [
   { text: 'Size LG', bdSize: 'lg' },
   { text: 'Size MD', bdSize: 'md' },
   { text: 'Size SM', bdSize: 'sm' },
@@ -68,6 +59,6 @@ const list: { text: string, bdSize: string, loading?: boolean, disabled?: boolea
 ]
 
 export default {
-  title: "Sample/Button",
-  component: SampleButton
+  title: 'Sample/Button',
+  component: SampleButton,
 } as Meta<typeof SampleButton>
