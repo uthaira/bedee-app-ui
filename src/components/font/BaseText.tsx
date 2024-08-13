@@ -33,7 +33,7 @@ interface BaseTextProps extends TypographyProps {
 }
 
 export const BaseText = (props: BaseTextProps) => {
-  const { text, bdType, color = Colors.black } = props
+  const { text, bdType, color = Colors.black, ...rest } = props
 
   const getTheme = (): Style => {
     const map: StyleDict = {
@@ -109,7 +109,7 @@ export const BaseText = (props: BaseTextProps) => {
   const v = getVariant()
 
   return (
-    <Typography {...props} {...t} color={color} variant={v}>
+    <Typography {...rest} {...t} color={color} variant={v}>
       {text}
     </Typography>
   )
