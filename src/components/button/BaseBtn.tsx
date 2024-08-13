@@ -17,7 +17,7 @@ export interface ButtonProps extends MuiButtonProps {
 }
 
 const Button = (props: ButtonProps) => {
-  const { bdType, icon, text, loading, bdSize, width = '100%', isRightIcon = false, counter } = props
+  const { bdType, icon, text, loading, bdSize, width = '100%', isRightIcon = false, counter, ...rest } = props
 
   const getTheme = () => {
     switch (bdType) {
@@ -143,7 +143,7 @@ const Button = (props: ButtonProps) => {
         },
       }}
       variant="outlined"
-      {...props}
+      {...rest}
     >
       <TextStyled>
         {!isRightIcon && iconImg}
