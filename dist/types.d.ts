@@ -75,6 +75,69 @@ interface BottomSheetProps extends SlideProps {
 }
 declare const BottomSheet: (props: BottomSheetProps) => react_jsx_runtime.JSX.Element;
 
+interface ICountriesPhone {
+    id: string;
+    flag: string;
+    flagIcon: string;
+    countryName: string;
+    phoneCode: string;
+    countryCode: string;
+    region: string | null;
+    active?: boolean;
+    createdAt?: string;
+    updatedAt?: string;
+}
+
+interface PhoneNoFormProps {
+    countryList: ICountriesPhone[];
+    mobile: string;
+    onChangeCountry: (selectedCountry: ICountriesPhone) => void;
+    onChangeMobile: (mobile: string) => void;
+    isInvalid?: boolean;
+    placeholder?: string;
+    defaultCountry?: ICountriesPhone;
+}
+declare const PhoneNoForm: React.FC<PhoneNoFormProps>;
+
+interface OtpFormProps {
+    length: number;
+    value: string;
+    refcode: string;
+    onChange: (val: string) => void;
+    onResend: () => void;
+    errorMessage?: string;
+    refcodeLabel?: string;
+    resendTimeSecond?: number;
+    expireTimeSecond?: number;
+    resendLabel?: string;
+    unitLabel?: string;
+    resendBtnText?: string;
+}
+declare const OtpForm: React.FC<OtpFormProps>;
+
+interface IPinForm {
+    onKeyboard: (val: string) => void;
+    onDelete: () => void;
+    codeList: string[];
+    error?: string;
+}
+declare const PinForm: React.FC<IPinForm>;
+
+interface KeyBoardProps {
+    onClick: (label: string) => void;
+    onDelete: () => void;
+}
+declare const PinKeyBoard: React.FC<KeyBoardProps>;
+
+type Variant = 'default' | 'outlined';
+type BadgeProps = {
+    color: string;
+    icon?: React.ReactNode;
+    text: React.ReactNode;
+    variant?: Variant;
+};
+declare const Badge: ({ color, icon, text, variant }: BadgeProps) => react_jsx_runtime.JSX.Element;
+
 declare const Colors: {
     brandBlack: string;
     darkBlue: string;
@@ -114,4 +177,44 @@ declare const Colors: {
     white: string;
 };
 
-export { Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, H1, H2, H3, H4, H5, H6, type HeadingProps, Lead1, Lead2, Mini, P1, P2, type ParagraphProps, type SmallProps, type StylizeProps, Tiny };
+type LogoProps = {
+    size?: number;
+};
+declare const Logo: (props: LogoProps) => react_jsx_runtime.JSX.Element;
+
+type IconProps$1 = {
+    size?: number;
+    color?: string;
+};
+declare const Circle: (props: IconProps$1) => react_jsx_runtime.JSX.Element;
+
+type IconProps = {
+    size?: number;
+    color?: string;
+};
+declare const Del: (props: IconProps) => react_jsx_runtime.JSX.Element;
+
+declare const Remove: () => react_jsx_runtime.JSX.Element;
+
+interface CloseIconProps {
+    className?: string;
+    width?: string;
+    height?: string;
+    color?: string;
+}
+declare function CloseIcon(props: CloseIconProps): react_jsx_runtime.JSX.Element;
+
+declare const toPattern: (value: string, pattern: string) => string;
+declare const clearPattern: (text?: string, ch?: string) => string;
+declare const removeZeroPrefix: (phoneNumber: string) => string;
+declare const randomString: (length: number) => string;
+
+declare const format_clearPattern: typeof clearPattern;
+declare const format_randomString: typeof randomString;
+declare const format_removeZeroPrefix: typeof removeZeroPrefix;
+declare const format_toPattern: typeof toPattern;
+declare namespace format {
+  export { format_clearPattern as clearPattern, format_randomString as randomString, format_removeZeroPrefix as removeZeroPrefix, format_toPattern as toPattern };
+}
+
+export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, type ICountriesPhone, Lead1, Lead2, Logo as LogoIcon, Mini, OtpForm, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };
