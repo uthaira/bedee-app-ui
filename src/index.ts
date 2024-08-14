@@ -1,4 +1,4 @@
 export * from './components'
 export * from './colors'
-// export * from './icons'
-// export * from './utils'
+export * from './icons'
+export * from './utils'
