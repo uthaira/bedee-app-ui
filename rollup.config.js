@@ -30,7 +30,7 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss(), 
     ],
-    external: ["react", "react-dom", "@emotion/react", "@emotion/styled", "@mui/material","@mui/icons-material"],
+    external: ["react", "react-dom", "@emotion/react", "@emotion/styled", "@mui/material","@mui/icons-material", "@mui/system"],
   },
   {
     input: "src/index.ts",
