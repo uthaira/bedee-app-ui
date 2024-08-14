@@ -1,7 +1,6 @@
 import { Colors } from "../../colors";
 import { Lead1 } from "../font";
 
-
 type TimerProps = {
   timerResend: number;
 };

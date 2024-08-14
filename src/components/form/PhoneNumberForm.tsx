@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
 import { MobileInput } from '../input';
 import InternationalPhone, { ICountriesPhone } from '../input/InternationalPhone';
 

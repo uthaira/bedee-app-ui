@@ -3,11 +3,10 @@ import { Meta } from '@storybook/react'
 import { COUNTRY_LIST, DEFAULT_COUNTRY_PHONE } from '../../constanst/mockData'
 import { Box } from '@mui/material'
 import { P1 } from '../../components'
-import styled from '@emotion/styled'
+import { styled } from '@mui/material/styles';
 import PhoneNoForm from '../../components/form/PhoneNumberForm'
 import OtpForm from '../../components/form/OtpForm'
 import PinForm from '../../components/form/PinForm'
-// import { PinForm, OtpForm, PhoneNumberForm } from '../../components/form'
 
 export const SampleForm = () => {
   const [isInvalid, setIsInvalid] = useState(false);
