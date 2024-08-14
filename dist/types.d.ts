@@ -1,6 +1,6 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import { ButtonProps as ButtonProps$1, TypographyProps, SlideProps } from '@mui/material';
-import React from 'react';
+import React, { FC } from 'react';
 
 type BdType = 'primary' | 'secondary' | 'outlined' | 'remove';
 type BdSize = 'lg' | 'md' | 'sm' | 'xs' | 'xxs';
@@ -87,6 +87,12 @@ interface ICountriesPhone {
     createdAt?: string;
     updatedAt?: string;
 }
+interface InternationalPhoneProps {
+    onChange?: (country: ICountriesPhone) => void;
+    defaultCountry?: ICountriesPhone;
+    countryList: ICountriesPhone[];
+}
+declare const InternationalPhone: FC<InternationalPhoneProps>;
 
 interface PhoneNoFormProps {
     countryList: ICountriesPhone[];
@@ -107,11 +113,10 @@ interface OtpFormProps {
     onResend: () => void;
     errorMessage?: string;
     refcodeLabel?: string;
-    resendTimeSecond?: number;
-    expireTimeSecond?: number;
     resendLabel?: string;
     unitLabel?: string;
     resendBtnText?: string;
+    timeRemain: number;
 }
 declare const OtpForm: React.FC<OtpFormProps>;
 
@@ -122,6 +127,32 @@ interface IPinForm {
     error?: string;
 }
 declare const PinForm: React.FC<IPinForm>;
+
+interface InputProps {
+    name: string;
+    label: string;
+    value?: string;
+    tag?: string;
+    disabled?: boolean;
+    pattern?: string;
+    charPattern?: string;
+    isNumber?: boolean;
+    limit?: number;
+    onChange?: (value: string, name: string, tag?: string) => void;
+    invalid?: boolean;
+    type?: string;
+    containerStyled?: React.CSSProperties;
+    inputStyled?: React.CSSProperties;
+    rightComponent?: React.ReactNode;
+}
+declare const MobileInput: React.FC<InputProps>;
+
+interface IOTP {
+    length: number;
+    value: string;
+    onChange: (val: string) => void;
+}
+declare const OtpInput: (props: IOTP) => react_jsx_runtime.JSX.Element;
 
 interface KeyBoardProps {
     onClick: (label: string) => void;
@@ -217,4 +248,4 @@ declare namespace format {
   export { format_clearPattern as clearPattern, format_randomString as randomString, format_removeZeroPrefix as removeZeroPrefix, format_toPattern as toPattern };
 }
 
-export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, type ICountriesPhone, Lead1, Lead2, Logo as LogoIcon, Mini, OtpForm, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };
+export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };

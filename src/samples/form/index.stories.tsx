@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Meta } from '@storybook/react'
 import { COUNTRY_LIST, DEFAULT_COUNTRY_PHONE } from '../../constanst/mockData'
 import { Box } from '@mui/material'
@@ -14,6 +14,8 @@ export const SampleForm = () => {
   const [otp, setOtp] = useState('');
   const [selectedCountry, setSelectedCountry] = useState(DEFAULT_COUNTRY_PHONE);
   const [codeList, setCodeList] = useState(['', '', '', '', '', '']);
+  const [delayResend, setDelayResend] = useState(180);
+  const [timerExpire, setTimerExpire] = useState(180);
 
   const onChangeMobile = (val: string) => {
     setMobile(val);
@@ -47,6 +49,29 @@ export const SampleForm = () => {
     }
   };
 
+  useEffect(() => {
+    const timerTimerExpire = setInterval(() => {
+      setTimerExpire(timerExpire - 1);
+    }, 1000);
+
+    const timerDelayResend = setInterval(() => {
+      setDelayResend(delayResend - 1);
+    }, 1000);
+
+    if (delayResend === 0) {
+      clearInterval(timerDelayResend);
+    }
+
+    if (timerExpire === 0) {
+      clearInterval(timerTimerExpire);
+    }
+
+    return () => {
+      clearInterval(timerDelayResend);
+      clearInterval(timerTimerExpire);
+    };
+  });
+
   return (
     <Box
       sx={{
@@ -77,6 +102,7 @@ export const SampleForm = () => {
           refcode='1EC2'
           value={otp}
           onResend={() => {}}
+          timeRemain={delayResend}
         />
       </Item>
       <Item>
