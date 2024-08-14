@@ -8,7 +8,7 @@ import { P1 } from '../../components'
 import styled from '@emotion/styled'
 import PinForm from '../../components/form/PinForm'
 
-export const SamplePhoneNumberForm = () => {
+export const SampleForm = () => {
   const [isInvalid, setIsInvalid] = useState(false);
   const [mobile, setMobile] = useState('');
   const [otp, setOtp] = useState('');
@@ -93,8 +93,8 @@ export const SamplePhoneNumberForm = () => {
 
 export default {
   title: 'Sample/Form',
-  component: SamplePhoneNumberForm,
-} as Meta<typeof SamplePhoneNumberForm>
+  component: SampleForm,
+} as Meta<typeof SampleForm>
 
 const Item = styled('div')`
   width: 100%;
