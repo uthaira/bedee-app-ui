@@ -129,6 +129,15 @@ interface KeyBoardProps {
 }
 declare const PinKeyBoard: React.FC<KeyBoardProps>;
 
+type Variant = 'default' | 'outlined';
+type BadgeProps = {
+    color: string;
+    icon?: React.ReactNode;
+    text: React.ReactNode;
+    variant?: Variant;
+};
+declare const Badge: ({ color, icon, text, variant }: BadgeProps) => react_jsx_runtime.JSX.Element;
+
 declare const Colors: {
     brandBlack: string;
     darkBlue: string;
@@ -208,4 +217,4 @@ declare namespace format {
   export { format_clearPattern as clearPattern, format_randomString as randomString, format_removeZeroPrefix as removeZeroPrefix, format_toPattern as toPattern };
 }
 
-export { Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, type ICountriesPhone, Lead1, Lead2, Logo as LogoIcon, Mini, OtpForm, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };
+export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, type ICountriesPhone, Lead1, Lead2, Logo as LogoIcon, Mini, OtpForm, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };
