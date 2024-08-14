@@ -1,12 +1,10 @@
 import { useState } from 'react'
 import { Meta } from '@storybook/react'
-import PhoneNumberForm from '../../components/form/PhoneNumberForm'
 import { COUNTRY_LIST, DEFAULT_COUNTRY_PHONE } from '../../constanst/mockData'
 import { Box } from '@mui/material'
-import OtpForm from '../../components/form/OtpForm'
 import { P1 } from '../../components'
 import styled from '@emotion/styled'
-import PinForm from '../../components/form/PinForm'
+import { PinForm, OtpForm, PhoneNumberForm } from '../../components/form'
 
 export const SampleForm = () => {
   const [isInvalid, setIsInvalid] = useState(false);

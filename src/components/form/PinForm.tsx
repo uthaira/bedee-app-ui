@@ -1,3 +1,4 @@
+import React from 'react';
 import { Box, styled } from '@mui/material';
 import { CircleIcon } from '../../icons';
 import { PinKeyboard } from '../keyboard';
@@ -11,7 +12,7 @@ export type IPinForm = {
   error?: string;
 };
 
-const PinForm = (props: IPinForm) => {
+const PinForm: React.FC<IPinForm> = (props) => {
   const { onKeyboard, onDelete, codeList, error } = props;
 
   const codes = codeList.map((it, i) => {
