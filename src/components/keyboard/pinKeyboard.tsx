@@ -81,10 +81,6 @@ const LineBtn = styled(Box)`
   align-items: center;
   column-gap: 40px;
   padding: 10px 0px;
-
-  ${({ theme }) => theme.breakpoints.down('xs')} {
-    column-gap: 20px;
-  }
 `;
 
 const Btn = styled(Box)`

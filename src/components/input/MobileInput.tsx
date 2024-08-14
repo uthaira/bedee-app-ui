@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent } from 'react';
 import { styled } from '@mui/material/styles';
 import { InputBase } from '@mui/material';
 import { Format } from '../../utils';
+import { Colors } from '../../colors';
 
 interface InputProps {
   name: string;
@@ -97,19 +98,19 @@ const Content = styled('div')(({ theme }) => ({
   backgroundColor: '#f7f8f9',
   borderRadius: '8px',
   padding: '0px 10px',
-  border: `1px solid ${theme.palette.divider}`,
+  border: `1px solid ${Colors.gray3}`,
   display: 'flex',
 
   '&.active': {
-    border: `1px solid ${theme.palette.primary.main}`,
+    border: `1px solid ${Colors.primary001}`,
   },
 
   '&.disabled': {
-    backgroundColor: theme.palette.action.disabledBackground,
+    backgroundColor: `${Colors.gray3}`,
   },
 
   '&.invalid': {
-    border: `1px solid ${theme.palette.error.main}`,
+    border: `1px solid ${Colors.error}`,
   },
 }));
 
