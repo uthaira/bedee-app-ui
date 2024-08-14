@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, styled } from '@mui/material';
+import { Box } from '@mui/material';
+import styled from '@emotion/styled';
 import { MobileInput } from '../input';
 import InternationalPhone, { ICountriesPhone } from '../input/InternationalPhone';
 
@@ -13,7 +14,7 @@ interface PhoneNoFormProps {
   defaultCountry?: ICountriesPhone;
 }
 
-const PhoneNoForm: React.FC<PhoneNoFormProps> = (props) => {
+const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
   const {
     countryList,
     onChangeCountry,

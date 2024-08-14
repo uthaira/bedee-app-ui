@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { styled } from '@mui/material/styles';
+import styled from '@emotion/styled';
 import { InputBase } from '@mui/material';
 import { Format } from '../../utils';
 import { Colors } from '../../colors';
@@ -32,7 +32,7 @@ const MobileInput: React.FC<InputProps> = ({
   charPattern,
   isNumber,
   limit = 900000,
-  onChange = () => {},
+  onChange = () => { },
   invalid,
   type = 'text',
   containerStyled,
@@ -92,13 +92,13 @@ const MobileInput: React.FC<InputProps> = ({
   );
 };
 
-const Content = styled('div')(({ theme }) => ({
+const Content = styled('div')({
   width: '100%',
   height: '56px',
   backgroundColor: '#f7f8f9',
   borderRadius: '8px',
   padding: '0px 10px',
-  border: `1px solid ${Colors.gray3}`,
+  border: `1px solid ${Colors.gray2}`,
   display: 'flex',
 
   '&.active': {
@@ -112,7 +112,7 @@ const Content = styled('div')(({ theme }) => ({
   '&.invalid': {
     border: `1px solid ${Colors.error}`,
   },
-}));
+});
 
 const Invalid = styled('div')`
   color: #f95247;

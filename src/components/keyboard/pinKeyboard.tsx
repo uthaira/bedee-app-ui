@@ -1,5 +1,5 @@
 import React from 'react';
-import { styled } from '@mui/system';
+import styled from '@emotion/styled';
 import { Box } from '@mui/material';
 import { DelIcon } from '../../icons';
 

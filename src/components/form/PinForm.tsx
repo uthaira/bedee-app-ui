@@ -1,5 +1,6 @@
 import React from 'react';
-import { Box, styled } from '@mui/material';
+import { Box } from '@mui/material';
+import styled from '@emotion/styled';
 import { CircleIcon } from '../../icons';
 import { PinKeyboard } from '../keyboard';
 import { P2 } from '../font';

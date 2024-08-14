@@ -5,9 +5,9 @@ import {
   Button,
   Typography,
   MenuItem,
-  styled,
   MenuProps,
 } from '@mui/material';
+import styled from '@emotion/styled';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Colors } from '../../colors';
 import { DEFAULT_COUNTRY_PHONE } from '../../constanst/mockData';
@@ -165,7 +165,7 @@ const StyledMenu = styled((props: MenuProps) => (
     }}
     {...props}
   />
-))(() => ({
+))({
   '& .MuiPaper-root': {
     borderRadius: 6,
     marginTop: 4,
@@ -176,6 +176,6 @@ const StyledMenu = styled((props: MenuProps) => (
       padding: '0',
     },
   },
-}));
+});
 
 export default InternationalPhone;

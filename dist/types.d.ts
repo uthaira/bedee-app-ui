@@ -75,22 +75,6 @@ interface BottomSheetProps extends SlideProps {
 }
 declare const BottomSheet: (props: BottomSheetProps) => react_jsx_runtime.JSX.Element;
 
-interface OtpFormProps {
-    length: number;
-    value: string;
-    refcode: string;
-    onChange: (val: string) => void;
-    onResend: () => void;
-    errorMessage?: string;
-    refcodeLabel?: string;
-    resendTimeSecond?: number;
-    expireTimeSecond?: number;
-    resendLabel?: string;
-    unitLabel?: string;
-    resendBtnText?: string;
-}
-declare const OtpForm: React.FC<OtpFormProps>;
-
 interface ICountriesPhone {
     id: string;
     flag: string;
@@ -120,6 +104,22 @@ interface PhoneNoFormProps {
     defaultCountry?: ICountriesPhone;
 }
 declare const PhoneNoForm: React.FC<PhoneNoFormProps>;
+
+interface OtpFormProps {
+    length: number;
+    value: string;
+    refcode: string;
+    onChange: (val: string) => void;
+    onResend: () => void;
+    errorMessage?: string;
+    refcodeLabel?: string;
+    resendTimeSecond?: number;
+    expireTimeSecond?: number;
+    resendLabel?: string;
+    unitLabel?: string;
+    resendBtnText?: string;
+}
+declare const OtpForm: React.FC<OtpFormProps>;
 
 type IPinForm = {
     onKeyboard: (val: string) => void;
@@ -213,31 +213,4 @@ declare namespace format {
   export { format_clearPattern as clearPattern, format_randomString as randomString, format_removeZeroPrefix as removeZeroPrefix, format_toPattern as toPattern };
 }
 
-type LogoProps = {
-    size?: number;
-};
-declare const Logo: (props: LogoProps) => react_jsx_runtime.JSX.Element;
-
-type IconProps$1 = {
-    size?: number;
-    color?: string;
-};
-declare const Circle: (props: IconProps$1) => react_jsx_runtime.JSX.Element;
-
-type IconProps = {
-    size?: number;
-    color?: string;
-};
-declare const Del: (props: IconProps) => react_jsx_runtime.JSX.Element;
-
-declare const Remove: () => react_jsx_runtime.JSX.Element;
-
-interface CloseIconProps {
-    className?: string;
-    width?: string;
-    height?: string;
-    color?: string;
-}
-declare function CloseIcon(props: CloseIconProps): react_jsx_runtime.JSX.Element;
-
-export { Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };
+export { Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, Lead1, Lead2, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, type SmallProps, type StylizeProps, Tiny };

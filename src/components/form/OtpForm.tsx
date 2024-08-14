@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Box, styled } from '@mui/material';
+import { Box } from '@mui/material';
+import styled from '@emotion/styled';
 import { OtpInput } from '../input';
 import { Colors } from '../../colors';
 import { Lead1, P1, P2 } from '../font';
