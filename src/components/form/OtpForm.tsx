@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { OtpInput } from '../input';
 import { Colors } from '../../colors';
 import { Lead1, P1, P2 } from '../font';
 import { OtpTimer } from '../timer';
 import OutlinedBtn from '../button/OutlinedBtn';
+import OtpInput from '../input/OtpInput';
 
 interface OtpFormProps {
   length: number;

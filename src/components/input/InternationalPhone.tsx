@@ -7,7 +7,7 @@ import {
   MenuItem,
   MenuProps,
 } from '@mui/material';
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Colors } from '../../colors';
 import { DEFAULT_COUNTRY_PHONE } from '../../constanst/mockData';

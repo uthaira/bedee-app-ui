@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { MobileInput } from '../input';
 import InternationalPhone, { ICountriesPhone } from '../input/InternationalPhone';
+import MobileInput from '../input/MobileInput';
 
 interface PhoneNoFormProps {
   countryList: ICountriesPhone[];

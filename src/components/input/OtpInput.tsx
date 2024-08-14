@@ -1,11 +1,10 @@
 import { TextField,Box } from '@mui/material';
 import * as React from 'react';
-
-export type IOTP = {
+interface IOTP {
   length: number;
   value: string;
   onChange: (val: string) => void;
-};
+}
 
 const OtpInput = (props: IOTP) => {
   const { length, value, onChange } = props;
