@@ -55,7 +55,7 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
   );
 };
 
-export const Phone = styled('div')`
+const Phone = styled('div')`
   width: 100%;
 `;
 

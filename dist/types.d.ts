@@ -75,54 +75,6 @@ interface BottomSheetProps extends SlideProps {
 }
 declare const BottomSheet: (props: BottomSheetProps) => react_jsx_runtime.JSX.Element;
 
-interface ICountriesPhone {
-    id: string;
-    flag: string;
-    flagIcon: string;
-    countryName: string;
-    phoneCode: string;
-    countryCode: string;
-    region: string | null;
-    active?: boolean;
-    createdAt?: string;
-    updatedAt?: string;
-}
-
-interface PhoneNoFormProps {
-    countryList: ICountriesPhone[];
-    mobile: string;
-    onChangeCountry: (selectedCountry: ICountriesPhone) => void;
-    onChangeMobile: (mobile: string) => void;
-    isInvalid?: boolean;
-    placeholder?: string;
-    defaultCountry?: ICountriesPhone;
-}
-declare const PhoneNoForm: React.FC<PhoneNoFormProps>;
-
-interface OtpFormProps {
-    length: number;
-    value: string;
-    refcode: string;
-    onChange: (val: string) => void;
-    onResend: () => void;
-    errorMessage?: string;
-    refcodeLabel?: string;
-    resendTimeSecond?: number;
-    expireTimeSecond?: number;
-    resendLabel?: string;
-    unitLabel?: string;
-    resendBtnText?: string;
-}
-declare const OtpForm: React.FC<OtpFormProps>;
-
-type IPinForm = {
-    onKeyboard: (val: string) => void;
-    onDelete: () => void;
-    codeList: string[];
-    error?: string;
-};
-declare const PinForm: React.FC<IPinForm>;
-
 declare const Colors: {
     brandBlack: string;
     darkBlue: string;
@@ -162,4 +114,4 @@ declare const Colors: {
     white: string;
 };
 
-export { Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, H1, H2, H3, H4, H5, H6, type HeadingProps, Lead1, Lead2, Mini, OtpForm, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, type SmallProps, type StylizeProps, Tiny };
+export { Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Colors, H1, H2, H3, H4, H5, H6, type HeadingProps, Lead1, Lead2, Mini, P1, P2, type ParagraphProps, type SmallProps, type StylizeProps, Tiny };

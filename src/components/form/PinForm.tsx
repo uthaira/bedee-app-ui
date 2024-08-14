@@ -1,26 +1,26 @@
-import React from 'react';
-import { Box } from '@mui/material';
-import styled from '@emotion/styled';
-import { CircleIcon } from '../../icons';
-import { PinKeyboard } from '../keyboard';
-import { P2 } from '../font';
-import { Colors } from '../../colors';
+import React from 'react'
+import { Box } from '@mui/material'
+import styled from '@emotion/styled'
+import { CircleIcon } from '../../icons'
+import { PinKeyboard } from '../keyboard'
+import { P2 } from '../font'
+import { Colors } from '../../colors'
 
-export type IPinForm = {
-  onKeyboard: (val: string) => void;
-  onDelete: () => void;
-  codeList: string[];
-  error?: string;
-};
+interface IPinForm {
+  onKeyboard: (val: string) => void
+  onDelete: () => void
+  codeList: string[]
+  error?: string
+}
 
-const PinForm: React.FC<IPinForm> = (props) => {
-  const { onKeyboard, onDelete, codeList, error } = props;
+const PinForm: React.FC<IPinForm> = (props: IPinForm) => {
+  const { onKeyboard, onDelete, codeList, error } = props
 
   const codes = codeList.map((it, i) => {
-    const isActive = it !== '';
-    const c = isActive ? <CircleIcon /> : '';
-    return <Code key={i}>{c}</Code>;
-  });
+    const isActive = it !== ''
+    const c = isActive ? <CircleIcon /> : ''
+    return <Code key={i}>{c}</Code>
+  })
 
   return (
     <Box
@@ -28,7 +28,7 @@ const PinForm: React.FC<IPinForm> = (props) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'column'
+        flexDirection: 'column',
       }}
     >
       <CodeSection>{codes}</CodeSection>
@@ -39,8 +39,8 @@ const PinForm: React.FC<IPinForm> = (props) => {
       )}
       <PinKeyboard onClick={onKeyboard} onDelete={onDelete} />
     </Box>
-  );
-};
+  )
+}
 
 const CodeSection = styled('div')`
   width: 100%;
@@ -48,7 +48,7 @@ const CodeSection = styled('div')`
   justify-content: center;
   column-gap: 8px;
   padding: 20px 0;
-`;
+`
 
 const Code = styled('div')`
   width: 48px;
@@ -70,11 +70,11 @@ const Code = styled('div')`
     color: ${Colors.royalBlue};
     border: 1px solid ${Colors.royalBlue};
   }
-`;
+`
 
-export const StyledTextError = styled('div')`
+const StyledTextError = styled('div')`
   padding: 12px 0;
   text-align: center;
-`;
+`
 
-export default PinForm;
+export default PinForm
