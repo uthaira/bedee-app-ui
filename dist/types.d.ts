@@ -181,10 +181,6 @@ declare enum ELanguage {
 declare const LanguageSwitch: (props: LanguageSwitchProps) => react_jsx_runtime.JSX.Element;
 
 interface ProfileHeaderProps {
-    headerText?: string;
-    loginText?: string;
-    registerText?: string;
-    welcomeText?: string;
     nameText?: string;
     isLogin?: boolean;
     localeLanguage?: string;
