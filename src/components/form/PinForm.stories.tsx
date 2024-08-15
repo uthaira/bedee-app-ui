@@ -2,7 +2,7 @@ import { Meta, StoryObj } from '@storybook/react'
 import PinForm from './PinForm'
 
 export default {
-  title: 'Components/PinForm',
+  title: 'Components/Form/PinForm',
   component: PinForm,
 } as Meta<typeof PinForm>
 

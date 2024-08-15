@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Colors } from '../../colors';
@@ -15,45 +15,17 @@ interface OtpFormProps {
   onResend: () => void;
   errorMessage?: string
   refcodeLabel?: string
-  resendTimeSecond?: number
-  expireTimeSecond?: number
   resendLabel?: string
   unitLabel?: string
   resendBtnText?: string
+  timeRemain: number
 }
 
 const OtpForm: React.FC<OtpFormProps> = (props) => {
-  const { length, value, onChange, errorMessage = '', refcode, refcodeLabel = 'หมายเลขอ้างอิง', resendLabel = 'ขอรหัสอีกครั้งใน', unitLabel = 'นาที', resendTimeSecond = 180, expireTimeSecond = 180, onResend, resendBtnText = 'ขอรหัสอีกครั้ง' } = props;
-  const [delayResend, setDelayResend] = useState(resendTimeSecond);
-  const [timerExpire, setTimerExpire] = useState(expireTimeSecond);
-
-
-  useEffect(() => {
-    const timerTimerExpire = setInterval(() => {
-      setTimerExpire(timerExpire - 1);
-    }, 1000);
-
-    const timerDelayResend = setInterval(() => {
-      setDelayResend(delayResend - 1);
-    }, 1000);
-
-    if (delayResend === 0) {
-      clearInterval(timerDelayResend);
-    }
-
-    if (timerExpire === 0) {
-      clearInterval(timerTimerExpire);
-    }
-
-    return () => {
-      clearInterval(timerDelayResend);
-      clearInterval(timerTimerExpire);
-    };
-  });
-
-
+  const { length, value, onChange, errorMessage = '', refcode, refcodeLabel = 'หมายเลขอ้างอิง', resendLabel = 'ขอรหัสอีกครั้งใน', unitLabel = 'นาที', onResend, resendBtnText = 'ขอรหัสอีกครั้ง', timeRemain = 0 } = props;
+  
   const renderResendTimer = () => {
-    if (delayResend > 0) {
+    if (timeRemain > 0) {
       return (
         <StyledTimmer>
           <Box
@@ -65,7 +37,7 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
             }}
           >
             <P1 text={resendLabel} />
-            <OtpTimer timerResend={delayResend} />
+            <OtpTimer timerResend={timeRemain} />
             <Lead1 text={unitLabel} color={Colors.royalBlue} />
           </Box>
         </StyledTimmer>

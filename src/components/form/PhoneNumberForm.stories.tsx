@@ -4,7 +4,7 @@ import { COUNTRY_LIST, DEFAULT_COUNTRY_PHONE } from '../../constanst/mockData'
 import { ICountriesPhone } from '../input/InternationalPhone'
 
 export default {
-  title: 'Components/PhoneNumberForm',
+  title: 'Components/Form/PhoneNumberForm',
   component: PhoneNumberForm,
 } as Meta<typeof PhoneNumberForm>
 
