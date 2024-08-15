@@ -169,6 +169,33 @@ type BadgeProps = {
 };
 declare const Badge: ({ color, icon, text, variant }: BadgeProps) => react_jsx_runtime.JSX.Element;
 
+interface LanguageSwitchProps {
+    width?: string;
+    localeLanguage: string;
+    updatedSwitchData: (lang: ELanguage) => void;
+}
+declare enum ELanguage {
+    TH = "th",
+    EN = "en"
+}
+declare const LanguageSwitch: (props: LanguageSwitchProps) => react_jsx_runtime.JSX.Element;
+
+interface ProfileHeaderProps {
+    headerText?: string;
+    loginText?: string;
+    registerText?: string;
+    welcomeText?: string;
+    nameText?: string;
+    isLogin?: boolean;
+    localeLanguage?: string;
+    updatedSwitchData?: (lang: ELanguage) => void;
+    onActivity?: () => void;
+    onProfile?: () => void;
+    onLogin?: () => void;
+    onRegister?: () => void;
+}
+declare const ProfileHeader: (props: ProfileHeaderProps) => react_jsx_runtime.JSX.Element;
+
 declare const Colors: {
     brandBlack: string;
     darkBlue: string;
@@ -248,4 +275,4 @@ declare namespace format {
   export { format_clearPattern as clearPattern, format_randomString as randomString, format_removeZeroPrefix as removeZeroPrefix, format_toPattern as toPattern };
 }
 
-export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };
+export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };
