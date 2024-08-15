@@ -1,20 +1,24 @@
 import { Meta } from '@storybook/react'
-import { Header } from '../../components/header'
+import { BdPrimaryButton, ProfileHeader } from '../../components'
 import { Container } from '@mui/material'
 import { useState } from 'react'
+import { ELanguage } from '../../components/switch/LanguageSwitch'
 
 export const SampleHeader = () => {
-  const [localeLanguage, setLocaleLanguage] = useState('th')
+  const [localeLanguage, setLocaleLanguage] = useState(ELanguage.TH)
+  const [isLogin, setIsLogin] = useState(false)
 
-  const handleLanguageChange = (newLanguage: string) => {
-    setLocaleLanguage(newLanguage)
-    // Additional logic if needed, such as updating a global state or making API calls
-    console.log(`Language switched to: ${newLanguage}`)
+  const handleLanguageChange = (lang: ELanguage) => {
+    setLocaleLanguage(lang)
+  }
+
+  const onLogin = () => {
+    setIsLogin(true)
   }
 
   return (
     <Container sx={{ height: '100vh', padding: 0 }}>
-      <Header
+      <ProfileHeader
         headerText="สมัครใช้งานบีดี เพื่อรับสิทธิประโยชน์ดีดีด้านสุขภาพ"
         loginText="เข้าสู่ระบบ"
         registerText="สมัครใช้งาน"
@@ -22,7 +26,11 @@ export const SampleHeader = () => {
         nameText="Pakorn"
         localeLanguage={localeLanguage}
         updatedSwitchData={handleLanguageChange}
+        onLogin={onLogin}
+        onRegister={onLogin}
+        isLogin={isLogin}
       />
+      {isLogin && <BdPrimaryButton text="Back" onClick={() => setIsLogin(false)} />}
     </Container>
   )
 }

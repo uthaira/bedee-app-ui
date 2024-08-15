@@ -1,46 +1,51 @@
 import React from 'react'
-import { Box, colors, ToggleButton, ToggleButtonGroup } from '@mui/material'
+import { Box, ToggleButton, ToggleButtonGroup } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { Colors } from '../../colors'
 
-interface LanguageSwitchProps {
+export interface LanguageSwitchProps {
+  width?: string
   localeLanguage: string
-  updatedSwitchData: (lang: string) => void
+  updatedSwitchData: (lang: ELanguage) => void
 }
 
-const SwitchWrapper = styled(Box)(({ theme }) => ({
-  height: 32,
-  width: 100,
+export enum ELanguage {
+  TH = 'th',
+  EN = 'en',
+}
+
+const SwitchWrapper = styled(Box)(() => ({
+  height: '32px',
   borderRadius: 25,
   display: 'flex',
   justifyContent: 'center',
+  backgroundColor: Colors.gray5,
 }))
 
-const LanguageSwitch: React.FC<LanguageSwitchProps> = ({ localeLanguage, updatedSwitchData }) => {
-  const handleLanguageChange = (event: any, newLanguage: string) => {
+const LanguageSwitch = (props: LanguageSwitchProps) => {
+  const { localeLanguage, updatedSwitchData, width } = props
+
+  const handleLanguageChange = (event: any, newLanguage: ELanguage) => {
     if (newLanguage !== null) {
       updatedSwitchData(newLanguage)
     }
   }
 
-  console.log(localeLanguage)
-
   return (
-    <Box display="flex" justifyContent="flex-end" flex={1}>
-      <SwitchWrapper>
-        <ToggleButtonGroup
-          value={localeLanguage}
-          exclusive
-          onChange={handleLanguageChange}
-          sx={{ width: '100%', }}
-        >
+    <Box display="flex" flex={1}>
+      <SwitchWrapper width={width}>
+        <ToggleButtonGroup value={localeLanguage} exclusive onChange={handleLanguageChange} sx={{ width: '100%' }}>
           <ToggleButton
             value="th"
             sx={{
               '&.MuiToggleButton-root': {
-                backgroundColor: localeLanguage === 'th' ? Colors.primary001 : Colors.gray5,
-                color: localeLanguage === 'th' ? Colors.white : Colors.gray3,
+                backgroundColor: localeLanguage === ELanguage.TH ? Colors.primary001 : Colors.gray5,
+                color: localeLanguage === ELanguage.TH ? Colors.white : Colors.gray3,
                 borderRadius: 25,
+                border: 'none',
+                '&:hover': {
+                  backgroundColor: localeLanguage === ELanguage.TH ? Colors.primary002 : Colors.gray5,
+                },
               },
             }}
           >
@@ -49,12 +54,16 @@ const LanguageSwitch: React.FC<LanguageSwitchProps> = ({ localeLanguage, updated
           <ToggleButton
             value="en"
             sx={{
-                '&.MuiToggleButton-root': {
-                  backgroundColor: localeLanguage === 'en' ? Colors.primary001 : Colors.gray5,
-                  color: localeLanguage === 'en' ? Colors.white : Colors.gray3,
-                  borderRadius: 25,
+              '&.MuiToggleButton-root': {
+                backgroundColor: localeLanguage === ELanguage.EN ? Colors.primary001 : Colors.gray5,
+                color: localeLanguage === ELanguage.EN ? Colors.white : Colors.gray3,
+                borderRadius: 25,
+                border: 'none',
+                '&:hover': {
+                  backgroundColor: localeLanguage === ELanguage.EN ? Colors.primary002 : Colors.gray5,
                 },
-              }}
+              },
+            }}
           >
             ENG
           </ToggleButton>

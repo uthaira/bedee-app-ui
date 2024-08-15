@@ -1,14 +1,14 @@
 import { Box, Divider, IconButton, Stack } from '@mui/material'
 import BeDeeLogo from '../../icons/BeDeeLogo'
-import { BaseText, Mini, P1, P2 } from '../font'
+import { BaseText, Mini, P2 } from '../font'
 import { Colors } from '../../colors'
-import PrimaryBtn from '../button/PrimaryBtn'
 import { BdPrimaryButton, BdSecondaryButton } from '../button'
 import ActivityHeaderIcon from '../../icons/ActivityHeaderIcon'
 import ProfileHeaderIcon from '../../icons/ProfileHeaderIcon'
 import { LanguageSwitch } from '../switch'
+import { ELanguage } from '../switch/LanguageSwitch'
 
-interface HeaderProps {
+export interface ProfileHeaderProps {
   headerText?: string
   loginText?: string
   registerText?: string
@@ -16,10 +16,14 @@ interface HeaderProps {
   nameText?: string
   isLogin?: boolean
   localeLanguage?: string
-  updatedSwitchData?: (lang: string) => void
+  updatedSwitchData?: (lang: ELanguage) => void
+  onActivity?: () => void
+  onProfile?: () => void
+  onLogin?: () => void
+  onRegister?: () => void
 }
 
-const Header = (props: HeaderProps) => {
+const ProfileHeader = (props: ProfileHeaderProps) => {
   const {
     headerText = '',
     loginText = '',
@@ -29,6 +33,10 @@ const Header = (props: HeaderProps) => {
     isLogin = false,
     localeLanguage = '',
     updatedSwitchData = () => {},
+    onActivity = () => {},
+    onProfile = () => {},
+    onLogin = () => {},
+    onRegister = () => {},
   } = props
 
   return (
@@ -46,11 +54,11 @@ const Header = (props: HeaderProps) => {
         <Stack direction="row" alignItems="center">
           {isLogin ? (
             <>
-              <IconButton>
+              <IconButton onClick={onActivity}>
                 <ActivityHeaderIcon />
               </IconButton>
               <Divider orientation="vertical" variant="middle" flexItem sx={{ height: '22px' }} />
-              <IconButton>
+              <IconButton onClick={onProfile}>
                 <ProfileHeaderIcon />
               </IconButton>
             </>
@@ -63,8 +71,8 @@ const Header = (props: HeaderProps) => {
         <Box width="100%" paddingX="16px">
           <P2 text={headerText} color={Colors.gray6} />
           <Stack paddingY="16px" direction="row" gap={2} justifyContent="center" alignItems="center">
-            <BdSecondaryButton text={loginText} width="fit" bdSize="sm" />
-            <BdPrimaryButton text={registerText} width="fit" bdSize="sm" />
+            <BdSecondaryButton text={loginText} onClick={onLogin} width="fit" bdSize="sm" />
+            <BdPrimaryButton text={registerText} onClick={onRegister} width="fit" bdSize="sm" />
           </Stack>
         </Box>
       )}
@@ -72,4 +80,4 @@ const Header = (props: HeaderProps) => {
   )
 }
 
-export default Header
+export default ProfileHeader
