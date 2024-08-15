@@ -19,10 +19,6 @@ export const SampleHeader = () => {
   return (
     <Container sx={{ height: '100vh', padding: 0 }}>
       <ProfileHeader
-        headerText="สมัครใช้งานบีดี เพื่อรับสิทธิประโยชน์ดีดีด้านสุขภาพ"
-        loginText="เข้าสู่ระบบ"
-        registerText="สมัครใช้งาน"
-        welcomeText="Welcome,"
         nameText="Pakorn"
         localeLanguage={localeLanguage}
         updatedSwitchData={handleLanguageChange}

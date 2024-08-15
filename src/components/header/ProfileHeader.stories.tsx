@@ -11,10 +11,6 @@ type ProfileHeaderStory = StoryObj<ProfileHeaderProps>
 
 export const ProfileHeaderGuest: ProfileHeaderStory = {
   args: {
-    headerText: 'Welcome to BeDee',
-    loginText: 'Log In',
-    registerText: 'Sign Up',
-    welcomeText: 'Welcome,',
     nameText: 'John Doe',
     isLogin: false,
     localeLanguage: 'en',
