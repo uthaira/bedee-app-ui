@@ -1,6 +1,6 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import { ButtonProps as ButtonProps$1, TypographyProps, SlideProps } from '@mui/material';
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 
 type BdType = 'primary' | 'secondary' | 'outlined' | 'remove';
 type BdSize = 'lg' | 'md' | 'sm' | 'xs' | 'xxs';
@@ -297,4 +297,18 @@ declare namespace cookie {
   export { cookie_getCookie as getCookie, cookie_removeCookie as removeCookie, cookie_setCookie as setCookie };
 }
 
-export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny, validateOAuthToken as ValidateOAuthToken };
+interface AuthContextProps {
+    isAuthenticated: boolean | null;
+    isRequiredPin: boolean | null;
+    accessToken: string | null;
+    refreshToken: string | null;
+    idToken: string | null;
+    otpToken: string | null;
+    onRefresh: () => void;
+}
+declare const AuthProvider: ({ children }: {
+    children: ReactNode;
+}) => react_jsx_runtime.JSX.Element;
+declare const useAuth: () => AuthContextProps;
+
+export { AuthProvider, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny, validateOAuthToken as ValidateOAuthToken, useAuth };
