@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { Cookie, ValidateOAuthToken } from '../utils';
 
-interface AuthContextProps {
+export interface AuthContextProps {
   isAuthenticated: boolean | null;
   isRequiredPin: boolean | null;
   accessToken: string | null;
@@ -17,7 +17,7 @@ interface AuthContextProps {
   onRefresh: () => void;
 }
 
-const AuthContext = createContext<AuthContextProps | undefined>(undefined);
+export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
@@ -102,10 +102,4 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-};
+export default AuthProvider

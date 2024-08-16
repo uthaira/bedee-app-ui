@@ -1,6 +1,7 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import { ButtonProps as ButtonProps$1, TypographyProps, SlideProps } from '@mui/material';
-import React, { FC, ReactNode } from 'react';
+import * as React from 'react';
+import React__default, { FC } from 'react';
 
 type BdType = 'primary' | 'secondary' | 'outlined' | 'remove';
 type BdSize = 'lg' | 'md' | 'sm' | 'xs' | 'xxs';
@@ -71,7 +72,7 @@ interface BottomSheetProps extends SlideProps {
     open?: boolean;
     onClose: () => void;
     isCloseIcon?: boolean;
-    children: React.ReactElement;
+    children: React__default.ReactElement;
 }
 declare const BottomSheet: (props: BottomSheetProps) => react_jsx_runtime.JSX.Element;
 
@@ -103,7 +104,7 @@ interface PhoneNoFormProps {
     placeholder?: string;
     defaultCountry?: ICountriesPhone;
 }
-declare const PhoneNoForm: React.FC<PhoneNoFormProps>;
+declare const PhoneNoForm: React__default.FC<PhoneNoFormProps>;
 
 interface OtpFormProps {
     length: number;
@@ -118,7 +119,7 @@ interface OtpFormProps {
     resendBtnText?: string;
     timeRemain: number;
 }
-declare const OtpForm: React.FC<OtpFormProps>;
+declare const OtpForm: React__default.FC<OtpFormProps>;
 
 interface IPinForm {
     onKeyboard: (val: string) => void;
@@ -126,7 +127,7 @@ interface IPinForm {
     codeList: string[];
     error?: string;
 }
-declare const PinForm: React.FC<IPinForm>;
+declare const PinForm: React__default.FC<IPinForm>;
 
 interface InputProps {
     name: string;
@@ -141,11 +142,11 @@ interface InputProps {
     onChange?: (value: string, name: string, tag?: string) => void;
     invalid?: boolean;
     type?: string;
-    containerStyled?: React.CSSProperties;
-    inputStyled?: React.CSSProperties;
-    rightComponent?: React.ReactNode;
+    containerStyled?: React__default.CSSProperties;
+    inputStyled?: React__default.CSSProperties;
+    rightComponent?: React__default.ReactNode;
 }
-declare const MobileInput: React.FC<InputProps>;
+declare const MobileInput: React__default.FC<InputProps>;
 
 interface IOTP {
     length: number;
@@ -158,13 +159,13 @@ interface KeyBoardProps {
     onClick: (label: string) => void;
     onDelete: () => void;
 }
-declare const PinKeyBoard: React.FC<KeyBoardProps>;
+declare const PinKeyBoard: React__default.FC<KeyBoardProps>;
 
 type Variant = 'default' | 'outlined';
 type BadgeProps = {
     color: string;
-    icon?: React.ReactNode;
-    text: React.ReactNode;
+    icon?: React__default.ReactNode;
+    text: React__default.ReactNode;
     variant?: Variant;
 };
 declare const Badge: ({ color, icon, text, variant }: BadgeProps) => react_jsx_runtime.JSX.Element;
@@ -306,9 +307,12 @@ interface AuthContextProps {
     otpToken: string | null;
     onRefresh: () => void;
 }
-declare const AuthProvider: ({ children }: {
-    children: ReactNode;
-}) => react_jsx_runtime.JSX.Element;
-declare const useAuth: () => AuthContextProps;
 
-export { AuthProvider, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny, validateOAuthToken as ValidateOAuthToken, useAuth };
+declare const Authentication: {
+    AuthProvider: ({ children }: {
+        children: React.ReactNode;
+    }) => react_jsx_runtime.JSX.Element;
+    useAuth: () => AuthContextProps;
+};
+
+export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny, validateOAuthToken as ValidateOAuthToken };

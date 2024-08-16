@@ -1,5 +1,4 @@
 import { styled } from '@mui/material'
-import { AuthProvider } from '../../authentication'
 
 const Box = (props: any) => {
   const { title, children } = props

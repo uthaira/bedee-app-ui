@@ -1,10 +1,10 @@
 import { Meta } from '@storybook/react'
 import { H5 } from '../../components'
 import { Container, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-import { AuthProvider, useAuth } from '../../authentication'
+import { Authentication } from '../../authentication'
 
 const AuthenticationContent = () => {
-  const { otpToken, accessToken, refreshToken, idToken } = useAuth()
+  const { otpToken, accessToken, refreshToken, idToken } = Authentication.useAuth()
 
   function createData(
     key: string,
@@ -72,9 +72,9 @@ const AuthenticationContent = () => {
 
 export const AuthenticationUsage = () => {
   return (
-    <AuthProvider>
+    <Authentication.AuthProvider>
       <AuthenticationContent />
-    </AuthProvider>
+    </Authentication.AuthProvider>
   )
 }
 
