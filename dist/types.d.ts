@@ -271,4 +271,30 @@ declare namespace format {
   export { format_clearPattern as clearPattern, format_randomString as randomString, format_removeZeroPrefix as removeZeroPrefix, format_toPattern as toPattern };
 }
 
-export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny };
+declare const checkIsTokenExpired: (jwtToken: string, leadTime?: number) => boolean;
+
+declare const validateOAuthToken_checkIsTokenExpired: typeof checkIsTokenExpired;
+declare namespace validateOAuthToken {
+  export { validateOAuthToken_checkIsTokenExpired as checkIsTokenExpired };
+}
+
+declare const setCookie: (name: string, value: string, options?: {
+    days?: number;
+    secure?: boolean;
+    path?: string;
+    domain?: string;
+}) => void;
+declare const getCookie: (name: string) => string | null;
+declare const removeCookie: (name: string, options?: {
+    path?: string;
+    domain?: string;
+}) => void;
+
+declare const cookie_getCookie: typeof getCookie;
+declare const cookie_removeCookie: typeof removeCookie;
+declare const cookie_setCookie: typeof setCookie;
+declare namespace cookie {
+  export { cookie_getCookie as getCookie, cookie_removeCookie as removeCookie, cookie_setCookie as setCookie };
+}
+
+export { Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, type SmallProps, type StylizeProps, Tiny, validateOAuthToken as ValidateOAuthToken };
