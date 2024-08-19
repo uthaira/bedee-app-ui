@@ -15,7 +15,7 @@ const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({
   width: "100%",
   justifyContent: "start",
   gap: theme.spacing(2),
-  padding: theme.spacing(1),
+  padding: 0,
   border: "none",
 }));
 
@@ -77,7 +77,7 @@ const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
   return (
     <Box sx={sx}>
       {label && (
-        <Typography sx={{ fontWeight: 600, fontSize: 14, mb: 1 }}>
+        <Typography sx={{ fontWeight: 400, fontSize: 14, mb: "14px" }}>
           {label}
         </Typography>
       )}
