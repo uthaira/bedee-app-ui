@@ -1,5 +1,5 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import { ButtonProps as ButtonProps$1, TypographyProps, SlideProps } from '@mui/material';
+import { ButtonProps as ButtonProps$1, TypographyProps, SlideProps, SxProps, Theme } from '@mui/material';
 import * as React from 'react';
 import React__default, { FC } from 'react';
 
@@ -154,6 +154,21 @@ interface IOTP {
     onChange: (val: string) => void;
 }
 declare const OtpInput: (props: IOTP) => react_jsx_runtime.JSX.Element;
+
+interface Option {
+    value: string;
+    label: React__default.ReactNode;
+}
+interface SelectionGroupInputProps {
+    name: string;
+    options: Option[];
+    label?: string;
+    exclusive?: boolean;
+    value?: string;
+    onChange?: (value: string) => void;
+    sx?: SxProps<Theme>;
+}
+declare const SelectionGroupInput: React__default.FC<SelectionGroupInputProps>;
 
 interface KeyBoardProps {
     onClick: (label: string) => void;
@@ -332,4 +347,4 @@ declare const Authentication: {
     useAuth: () => AuthContextProps;
 };
 
-export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, type SmallProps, type StylizeProps, SuccessWidget, Tiny, validateOAuthToken as ValidateOAuthToken };
+export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, type SmallProps, type StylizeProps, SuccessWidget, Tiny, validateOAuthToken as ValidateOAuthToken };
