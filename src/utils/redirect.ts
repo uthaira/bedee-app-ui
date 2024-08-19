@@ -6,7 +6,7 @@ const getNewUrl = (url: string, path: string) => {
   if (isLocalhost || hostMatch.test(parsedUrl.hostname)) {
     const environment = parsedUrl.hostname.split('-')[0];
     if (isLocalhost) {
-      return `https://localhost:3000${path}?redirectUrl=${url}`;
+      return `http://localhost:3000${path}?redirectUrl=${url}`;
     } else {
       return `https://${environment}-services.bedee.com${path}?redirectUrl=${url}`;
     }
