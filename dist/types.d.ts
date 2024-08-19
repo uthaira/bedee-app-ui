@@ -330,6 +330,15 @@ declare namespace cookie {
   export { cookie_getCookie as getCookie, cookie_removeCookie as removeCookie, cookie_setCookie as setCookie };
 }
 
+declare const gotoLoginMobilePage: (url: string) => void;
+declare const gotoLoginPinPage: (url: string) => void;
+
+declare const redirect_gotoLoginMobilePage: typeof gotoLoginMobilePage;
+declare const redirect_gotoLoginPinPage: typeof gotoLoginPinPage;
+declare namespace redirect {
+  export { redirect_gotoLoginMobilePage as gotoLoginMobilePage, redirect_gotoLoginPinPage as gotoLoginPinPage };
+}
+
 interface AuthContextProps {
     isAuthenticated: boolean | null;
     isRequiredPin: boolean | null;
@@ -345,6 +354,7 @@ declare const Authentication: {
         children: React.ReactNode;
     }) => react_jsx_runtime.JSX.Element;
     useAuth: () => AuthContextProps;
+    withAuth: (WrappedComponent: React.FC) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
-export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, type SmallProps, type StylizeProps, SuccessWidget, Tiny, validateOAuthToken as ValidateOAuthToken };
+export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, format as Format, H1, H2, H3, H4, H5, H6, type HeadingProps, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, type SmallProps, type StylizeProps, SuccessWidget, Tiny, validateOAuthToken as ValidateOAuthToken };

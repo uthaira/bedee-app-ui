@@ -40,11 +40,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       getCurrentAuthData();
 
     if (otpToken) {
-      const isotpTokenExpired = ValidateOAuthToken.checkIsTokenExpired(otpToken || '');
-      if (isotpTokenExpired) {
-        removeAuthData();
-        onRefresh();
-        return;
+      if(!accessToken){
+        const otpTokenExpired = ValidateOAuthToken.checkIsTokenExpired(otpToken || '');
+        if (otpTokenExpired) {
+          removeAuthData()
+          onRefresh()
+          return;
+        }
       }
 
       setIsAuthenticated(true);
@@ -73,6 +75,17 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
     }
   };
+
+  useEffect(() => {
+    if(accessToken){
+      const accessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken || '');
+      if (accessTokenExpired) {
+        Cookie.removeCookie('accessToken');
+        setIsRequiredPin(true);
+        return;
+      }
+    }
+  },[accessToken])
 
   const removeAuthData = () => {
     Cookie.removeCookie('accessToken');
