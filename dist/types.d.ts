@@ -421,6 +421,32 @@ declare namespace redirect {
   export { redirect_gotoLoginPhoneNumberPage as gotoLoginPhoneNumberPage, redirect_gotoLoginPinPage as gotoLoginPinPage };
 }
 
+interface IAuthData {
+    accessToken: string;
+    idToken: string;
+    refreshToken: string;
+}
+declare const getCookieOptions: () => {
+    path: string;
+};
+declare const saveAuthData: (oAuthData: IAuthData) => void;
+declare const removeAuthData: () => void;
+declare const getAuthData: () => {
+    accessToken: string | null;
+    refreshToken: string | null;
+    idToken: string | null;
+    otpToken: string | null;
+};
+
+type manageAuth_IAuthData = IAuthData;
+declare const manageAuth_getAuthData: typeof getAuthData;
+declare const manageAuth_getCookieOptions: typeof getCookieOptions;
+declare const manageAuth_removeAuthData: typeof removeAuthData;
+declare const manageAuth_saveAuthData: typeof saveAuthData;
+declare namespace manageAuth {
+  export { type manageAuth_IAuthData as IAuthData, manageAuth_getAuthData as getAuthData, manageAuth_getCookieOptions as getCookieOptions, manageAuth_removeAuthData as removeAuthData, manageAuth_saveAuthData as saveAuthData };
+}
+
 interface AuthContextProps {
     isAuthenticated: boolean | null;
     isRequiredPin: boolean | null;
@@ -439,4 +465,4 @@ declare const Authentication: {
     withAuth: (WrappedComponent: React.FC) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
-export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, DocumentText as DocumentTextIcon, DropdownInput, EditIcon, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken };
+export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, Del as DelIcon, DocumentText as DocumentTextIcon, DropdownInput, EditIcon, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken };
