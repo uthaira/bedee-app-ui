@@ -52,6 +52,7 @@ interface SelectionGroupInputProps {
   value?: string;
   onChange?: (value: string) => void;
   sx?: SxProps<Theme>;
+  inputSx?: SxProps<Theme>;
 }
 
 const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
@@ -62,6 +63,7 @@ const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
   value: propValue,
   onChange: propOnChange,
   sx = {},
+  inputSx,
   ...props
 }) => {
   const [selectedValue, setSelectedValue] = useState(propValue || "");

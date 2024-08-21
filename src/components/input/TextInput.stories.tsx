@@ -49,3 +49,11 @@ export const Disabled: Story = {
     disabled: true,
   },
 };
+
+export const WithStyleCustomizationText: Story = {
+  args: {
+    label: "Email",
+    placeholder: "Enter your email",
+    backgroundColor: "#EAEEF6",
+  },
+};
