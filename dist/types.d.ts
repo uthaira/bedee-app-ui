@@ -390,13 +390,13 @@ declare namespace cookie {
   export { cookie_getCookie as getCookie, cookie_removeCookie as removeCookie, cookie_setCookie as setCookie };
 }
 
-declare const gotoLoginMobilePage: (url: string) => void;
+declare const gotoLoginPhoneNumberPage: (url: string) => void;
 declare const gotoLoginPinPage: (url: string) => void;
 
-declare const redirect_gotoLoginMobilePage: typeof gotoLoginMobilePage;
+declare const redirect_gotoLoginPhoneNumberPage: typeof gotoLoginPhoneNumberPage;
 declare const redirect_gotoLoginPinPage: typeof gotoLoginPinPage;
 declare namespace redirect {
-  export { redirect_gotoLoginMobilePage as gotoLoginMobilePage, redirect_gotoLoginPinPage as gotoLoginPinPage };
+  export { redirect_gotoLoginPhoneNumberPage as gotoLoginPhoneNumberPage, redirect_gotoLoginPinPage as gotoLoginPinPage };
 }
 
 interface AuthContextProps {

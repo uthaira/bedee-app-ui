@@ -14,7 +14,7 @@ const getNewUrl = (url: string, path: string) => {
   return ''
 }
 
-export const gotoLoginMobilePage = (url: string) => {
+export const gotoLoginPhoneNumberPage = (url: string) => {
   const loginPath = '/home/login';
   window.location.href = getNewUrl(url, loginPath)
 }

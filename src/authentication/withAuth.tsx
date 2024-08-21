@@ -10,7 +10,7 @@ const withAuth = (WrappedComponent: React.FC) => {
       if (isAuthenticated == null || isRequiredPin == null) return;
       const redirectUrl = window.location.href;
       if (!isAuthenticated) {
-        Redirect.gotoLoginMobilePage(redirectUrl)
+        Redirect.gotoLoginPhoneNumberPage(redirectUrl)
         return;
       }
 
