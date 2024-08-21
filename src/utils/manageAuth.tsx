@@ -20,10 +20,11 @@ export const saveAuthData = (oAuthData: IAuthData) => {
 };
 
 export const removeAuthData = () => {
-  Cookie.removeCookie('accessToken');
-  Cookie.removeCookie('refreshToken');
-  Cookie.removeCookie('idToken');
-  Cookie.removeCookie('otpToken');
+  const options = getCookieOptions()
+  Cookie.removeCookie('accessToken', options);
+  Cookie.removeCookie('refreshToken', options);
+  Cookie.removeCookie('idToken', options);
+  Cookie.removeCookie('otpToken', options);
 };
 
 export const getAuthData = () => {

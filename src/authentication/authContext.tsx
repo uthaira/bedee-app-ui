@@ -5,7 +5,7 @@ import {
   ReactNode,
   useEffect,
 } from 'react';
-import { Cookie, ValidateOAuthToken } from '../utils';
+import { Cookie, ManageAuth, ValidateOAuthToken } from '../utils';
 
 export interface AuthContextProps {
   isAuthenticated: boolean | null;
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       getCurrentAuthData();
 
     if (otpToken) {
-      if(!accessToken){
+      if (!accessToken) {
         const otpTokenExpired = ValidateOAuthToken.checkIsTokenExpired(otpToken || '');
         if (otpTokenExpired) {
           removeAuthData()
@@ -77,21 +77,29 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   useEffect(() => {
-    if(accessToken){
-      const accessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken || '');
+    if (accessToken) {
+      const accessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken);
       if (accessTokenExpired) {
         Cookie.removeCookie('accessToken');
         setIsRequiredPin(true);
         return;
       }
     }
-  },[accessToken])
+  }, [accessToken])
+
+  useEffect(() => {
+    if (refreshToken) {
+      const refreshTokenExpired = ValidateOAuthToken.checkIsTokenExpired(refreshToken);
+      if (refreshTokenExpired) {
+        removeAuthData()
+        onRefresh()
+        return;
+      }
+    }
+  }, [refreshToken])
 
   const removeAuthData = () => {
-    Cookie.removeCookie('accessToken');
-    Cookie.removeCookie('refreshToken');
-    Cookie.removeCookie('idToken');
-    Cookie.removeCookie('otpToken');
+    ManageAuth.removeAuthData()
   };
 
   useEffect(() => {
