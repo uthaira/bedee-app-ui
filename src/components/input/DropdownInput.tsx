@@ -7,8 +7,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const StyledSelect = styled(Select)<{ backgroundColor?: string }>(
   ({ theme, backgroundColor }) => ({
-    height: "50.89px",
-
     "& .MuiSelect-select": {
       padding: "14px 16px",
       color: Colors.gray7,
