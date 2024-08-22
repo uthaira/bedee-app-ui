@@ -202,6 +202,8 @@ export default function DocumentUploader({
     }
   };
 
+  const isMaxFileCountReached = files.length >= maxFileCount;
+
   return (
     <>
       <Stack sx={{ py: '8px', borderRadius: '8px', justifyContent: 'center', alignItems: 'center', bgcolor: '#FBFBFC' }}>
@@ -209,6 +211,7 @@ export default function DocumentUploader({
           startIcon={<UploadIcon />}
           variant="outlined"
           onClick={() => setOpenDialog(true)}
+          disabled={isMaxFileCountReached}
           sx={{
             borderRadius: '32px',
             gap: '8px',
