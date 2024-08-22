@@ -204,6 +204,24 @@ interface DOBPickerProps extends DatePickerProps<PickerValidDate> {
 }
 declare const DOBPicker: React__default.FC<DOBPickerProps>;
 
+interface TextAreaProps {
+    value: string;
+    onChange?: (event: React__default.ChangeEvent<HTMLTextAreaElement>) => void;
+    placeholder?: string;
+    maxLength?: number;
+    borderColor?: string;
+    borderActiveColor?: string;
+    fontSize?: string;
+    borderRadius?: string;
+    placeholderColor?: string;
+    rows?: number;
+    sx?: SxProps$1<Theme$1>;
+    helperText?: string;
+    error?: boolean;
+    disabled?: boolean;
+}
+declare const TextArea: React__default.FC<TextAreaProps>;
+
 interface KeyBoardProps {
     onClick: (label: string) => void;
     onDelete: () => void;
@@ -477,4 +495,4 @@ declare const Authentication: {
     withAuth: (WrappedComponent: React.FC) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
-export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DocumentText as DocumentTextIcon, DropdownInput, EditIcon, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken };
+export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DocumentText as DocumentTextIcon, DropdownInput, EditIcon, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken };
