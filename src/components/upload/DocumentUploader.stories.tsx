@@ -196,3 +196,40 @@ export const WithSuccessFile: Story = {
     fileInfo: 'รองรับไฟล์ PDF, JPEG, PNG',
   },
 };
+
+export const WithMaxFiles: Story = {
+  render: (args) => {
+    const initialFiles: FileWithUploadStatus[] = Array.from({ length: 10 }, (_, i) => ({
+      id: i + 1,
+      file: new File(["sample"], `file${i + 1}.jpg`, { type: "image/jpeg" }),
+      imageUrl: 'https://via.placeholder.com/150',
+    }));
+
+    const { files, uploadPercentages, addFiles, removeFile } = useFileUploader(mockUploadService);
+
+    React.useEffect(() => {
+      addFiles(initialFiles);
+    }, [addFiles]);
+
+    const handleFileChange = (newFiles: FileWithUploadStatus[]) => {
+      addFiles(newFiles);
+    };
+
+    return (
+      <Box width="500px">
+        <DocumentUploader
+          {...args}
+          files={files}
+          uploadPercentages={uploadPercentages}
+          onFileChange={handleFileChange}
+          onRemoveFile={removeFile}
+        />
+      </Box>
+    );
+  },
+  args: {
+    maxFileCount: 10,
+    maxFileSizeMB: 10,
+    fileInfo: 'รองรับไฟล์ PDF, JPEG, PNG',
+  },
+}
