@@ -28,6 +28,7 @@ interface LabelConfig {
   photoButtonLabel: string;
   fileButtonLabel: string;
   uploadedLabel: string;
+  cancelButtonLabel: string;
 }
 
 interface DocumentUploaderProps {
@@ -55,6 +56,7 @@ export default function DocumentUploader({
     photoButtonLabel: 'รูปภาพ',
     fileButtonLabel: 'ไฟล์',
     uploadedLabel: 'อัปโหลดแล้ว',
+    cancelButtonLabel: 'ยกเลิก',
   },
 }: DocumentUploaderProps) {
   const [openDialog, setOpenDialog] = useState(false);
@@ -247,6 +249,7 @@ export default function DocumentUploader({
         onClose={() => setOpenDialog(false)}
         hasCancelButton
         onSelectOption={handleSelectOption}
+        cancelText={labelConfig.cancelButtonLabel}
         options={[
           { id: 'camera', title: labelConfig.cameraButtonLabel },
           { id: 'photo', title: labelConfig.photoButtonLabel },
