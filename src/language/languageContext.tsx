@@ -18,13 +18,15 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
   const lang = i18n.language;
 
   const changeLanguage = (language: string) => {
-    i18n.changeLanguage(language);
+    if (i18n && i18n?.changeLanguage) {
+      i18n.changeLanguage(language);
+    }
     Cookie.setCookie('i18next', language, { path: '/' });
   };
 
   useEffect(() => {
     const savedLang = Cookie.getCookie('i18next');
-    if (savedLang && savedLang !== lang && i18n) {
+    if (savedLang && savedLang !== lang && i18n && i18n?.changeLanguage) {
       i18n.changeLanguage(savedLang);
     }
   }, [lang, i18n]);
