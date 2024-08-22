@@ -260,6 +260,14 @@ interface ProfileHeaderProps {
 }
 declare const ProfileHeader: (props: ProfileHeaderProps) => react_jsx_runtime.JSX.Element;
 
+interface PageHeaderProps {
+    title: string;
+    onBack?: () => void;
+    elevated?: boolean;
+    fixed?: boolean;
+}
+declare const PageHeader: React__default.FC<PageHeaderProps>;
+
 interface LoadingWidgetProps {
     open: boolean;
 }
@@ -270,6 +278,20 @@ interface SuccessWidgetProps {
     message?: string;
 }
 declare const SuccessWidget: React__default.FC<SuccessWidgetProps>;
+
+interface OptionsProps {
+    id: string;
+    title: string;
+}
+interface DialogModalProps {
+    open: boolean;
+    onClose: () => void;
+    onSelectOption: (option: string) => void;
+    options?: OptionsProps[];
+    hasCancelButton?: boolean;
+    cancelText?: string;
+}
+declare const DialogModal: React__default.FC<DialogModalProps>;
 
 declare const Colors: {
     brandBlack: string;
@@ -495,4 +517,16 @@ declare const Authentication: {
     withAuth: (WrappedComponent: React.FC) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
-export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DocumentText as DocumentTextIcon, DropdownInput, EditIcon, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken };
+interface LanguageContextProps {
+    lang: string;
+    changeLanguage: (language: string) => void;
+}
+
+declare const Language: {
+    LanguageProvider: React.FC<{
+        children: React.ReactNode;
+    }>;
+    useLanguage: () => LanguageContextProps;
+};
+
+export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DialogModal, DocumentText as DocumentTextIcon, DropdownInput, EditIcon, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, Language, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken };
