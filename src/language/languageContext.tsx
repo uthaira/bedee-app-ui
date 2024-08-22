@@ -1,5 +1,5 @@
+import { i18n } from 'i18next';
 import React, { createContext, ReactNode, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { Cookie } from '../utils';
 
 export interface LanguageContextProps {
@@ -11,10 +11,10 @@ export const LanguageContext = createContext<LanguageContextProps | undefined>(
   undefined
 );
 
-export const LanguageProvider: React.FC<{ children: ReactNode }> = ({
-  children,
-}) => {
-  const { i18n } = useTranslation();
+export const LanguageProvider: React.FC<{
+  children: ReactNode;
+  i18n: i18n;
+}> = ({ children, i18n }) => {
   const lang = i18n.language;
 
   const changeLanguage = (language: string) => {

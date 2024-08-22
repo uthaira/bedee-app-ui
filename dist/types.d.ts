@@ -4,6 +4,7 @@ import * as React from 'react';
 import React__default, { FC } from 'react';
 import { SxProps as SxProps$1, Theme as Theme$1 } from '@mui/material/styles';
 import { DatePickerProps, PickerValidDate } from '@mui/x-date-pickers';
+import * as i18next from 'i18next';
 
 type BdType = 'primary' | 'secondary' | 'outlined' | 'remove';
 type BdSize = 'lg' | 'md' | 'sm' | 'xs' | 'xxs';
@@ -525,6 +526,7 @@ interface LanguageContextProps {
 declare const Language: {
     LanguageProvider: React.FC<{
         children: React.ReactNode;
+        i18n: i18next.i18n;
     }>;
     useLanguage: () => LanguageContextProps;
 };
