@@ -119,7 +119,7 @@ export default function DocumentUploader({
             <P2
               text={file.file.name}
               color={Colors.success}
-              // sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+              sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
             />
           </Stack>
           <IconButton onClick={() => onRemoveFile?.(file.id)}>
@@ -142,12 +142,12 @@ export default function DocumentUploader({
               <P2
                 text={file.file.name}
                 color={Colors.error}
-                // sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+                sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
               />
               {file.errorMessage && <P2
                 text={file.errorMessage}
                 color={Colors.error}
-                // sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+                sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
               />}
             </Stack>
           </Stack>
