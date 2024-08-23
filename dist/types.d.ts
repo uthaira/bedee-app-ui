@@ -175,6 +175,8 @@ interface SelectionGroupInputProps {
     onChange?: (value: string) => void;
     sx?: SxProps<Theme>;
     inputSx?: SxProps<Theme>;
+    helperText?: string;
+    error?: boolean;
 }
 declare const SelectionGroupInput: React__default.FC<SelectionGroupInputProps>;
 
@@ -465,6 +467,38 @@ type IconProps = {
 };
 declare const TrashbinIcon: (props: IconProps) => react_jsx_runtime.JSX.Element;
 
+declare const AggressionToOthersIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const ChestPainIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const DyspneaIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const InformationIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const PalpitationIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const SelfIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const SevereAbdominalPainIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const SevereHeadache: () => react_jsx_runtime.JSX.Element;
+
+declare const WarningIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const WeaknessIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const ConsultationIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const DoctorEducationIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const DoctorFeeIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const DoctorHospitalIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const DoctorLanguageIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const DoctorSpecializeIcon: () => react_jsx_runtime.JSX.Element;
+
 declare const toPattern: (value: string, pattern: string) => string;
 declare const clearPattern: (text?: string, ch?: string) => string;
 declare const removeZeroPrefix: (phoneNumber: string) => string;
@@ -593,4 +627,4 @@ declare const useFileUploader: (uploadService: UploadService) => {
     handleUploadFiles: () => Promise<void>;
 };
 
-export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DialogModal, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, EditIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, Language, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, useFileUploader };
+export { AggressionToOthersIcon, Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, ChestPainIcon, Circle as CircleIcon, CloseIcon, Colors, ConsultationIcon, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DyspneaIcon, EditIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InformationIcon, InternationalPhone, Language, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, WarningIcon, WeaknessIcon, useFileUploader };
