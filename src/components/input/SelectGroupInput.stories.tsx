@@ -48,3 +48,18 @@ export const WithInitialValue: Story = {
     exclusive: true,
   },
 };
+
+export const ErrorState: Story = {
+  args: {
+    name: "gender",
+    options: [
+      { value: "male", label: "ชาย" },
+      { value: "female", label: "หญิง" },
+      { value: "other", label: "ไม่ระบุ" },
+    ],
+    label: "เลือกเพศ",
+    exclusive: true,
+    error: true,
+    helperText: "An error occurred",
+  },
+};
