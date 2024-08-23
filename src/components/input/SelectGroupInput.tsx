@@ -53,6 +53,8 @@ interface SelectionGroupInputProps {
   onChange?: (value: string) => void;
   sx?: SxProps<Theme>;
   inputSx?: SxProps<Theme>;
+  helperText?: string;
+  error?: boolean;
 }
 
 const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
@@ -64,6 +66,8 @@ const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
   onChange: propOnChange,
   sx = {},
   inputSx,
+  helperText,
+  error,
   ...props
 }) => {
   const [selectedValue, setSelectedValue] = useState(propValue || "");
@@ -95,6 +99,18 @@ const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
           </StyledToggleButton>
         ))}
       </StyledToggleButtonGroup>
+      {helperText && (
+        <Typography
+          variant="caption"
+          component="p"
+          sx={{
+            color: error ? "error.main" : "text.secondary",
+            mt: "3px",
+          }}
+        >
+          {helperText}
+        </Typography>
+      )}
     </Box>
   );
 };
