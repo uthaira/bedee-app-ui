@@ -5,6 +5,7 @@ import secondary from './secondary'
 import trinary from './trinary'
 import functional from './functional'
 import brand from './brand'
+import form from './form'
 
 export const Colors = {
   ...neutral,
@@ -14,4 +15,5 @@ export const Colors = {
   ...trinary,
   ...functional,
   ...brand,
+  ...form,
 }

@@ -295,6 +295,9 @@ interface DialogModalProps {
 declare const DialogModal: React__default.FC<DialogModalProps>;
 
 declare const Colors: {
+    formBorderActive: string;
+    formTextActive: string;
+    formBorder: string;
     brandBlack: string;
     darkBlue: string;
     royalBlue: string;

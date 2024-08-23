@@ -1,5 +1,6 @@
-import { TextField,Box } from '@mui/material';
+import { TextField, Box, styled } from '@mui/material';
 import * as React from 'react';
+import { Colors } from '../../colors';
 interface IOTP {
   length: number;
   value: string;
@@ -145,11 +146,11 @@ const OtpInput = (props: IOTP) => {
     >
       {new Array(length).fill(null).map((_, index) => (
         <React.Fragment key={index}>
-          <TextField
+          <CustomTextField
             inputRef={(ele) => {
               inputRefs.current[index] = ele;
             }}
-            inputProps={{ style: { textAlign: 'center', color: '#176AFC' } }}
+            inputProps={{ style: { textAlign: 'center', color: Colors.formTextActive } }}
             onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) =>
               handleKeyDown(event, index)
             }
@@ -163,11 +164,41 @@ const OtpInput = (props: IOTP) => {
               handlePaste(event, index)
             }
             value={value[index] ?? '-'}
+            type='number'
+            hasValue={Boolean(value[index])} 
           />
         </React.Fragment>
       ))}
     </Box>
   );
 };
+
+const CustomTextField = styled(TextField)(({ hasValue }: { hasValue: boolean }) => ({
+  "& input[type=number]": {
+    MozAppearance: "textfield", // For Firefox
+  },
+  "& input[type=number]::-webkit-outer-spin-button, & input[type=number]::-webkit-inner-spin-button": {
+    WebkitAppearance: "none", // For Chrome, Safari, Edge
+    margin: 0,
+  },
+  "& .MuiOutlinedInput-input": {
+    fontSize: "24px",
+    fontWeight: 600,
+    lineHeight: "28px",
+    textAlign: "center",
+  },
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: hasValue ? Colors.formBorderActive : Colors.formBorder,
+      borderRadius: "8px"
+    },
+    "&:hover fieldset": {
+      borderColor: hasValue ? Colors.formBorderActive : Colors.formBorder,
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: Colors.formBorderActive,
+    },
+  },
+}));
 
 export default OtpInput;
