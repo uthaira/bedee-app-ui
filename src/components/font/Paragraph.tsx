@@ -1,8 +1,10 @@
+import { SxProps, Theme } from "@mui/material"
 import { BaseText } from "./BaseText"
 
 export interface ParagraphProps {
   text: string
   color?: string
+  sx?: SxProps<Theme>
 }
 
 export const P1 = (props: ParagraphProps) => <BaseText {...props} bdType="p1" />
