@@ -1,8 +1,10 @@
+import { SxProps, Theme } from "@mui/material"
 import { BaseText } from "./BaseText"
 
 export interface HeadingProps {
   text: string
   color?: string
+  sx?: SxProps<Theme>
 }
 
 export const H1 = (props: HeadingProps) => <BaseText {...props} bdType="h1" />
