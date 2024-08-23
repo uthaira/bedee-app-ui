@@ -1,5 +1,5 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
-import { ButtonProps as ButtonProps$1, TypographyProps, SlideProps, SxProps, Theme, TextFieldProps, SelectProps } from '@mui/material';
+import { ButtonProps as ButtonProps$1, TypographyProps, SxProps, Theme, SlideProps, TextFieldProps, SelectProps } from '@mui/material';
 import * as React from 'react';
 import React__default, { FC } from 'react';
 import { SxProps as SxProps$1, Theme as Theme$1 } from '@mui/material/styles';
@@ -39,6 +39,7 @@ declare const BaseText: (props: BaseTextProps) => react_jsx_runtime.JSX.Element;
 interface HeadingProps {
     text: string;
     color?: string;
+    sx?: SxProps<Theme>;
 }
 declare const H1: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
 declare const H2: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
@@ -50,6 +51,7 @@ declare const H6: (props: HeadingProps) => react_jsx_runtime.JSX.Element;
 interface ParagraphProps {
     text: string;
     color?: string;
+    sx?: SxProps<Theme>;
 }
 declare const P1: (props: ParagraphProps) => react_jsx_runtime.JSX.Element;
 declare const P2: (props: ParagraphProps) => react_jsx_runtime.JSX.Element;
@@ -59,6 +61,7 @@ declare const Lead2: (props: ParagraphProps) => react_jsx_runtime.JSX.Element;
 interface SmallProps {
     text: string;
     color?: string;
+    sx?: SxProps<Theme>;
 }
 declare const Mini: (props: SmallProps) => react_jsx_runtime.JSX.Element;
 declare const Tiny: (props: SmallProps) => react_jsx_runtime.JSX.Element;
@@ -66,6 +69,7 @@ declare const Tiny: (props: SmallProps) => react_jsx_runtime.JSX.Element;
 interface StylizeProps {
     text: string;
     color?: string;
+    sx?: SxProps<Theme>;
 }
 declare const Badges: (props: StylizeProps) => react_jsx_runtime.JSX.Element;
 declare const BadgesBold: (props: StylizeProps) => react_jsx_runtime.JSX.Element;
@@ -293,6 +297,38 @@ interface DialogModalProps {
     cancelText?: string;
 }
 declare const DialogModal: React__default.FC<DialogModalProps>;
+
+interface FileWithUploadStatus$1 {
+    file: File;
+    isUploaded?: boolean;
+    isFailed?: boolean;
+    isInProgress?: boolean;
+    imageKey?: string;
+    imageUrl?: string;
+    errorMessage?: string;
+    id: number;
+}
+interface LabelConfig {
+    uploadButtonLabel: string;
+    cameraButtonLabel: string;
+    photoButtonLabel: string;
+    fileButtonLabel: string;
+    uploadedLabel: string;
+    cancelButtonLabel: string;
+}
+interface DocumentUploaderProps {
+    files: FileWithUploadStatus$1[];
+    uploadPercentages: {
+        [key: number]: number;
+    };
+    maxFileCount?: number;
+    maxFileSizeMB?: number;
+    fileInfo?: string;
+    onFileChange?: (files: FileWithUploadStatus$1[]) => void;
+    onRemoveFile?: (id: number) => void;
+    labelConfig?: LabelConfig;
+}
+declare function DocumentUploader({ files, uploadPercentages, maxFileCount, maxFileSizeMB, fileInfo, onFileChange, onRemoveFile, labelConfig, }: DocumentUploaderProps): react_jsx_runtime.JSX.Element;
 
 declare const Colors: {
     formBorderActive: string;
@@ -534,4 +570,27 @@ declare const Language: {
     useLanguage: () => LanguageContextProps;
 };
 
-export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DialogModal, DocumentText as DocumentTextIcon, DropdownInput, EditIcon, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, Language, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken };
+interface FileWithUploadStatus {
+    file: File;
+    isUploaded?: boolean;
+    isFailed?: boolean;
+    isInProgress?: boolean;
+    imageKey?: string;
+    imageUrl?: string;
+    errorMessage?: string;
+    id: number;
+}
+interface UploadService {
+    (file: FileWithUploadStatus, updateProgress: (progress: number) => void): Promise<any>;
+}
+declare const useFileUploader: (uploadService: UploadService) => {
+    files: FileWithUploadStatus[];
+    uploadPercentages: {
+        [key: number]: number;
+    };
+    addFiles: (newFiles: FileWithUploadStatus[]) => void;
+    removeFile: (id: number) => void;
+    handleUploadFiles: () => Promise<void>;
+};
+
+export { Authentication, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, Circle as CircleIcon, CloseIcon, Colors, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DialogModal, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, EditIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InternationalPhone, Language, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, type ParagraphProps, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, useFileUploader };
