@@ -27,6 +27,7 @@ const StyledToggleButton = styled(ToggleButton)(({ theme }) => ({
   color: Colors.gray7,
   position: "relative",
   textTransform: "none",
+  fontSize: "14px",
   
   "&.MuiToggleButtonGroup-grouped": {
     borderRadius: "27.26px",
