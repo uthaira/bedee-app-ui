@@ -15,7 +15,7 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = ({ title, onBack, elevated = false, fixed = false }) => {
   return (
     <PageHeaderContainer elevated={elevated} fixed={fixed}>
-      <Box width={32} height={32}>
+      <Box>
         {onBack && (
           <IconButton onClick={onBack}>
             <ArrowLeftIcon />
@@ -25,7 +25,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({ title, onBack, elevated = false
       <PageHeaderTitleWrapper>
         <H5 text={title} color={Colors.gray7} />
       </PageHeaderTitleWrapper>
-      <Box width={32} height={32} />
+      <Box/>
     </PageHeaderContainer>
   );
 };
@@ -41,7 +41,7 @@ const PageHeaderContainer = styled(Box, {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  padding: theme.spacing(2),
+  padding: theme.spacing(1),
   backgroundColor: Colors.white,
   height: '64px',
   boxShadow: elevated ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
