@@ -318,6 +318,10 @@ interface LabelConfig {
     uploadedLabel: string;
     cancelButtonLabel: string;
 }
+interface ErrorMessageConfig {
+    maxFileSizeErrorMessage: string;
+    networkErrorMessage: string;
+}
 interface DocumentUploaderProps {
     files: FileWithUploadStatus$1[];
     uploadPercentages: {
@@ -329,8 +333,9 @@ interface DocumentUploaderProps {
     onFileChange?: (files: FileWithUploadStatus$1[]) => void;
     onRemoveFile?: (id: number) => void;
     labelConfig?: LabelConfig;
+    errorMessageConfig?: ErrorMessageConfig;
 }
-declare function DocumentUploader({ files, uploadPercentages, maxFileCount, maxFileSizeMB, fileInfo, onFileChange, onRemoveFile, labelConfig, }: DocumentUploaderProps): react_jsx_runtime.JSX.Element;
+declare function DocumentUploader({ files, uploadPercentages, maxFileCount, maxFileSizeMB, fileInfo, onFileChange, onRemoveFile, labelConfig, errorMessageConfig, }: DocumentUploaderProps): react_jsx_runtime.JSX.Element;
 
 declare enum AlertType {
     Success = "SUCCESS",
