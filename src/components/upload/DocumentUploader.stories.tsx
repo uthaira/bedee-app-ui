@@ -58,7 +58,7 @@ export const Default: Story = {
     };
 
     return (
-      <Box width="500px">
+      <Box width="375px">
         <DocumentUploader
           {...args}
           files={files}
@@ -98,7 +98,7 @@ export const WithUploadingFile: Story = {
     };
 
     return (
-      <Box width="500px">
+      <Box width="375px">
         <DocumentUploader
           {...args}
           files={files}
@@ -139,7 +139,7 @@ export const WithFailedFile: Story = {
     };
 
     return (
-      <Box width="500px">
+      <Box width="375px">
         <DocumentUploader
           {...args}
           files={files}
@@ -179,7 +179,7 @@ export const WithSuccessFile: Story = {
     };
 
     return (
-      <Box width="500px">
+      <Box width="375px">
         <DocumentUploader
           {...args}
           files={files}
@@ -216,7 +216,7 @@ export const WithMaxFiles: Story = {
     };
 
     return (
-      <Box width="500px">
+      <Box width="375px">
         <DocumentUploader
           {...args}
           files={files}

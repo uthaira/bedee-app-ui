@@ -31,6 +31,11 @@ interface LabelConfig {
   cancelButtonLabel: string;
 }
 
+interface ErrorMessageConfig {
+  maxFileSizeErrorMessage: string;
+  networkErrorMessage: string;
+}
+
 interface DocumentUploaderProps {
   files: FileWithUploadStatus[];
   uploadPercentages: { [key: number]: number };
@@ -40,6 +45,7 @@ interface DocumentUploaderProps {
   onFileChange?: (files: FileWithUploadStatus[]) => void;
   onRemoveFile?: (id: number) => void;
   labelConfig?: LabelConfig;
+  errorMessageConfig?: ErrorMessageConfig;
 }
 
 export default function DocumentUploader({
@@ -57,6 +63,10 @@ export default function DocumentUploader({
     fileButtonLabel: 'ไฟล์',
     uploadedLabel: 'อัปโหลดแล้ว',
     cancelButtonLabel: 'ยกเลิก',
+  },
+  errorMessageConfig = {
+    maxFileSizeErrorMessage: `กรุณาเลือกอัปโหลดไฟล์ที่มีขนาดไม่เกิน ${maxFileSizeMB} MB`,
+    networkErrorMessage: 'เกิดข้อผิดพลาดในการอัปโหลดไฟล์ กรุณาลองใหม่อีกครั้ง',
   },
 }: DocumentUploaderProps) {
   const [openDialog, setOpenDialog] = useState(false);
@@ -78,7 +88,7 @@ export default function DocumentUploader({
             isUploaded: false,
             isFailed: isMaxSize,
             isInProgress: false,
-            errorMessage: isMaxSize ? `กรุณาเลือกอัปโหลดไฟล์ที่มีขนาดไม่เกิน ${maxFileSizeMB} MB` : undefined,
+            errorMessage: isMaxSize ? errorMessageConfig.maxFileSize : undefined,
             imageUrl: URL.createObjectURL(file),
         }
       });
@@ -104,6 +114,7 @@ export default function DocumentUploader({
       return (
         <Stack key={`upload-status-${index}`} flexDirection="row" justifyContent="space-between" alignItems="center" gap="8px" width="100%">
           <Stack flexDirection="row" alignItems="center" maxWidth="90%">
+            <Box width="40px">
             <Avatar
               src={file.imageUrl}
               sx={{
@@ -115,7 +126,8 @@ export default function DocumentUploader({
               variant="square"
             >
               <TextSnippetOutlinedIcon sx={{ color: Colors.black }} />
-            </Avatar>
+              </Avatar>
+            </Box>
             <P2
               text={file.file.name}
               color={Colors.success}
@@ -145,7 +157,7 @@ export default function DocumentUploader({
                 sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
               />
               {file.errorMessage && <P2
-                text={file.errorMessage}
+                text={file.errorMessage || errorMessageConfig.networkError}
                 color={Colors.error}
                 sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
               />}
@@ -162,11 +174,13 @@ export default function DocumentUploader({
       return (
         <Stack key={`upload-status-${index}`} width="100%">
           <Stack flexDirection="row" justifyContent="space-between">
-            <CircularProgress size={20} sx={{ color: Colors.primary001 }} />
+            <Box width="40px">
+              <CircularProgress size={20} sx={{ color: Colors.primary001 }} />
+            </Box>
             <P2
               text={file.file.name}
               color={Colors.gray7}
-              // sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+              sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
             />
             <IconButton onClick={() => onRemoveFile?.(file.id)}>
               <CloseIcon />
