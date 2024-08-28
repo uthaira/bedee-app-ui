@@ -88,7 +88,7 @@ export default function DocumentUploader({
             isUploaded: false,
             isFailed: isMaxSize,
             isInProgress: false,
-            errorMessage: isMaxSize ? errorMessageConfig.maxFileSize : undefined,
+            errorMessage: isMaxSize ? errorMessageConfig.maxFileSizeErrorMessage : undefined,
             imageUrl: URL.createObjectURL(file),
         }
       });
