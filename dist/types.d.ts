@@ -332,6 +332,26 @@ interface DocumentUploaderProps {
 }
 declare function DocumentUploader({ files, uploadPercentages, maxFileCount, maxFileSizeMB, fileInfo, onFileChange, onRemoveFile, labelConfig, }: DocumentUploaderProps): react_jsx_runtime.JSX.Element;
 
+declare enum AlertType {
+    Success = "SUCCESS",
+    Error = "ERROR",
+    Info = "INFO",
+    Warning = "WARNING",
+    Notice = "NOTICE"
+}
+declare enum AlertStyle {
+    Plain = "PLAIN",
+    Fill = "FILL"
+}
+
+interface IAlert {
+    text: string | JSX.Element;
+    type?: AlertType;
+    style?: AlertStyle;
+    showCloseButton?: boolean;
+}
+declare const Alert: (props: IAlert) => react_jsx_runtime.JSX.Element | null;
+
 declare const Colors: {
     textSuccess: string;
     textError: string;
@@ -547,7 +567,7 @@ declare const toPattern: (value: string, pattern: string) => string;
 declare const clearPattern: (text?: string, ch?: string) => string;
 declare const removeZeroPrefix: (phoneNumber: string) => string;
 declare const randomString: (length: number) => string;
-declare const formatPriceWithCommas: (price: number) => string;
+declare const formatPriceWithCommas: (price: number, currentcy?: string) => string;
 
 declare const format_clearPattern: typeof clearPattern;
 declare const format_formatPriceWithCommas: typeof formatPriceWithCommas;
@@ -673,4 +693,4 @@ declare const useFileUploader: (uploadService: UploadService) => {
     handleUploadFiles: () => Promise<void>;
 };
 
-export { AggressionToOthersIcon, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, ChestPainIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, Language, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, Icon$2 as PaymentIcon, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, WarningIcon, WarningNotificationIcon, WeaknessIcon, useFileUploader };
+export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon, Check as CheckIcon, ChestPainIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, DOBPicker as DOBPickerInput, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, Language, LanguageSwitch, Lead1, Lead2, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, Icon$2 as PaymentIcon, PhoneIcon, PhoneNoForm as PhoneNumberForm, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, WarningIcon, WarningNotificationIcon, WeaknessIcon, useFileUploader };

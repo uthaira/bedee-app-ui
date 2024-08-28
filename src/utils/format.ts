@@ -35,6 +35,6 @@ export const randomString = (length: number) => {
   return result;
 };
 
-export const formatPriceWithCommas = (price: number): string => {
-  return price.toLocaleString('en-US');
+export const formatPriceWithCommas = (price: number, currentcy: string = '฿'): string => {
+  return `${currentcy} ${price.toLocaleString('en-US')}`
 };
