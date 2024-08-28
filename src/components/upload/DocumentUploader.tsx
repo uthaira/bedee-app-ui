@@ -157,7 +157,7 @@ export default function DocumentUploader({
                 sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
               />
               {file.errorMessage && <P2
-                text={file.errorMessage || errorMessageConfig.networkError}
+                text={errorMessageConfig.networkErrorMessage}
                 color={Colors.error}
                 sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
               />}
