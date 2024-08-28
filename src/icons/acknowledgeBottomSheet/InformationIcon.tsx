@@ -1,15 +1,23 @@
-const InformationIcon = () => {
+type IconProps = {
+  size?: number;
+  color?: string;
+};
+const Icon = (props: IconProps) => {
+  const { size = 30, color = '#1E6AF6' } = props;
+  const width = size;
+  const height = size;
+
   return (
     <svg
-      width='30'
-      height='30'
+      width={width}
+      height={height}
       viewBox='0 0 30 30'
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
       <path
         d='M25.01 19.1457C25.5544 17.8313 25.8346 16.4226 25.8346 15C25.8346 12.1268 24.6933 9.37128 22.6616 7.33964C20.63 5.30799 17.8745 4.16663 15.0013 4.16663C12.1281 4.16663 9.37262 5.30799 7.34098 7.33964C5.30933 9.37128 4.16797 12.1268 4.16797 15C4.16797 16.4226 4.44818 17.8313 4.99261 19.1457C5.53703 20.4601 6.33501 21.6543 7.34098 22.6603C8.34695 23.6663 9.5412 24.4642 10.8556 25.0087C12.1699 25.5531 13.5786 25.8333 15.0013 25.8333C16.424 25.8333 17.8327 25.5531 19.147 25.0087C20.4614 24.4642 21.6557 23.6663 22.6616 22.6603C23.6676 21.6543 24.4656 20.4601 25.01 19.1457Z'
-        fill='#1E6AF6'
+        fill={color}
       />
       <path
         fillRule='evenodd'
@@ -25,4 +33,4 @@ const InformationIcon = () => {
   );
 };
 
-export default InformationIcon;
+export default Icon;
