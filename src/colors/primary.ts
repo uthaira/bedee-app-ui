@@ -5,4 +5,5 @@ export default {
   primary004: "#A5C3FB",
   primary005: "#E8F0FE",
   primary006: "#F4F8FF",
+  primary007: "#003CDE",
 }

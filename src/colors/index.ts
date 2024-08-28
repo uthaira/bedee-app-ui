@@ -6,6 +6,8 @@ import trinary from './trinary'
 import functional from './functional'
 import brand from './brand'
 import form from './form'
+import background from './background'
+import functionalMessage from './functionalMessage'
 
 export const Colors = {
   ...neutral,
@@ -16,4 +18,6 @@ export const Colors = {
   ...functional,
   ...brand,
   ...form,
+  ...background,
+  ...functionalMessage,
 }

@@ -15,6 +15,9 @@ import ShieldCheckIcon from "./shield-check";
 import SpeakerphoneIcon from "./speakerphone";
 import TrashbinIcon from "./trashbin";
 import PhoneOutgoingIcon from "./phone-outgoing";
+import ConsultIcon from "./consult";
+import PaymentIcon from "./payment";
+import BGProviderIcon from "./bgProvider";
 
 // Social media
 import LineIcon from "./line";
@@ -38,6 +41,14 @@ import DoctorFeeIcon from "./providerDetails/DoctorFeeIcon";
 import DoctorHospitalIcon from "./providerDetails/DoctorHospitalIcon";
 import DoctorLanguageIcon from "./providerDetails/DoctorLanguage";
 import DoctorSpecializeIcon from "./providerDetails/DoctorSpecailizeIcon";
+
+// alert toast
+import AttentionNotificationIcon from "./alert/AttentionNotificationIcon";
+import CloseNotificationIcon from "./alert/CloseNotificationIcon";
+import ErrorNotificationIcon from "./alert/ErrorNotificationIcon";
+import InfoNotificationIcon from "./alert/InfoNotificationIcon";
+import SuccessNotificationIcon from "./alert/SuccessNotificationIcon";
+import WarningNotificationIcon from "./alert/WarningNotificationIcon";
 
 export {
   LogoIcon,
@@ -72,6 +83,15 @@ export {
   DoctorHospitalIcon,
   DoctorLanguageIcon,
   DoctorSpecializeIcon,
+  AttentionNotificationIcon,
+  CloseNotificationIcon,
+  ErrorNotificationIcon,
+  InfoNotificationIcon,
+  SuccessNotificationIcon,
+  WarningNotificationIcon,
+  ConsultIcon,
+  PaymentIcon,
+  BGProviderIcon,
   LineIcon,
-  PhoneOutgoingIcon
+  PhoneOutgoingIcon,
 };
