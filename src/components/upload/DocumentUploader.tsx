@@ -9,7 +9,7 @@ import UploadIcon from "../../icons/UploadIcon";
 import CloseIcon from "../../icons/CloseIcon";
 import TrashbinIcon from "../../icons/trashbin";
 import { Colors } from '../../colors'
-import { P2 } from '../font'
+import { P1, P2 } from '../font'
 
 interface FileWithUploadStatus {
   file: File;
@@ -247,9 +247,15 @@ export default function DocumentUploader({
       </Stack>
 
       <Stack mt="16px" alignItems="center" justifyContent="center" flexDirection="row">
-        <P2 text={labelConfig.uploadedLabel} />
+        <P1
+          text={labelConfig.uploadedLabel}
+          sx={{ fontWeight: 'bold' }}
+        />
         <Box ml="4px">
-          <P2 text={`${files.length} / ${maxFileCount}`} />
+          <P1
+            text={`${files.length} / ${maxFileCount}`}
+            sx={{ fontWeight: 'bold' }}
+          />
         </Box>
       </Stack>
 
