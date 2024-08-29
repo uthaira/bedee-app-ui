@@ -88,7 +88,7 @@ export default function DocumentUploader({
             isUploaded: false,
             isFailed: isMaxSize,
             isInProgress: false,
-            errorMessage: isMaxSize ? errorMessageConfig.maxFileSizeErrorMessage : undefined,
+            errorMessage: isMaxSize ? errorMessageConfig.maxFileSizeErrorMessage : errorMessageConfig.networkErrorMessage,
             imageUrl: URL.createObjectURL(file),
         }
       });
@@ -157,7 +157,7 @@ export default function DocumentUploader({
                 sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
               />
               {file.errorMessage && <P2
-                text={errorMessageConfig.networkErrorMessage}
+                text={file.errorMessage}
                 color={Colors.error}
                 sx={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
               />}
