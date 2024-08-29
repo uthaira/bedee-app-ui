@@ -9,6 +9,7 @@ export interface IAuthData {
 export const getCookieOptions = () => {
   return {
     path: '/',
+    days: 31,
   }
 };
 

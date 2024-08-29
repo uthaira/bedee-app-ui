@@ -1,7 +1,7 @@
 
 export const setCookie = (
   name: string,
-  value: string,
+  value: string | null,
   options: {
     days?: number;
     secure?: boolean;
@@ -15,7 +15,7 @@ export const setCookie = (
     options = { path: '/', domain, secure: false }
   }
 
-  let cookieString = `${encodeURIComponent(name)}=${encodeURIComponent(value)};`;
+  let cookieString = `${encodeURIComponent(name)}=${value ? encodeURIComponent(value): null};`;
 
   if (options.days) {
     const date = new Date();
@@ -58,5 +58,5 @@ export const removeCookie = (
 ) => {
   if (typeof document === 'undefined') return; // Ensure we're in the browser
 
-  setCookie(name, '', { days: -1, path: options.path, domain: options.domain });
+  setCookie(name, null, { days: -1, path: options.path, domain: options.domain });
 };
