@@ -18,6 +18,14 @@ import PhoneOutgoingIcon from "./phone-outgoing";
 import ConsultIcon from "./consult";
 import PaymentIcon from "./payment";
 import BGProviderIcon from "./bgProvider";
+import DateIcon from "./DateIcon";
+import ChatIcon from "./ChatIcon";
+import DrugsIcon from "./DrugsIcon";
+import MedicalCertificateIcon from "./MedicalCertificateIcon";
+import PhotoIcon from "./PhotoIcon";
+import TeleIcon from "./TeleIcon";
+import VideoIcon from "./VideoIcon";
+
 
 // Social media
 import LineIcon from "./line";
@@ -92,6 +100,13 @@ export {
   ConsultIcon,
   PaymentIcon,
   BGProviderIcon,
+  DateIcon,
+  ChatIcon,
+  DrugsIcon,
+  MedicalCertificateIcon,
+  PhotoIcon,
+  TeleIcon,
+  VideoIcon,
   LineIcon,
   PhoneOutgoingIcon,
 };
