@@ -14,6 +14,7 @@ import PhoneIcon from "./phone";
 import ShieldCheckIcon from "./shield-check";
 import SpeakerphoneIcon from "./speakerphone";
 import TrashbinIcon from "./trashbin";
+import PhoneOutgoingIcon from "./phone-outgoing";
 import ConsultIcon from "./consult";
 import PaymentIcon from "./payment";
 import BGProviderIcon from "./bgProvider";
@@ -25,6 +26,9 @@ import PhotoIcon from "./PhotoIcon";
 import TeleIcon from "./TeleIcon";
 import VideoIcon from "./VideoIcon";
 
+
+// Social media
+import LineIcon from "./line";
 
 // acknowledgeBottomSheet
 import AggressionToOthersIcon from "./acknowledgeBottomSheet/AggressionToOthersIcon";
@@ -103,4 +107,6 @@ export {
   PhotoIcon,
   TeleIcon,
   VideoIcon,
+  LineIcon,
+  PhoneOutgoingIcon,
 };

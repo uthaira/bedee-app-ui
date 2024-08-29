@@ -15,17 +15,14 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = ({ title, onBack, elevated = false, fixed = false }) => {
   return (
     <PageHeaderContainer elevated={elevated} fixed={fixed}>
-      <Box width={32} height={32}>
-        {onBack && (
-          <IconButton onClick={onBack}>
-            <ArrowLeftIcon />
-          </IconButton>
-        )}
-      </Box>
+      {onBack && (
+        <IconButtonLeft onClick={onBack}>
+          <ArrowLeftIcon />
+        </IconButtonLeft>
+      )}
       <PageHeaderTitleWrapper>
         <H5 text={title} color={Colors.gray7} />
       </PageHeaderTitleWrapper>
-      <Box width={32} height={32} />
     </PageHeaderContainer>
   );
 };
@@ -40,8 +37,8 @@ const PageHeaderContainer = styled(Box, {
   width: '100%',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'space-between',
-  padding: theme.spacing(2),
+  justifyContent: 'center',
+  padding: theme.spacing(1),
   backgroundColor: Colors.white,
   height: '64px',
   boxShadow: elevated ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
@@ -49,9 +46,17 @@ const PageHeaderContainer = styled(Box, {
 }));
 
 const PageHeaderTitleWrapper = styled(Box)(({ theme }) => ({
+  position: 'relative',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
+  flex: 1,
+  zIndex: 1,
+}));
+
+const IconButtonLeft = styled(IconButton)(({ theme }) => ({
+  position: 'absolute',
+  left: theme.spacing(1),
 }));
 
 export default PageHeader;

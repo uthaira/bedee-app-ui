@@ -19,7 +19,7 @@ const SwitchWrapper = styled(Box)(() => ({
   borderRadius: 25,
   display: 'flex',
   justifyContent: 'center',
-  backgroundColor: Colors.gray5,
+  backgroundColor: Colors.gray6,
 }))
 
 const LanguageSwitch = (props: LanguageSwitchProps) => {
@@ -39,12 +39,12 @@ const LanguageSwitch = (props: LanguageSwitchProps) => {
             value="th"
             sx={{
               '&.MuiToggleButton-root': {
-                backgroundColor: localeLanguage === ELanguage.TH ? Colors.primary001 : Colors.gray5,
+                backgroundColor: localeLanguage === ELanguage.TH ? Colors.primary001 : Colors.gray6,
                 color: localeLanguage === ELanguage.TH ? Colors.white : Colors.gray3,
                 borderRadius: 25,
                 border: 'none',
                 '&:hover': {
-                  backgroundColor: localeLanguage === ELanguage.TH ? Colors.primary002 : Colors.gray5,
+                  backgroundColor: localeLanguage === ELanguage.TH ? Colors.primary002 : Colors.gray6,
                 },
               },
             }}
@@ -55,12 +55,12 @@ const LanguageSwitch = (props: LanguageSwitchProps) => {
             value="en"
             sx={{
               '&.MuiToggleButton-root': {
-                backgroundColor: localeLanguage === ELanguage.EN ? Colors.primary001 : Colors.gray5,
+                backgroundColor: localeLanguage === ELanguage.EN ? Colors.primary001 : Colors.gray6,
                 color: localeLanguage === ELanguage.EN ? Colors.white : Colors.gray3,
                 borderRadius: 25,
                 border: 'none',
                 '&:hover': {
-                  backgroundColor: localeLanguage === ELanguage.EN ? Colors.primary002 : Colors.gray5,
+                  backgroundColor: localeLanguage === ELanguage.EN ? Colors.primary002 : Colors.gray6,
                 },
               },
             }}
