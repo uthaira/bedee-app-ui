@@ -272,6 +272,8 @@ interface PageHeaderProps {
     onBack?: () => void;
     elevated?: boolean;
     fixed?: boolean;
+    bgColor?: string;
+    color?: string;
 }
 declare const PageHeader: React__default.FC<PageHeaderProps>;
 
