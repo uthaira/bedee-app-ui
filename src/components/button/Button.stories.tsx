@@ -39,6 +39,17 @@ Primary.args = {
   loading: false,
 }
 
+const withCustomTextTemplate: StoryFn<typeof PrimaryBtn> = (args) => <PrimaryBtn {...args} />
+export const withCustomText = withCustomTextTemplate.bind({})
+withCustomText.args = {
+  bdSize: 'lg',
+  text: <span>Text element</span>,
+  disabled: false,
+  loading: false,
+}
+
+
+
 const SecondaryTemplate: StoryFn<typeof SecondaryBtn> = (args) => <SecondaryBtn {...args} />
 export const Secondary = SecondaryTemplate.bind({})
 Secondary.args = {
@@ -65,3 +76,4 @@ Remove.args = {
   disabled: false,
   loading: false,
 }
+

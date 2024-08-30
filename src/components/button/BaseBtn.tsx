@@ -9,7 +9,7 @@ export interface ButtonProps extends MuiButtonProps {
   bdType?: BdType
   bdSize?: BdSize
   icon?: JSX.Element
-  text?: string
+  text?: string | JSX.Element
   loading?: boolean
   width?: string
   isRightIcon?: boolean
