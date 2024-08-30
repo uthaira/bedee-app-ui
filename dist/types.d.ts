@@ -12,7 +12,7 @@ interface ButtonProps extends ButtonProps$1 {
     bdType?: BdType;
     bdSize?: BdSize;
     icon?: JSX.Element;
-    text?: string;
+    text?: string | JSX.Element;
     loading?: boolean;
     width?: string;
     isRightIcon?: boolean;
@@ -200,7 +200,7 @@ interface DropdownInputProps extends Omit<SelectProps, "variant"> {
 }
 declare const DropdownInput: React__default.FC<DropdownInputProps>;
 
-interface DOBPickerProps extends DatePickerProps<PickerValidDate> {
+interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' | 'onOpen' | 'onClose'> {
     label?: string;
     helperText?: string;
     sx?: SxProps$1<Theme$1>;
@@ -235,14 +235,15 @@ interface KeyBoardProps {
 }
 declare const PinKeyBoard: React__default.FC<KeyBoardProps>;
 
-type Variant = 'default' | 'outlined';
+type Variant = "default" | "outlined";
 type BadgeProps = {
     color: string;
     icon?: React__default.ReactNode;
     text: React__default.ReactNode;
     variant?: Variant;
+    sx?: SxProps<Theme>;
 };
-declare const Badge: ({ color, icon, text, variant }: BadgeProps) => react_jsx_runtime.JSX.Element;
+declare const Badge: ({ color, icon, text, sx, variant }: BadgeProps) => react_jsx_runtime.JSX.Element;
 
 interface LanguageSwitchProps {
     width?: string;
