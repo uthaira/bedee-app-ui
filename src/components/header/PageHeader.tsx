@@ -3,7 +3,7 @@ import { Box, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 import { Colors } from '../../colors';
 import ArrowLeftIcon from '../../icons/ArrowLeftIcon';
-import { H5 } from '../font';
+import { H6 } from '../font';
 
 interface PageHeaderProps {
   title: string;
@@ -34,7 +34,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
         </IconButtonLeft>
       )}
       <PageHeaderTitleWrapper>
-        <H5 text={title} color={color} />
+        <H6 text={title} color={color} />
       </PageHeaderTitleWrapper>
     </PageHeaderContainer>
   );
