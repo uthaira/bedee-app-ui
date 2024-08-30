@@ -10,18 +10,31 @@ interface PageHeaderProps {
   onBack?: () => void;
   elevated?: boolean;
   fixed?: boolean;
+  bgColor?: string;
+  color?: string;
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ title, onBack, elevated = false, fixed = false }) => {
+const PageHeader: React.FC<PageHeaderProps> = ({
+  title,
+  onBack,
+  elevated = false,
+  fixed = false,
+  bgColor = Colors.white,
+  color = Colors.gray7,
+}) => {
   return (
-    <PageHeaderContainer elevated={elevated} fixed={fixed}>
+    <PageHeaderContainer
+      elevated={elevated}
+      fixed={fixed}
+      sx={{ backgroundColor: bgColor }}
+    >
       {onBack && (
         <IconButtonLeft onClick={onBack}>
-          <ArrowLeftIcon />
+          <ArrowLeftIcon color={color} />
         </IconButtonLeft>
       )}
       <PageHeaderTitleWrapper>
-        <H5 text={title} color={Colors.gray7} />
+        <H5 text={title} color={color} />
       </PageHeaderTitleWrapper>
     </PageHeaderContainer>
   );
@@ -57,6 +70,7 @@ const PageHeaderTitleWrapper = styled(Box)(({ theme }) => ({
 const IconButtonLeft = styled(IconButton)(({ theme }) => ({
   position: 'absolute',
   left: theme.spacing(1),
+  zIndex: 2,
 }));
 
 export default PageHeader;
