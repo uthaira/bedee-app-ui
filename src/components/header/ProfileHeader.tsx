@@ -40,8 +40,8 @@ const ProfileHeader = (props: ProfileHeaderProps) => {
           <BeDeeLogo />
           {isLogin && (
             <Stack direction="row" gap={1} alignItems="baseline">
-              <Mini text={isThai ? 'ยินดีต้อนรับ' : 'Welcome'} color={Colors.gray7} />
-              <BaseText text={nameText} color={Colors.gray7} fontSize={14} fontWeight={700} />
+              <Mini text={isThai ? 'ยินดีต้อนรับ' : 'Welcome,'} color={Colors.gray7} />
+              <BaseText text={nameText} color={Colors.gray7} sx={{ fontSize: '14px', fontWeight: '700' }} />
             </Stack>
           )}
         </Box>
