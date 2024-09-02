@@ -69,7 +69,7 @@ const PageHeaderTitleWrapper = styled(Box)(({ theme }) => ({
 
 const IconButtonLeft = styled(IconButton)(({ theme }) => ({
   position: 'absolute',
-  left: theme.spacing(1),
+  left: 0,
   zIndex: 2,
 }));
 
