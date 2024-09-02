@@ -14,9 +14,9 @@ const InfoNotificationIcon = () => {
       <path
         d="M19.5 24H18V18H16.5M18 12H18.015"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
