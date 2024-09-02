@@ -13,9 +13,9 @@ const CloseNotificationIcon = () => {
       <path
         d="M6.47729 6.47728L12.5227 12.5227M6.47729 12.5227L12.5227 6.47728L6.47729 12.5227Z"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <defs>
         <filter

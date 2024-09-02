@@ -25,7 +25,7 @@ import MedicalCertificateIcon from "./MedicalCertificateIcon";
 import PhotoIcon from "./PhotoIcon";
 import TeleIcon from "./TeleIcon";
 import VideoIcon from "./VideoIcon";
-
+import CouponIcon from "./CouponIcon";
 
 // Social media
 import LineIcon from "./line";
@@ -109,4 +109,5 @@ export {
   VideoIcon,
   LineIcon,
   PhoneOutgoingIcon,
+  CouponIcon
 };

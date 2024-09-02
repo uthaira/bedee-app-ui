@@ -16,7 +16,7 @@ const MedicalCertificateIcon = (props: IconProps) => {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g clip-path='url(#clip0_3287_2214)'>
+      <g clipPath='url(#clip0_3287_2214)'>
         <path
           d='M24.5337 6.39844V28.7984H6.40039V6.39844H9.69736L15.4671 7.99844L21.2368 6.39844H24.5337Z'
           fill='#317DF6'
