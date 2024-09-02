@@ -89,6 +89,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
               sx={inputSx}
               helperText={helperText}
               InputProps={{
+                ...props.InputProps,
                 endAdornment: (
                   <InputAdornment position="end">
                     {props.value && (
