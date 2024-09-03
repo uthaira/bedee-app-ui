@@ -31,6 +31,7 @@ import KycStepIcon from "./KycStepIcon";
 import ChevronRightIcon from "./ChevronRight";
 
 import CouponIcon from "./CouponIcon";
+import CameraIcon from "./CameraIcon";
 
 // Social media
 import LineIcon from "./line";
@@ -118,5 +119,6 @@ export {
   PassportIcon,
   KycStepIcon,
   CouponIcon,
-  ChevronRightIcon
+  ChevronRightIcon,
+  CameraIcon,
 };

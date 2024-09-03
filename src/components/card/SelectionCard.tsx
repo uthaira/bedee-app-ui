@@ -66,7 +66,14 @@ const SelectionCard: React.FC<SelectionCardProps> = ({
       onClick={onClick}
     >
       <IconWrapper>{icon}</IconWrapper>
-      <Typography variant="h6" color={selected ? textActiveColor : textColor}>
+      <Typography
+        sx={{
+          fontWeight: 600,
+          fontSize: '18px',
+          '&:hover': { color: textActiveColor },
+        }}
+        color={selected ? textActiveColor : textColor}
+      >
         {title}
       </Typography>
     </CardWrapper>
