@@ -18,6 +18,7 @@ interface IAlert {
   type?: AlertType;
   style?: AlertStyle;
   showCloseButton?: boolean;
+  elevation?: number
 }
 
 const getBgColor = (style: AlertStyle, type: AlertType): string => {
@@ -79,13 +80,14 @@ const Alert = (props: IAlert) => {
     type = AlertType.Error,
     style = AlertStyle.Plain,
     showCloseButton = true,
+    elevation = 6,
   } = props;
 
   const [alertVisible, setAlertVisible] = useState(true);
 
   return alertVisible ? (
     <Paper
-      elevation={6}
+      elevation={elevation}
       sx={{
         display: "flex",
         alignItems: "center",

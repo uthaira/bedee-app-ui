@@ -28,6 +28,7 @@ import VideoIcon from "./VideoIcon";
 import IdCardIcon from "./IdCardIcon";
 import PassportIcon from "./PassportIcon";
 import KycStepIcon from "./KycStepIcon";
+import ChevronRightIcon from "./ChevronRight";
 
 import CouponIcon from "./CouponIcon";
 
@@ -116,5 +117,6 @@ export {
   IdCardIcon,
   PassportIcon,
   KycStepIcon,
-  CouponIcon
+  CouponIcon,
+  ChevronRightIcon
 };

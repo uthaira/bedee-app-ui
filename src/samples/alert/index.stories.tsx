@@ -42,6 +42,14 @@ export const SampleAlert = () => {
           style={AlertStyle.Fill}
         />
       </AlertContainerStyled>
+      <AlertContainerStyled>
+        <Alert
+          text={"This is Success Alert custom elevation"}
+          type={AlertType.Success}
+          style={AlertStyle.Fill}
+          elevation={0}
+        />
+      </AlertContainerStyled>
     </Container>
   );
 };
