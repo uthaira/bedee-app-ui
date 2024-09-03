@@ -53,7 +53,7 @@ const PageHeaderContainer = styled(Box, {
   justifyContent: 'center',
   padding: theme.spacing(1),
   backgroundColor: Colors.white,
-  height: '64px',
+  height: '56px',
   boxShadow: elevated ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : 'none',
   transition: 'box-shadow 0.3s ease',
 }));

@@ -29,6 +29,7 @@ import IdCardIcon from "./IdCardIcon";
 import PassportIcon from "./PassportIcon";
 import KycStepIcon from "./KycStepIcon";
 
+import CouponIcon from "./CouponIcon";
 
 // Social media
 import LineIcon from "./line";
@@ -115,4 +116,5 @@ export {
   IdCardIcon,
   PassportIcon,
   KycStepIcon,
+  CouponIcon
 };

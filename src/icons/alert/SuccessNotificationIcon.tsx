@@ -14,9 +14,9 @@ const SuccessNotificationIcon = () => {
       <path
         d="M13 19.0413L16.244 22.0825L22.732 16"
         stroke="white"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
