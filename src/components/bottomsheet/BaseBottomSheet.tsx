@@ -69,10 +69,9 @@ const BottomSheet = (props: BottomSheetProps) => {
           {isCloseIcon && (
             <Box
               sx={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                alignItems: 'center',
-                pb: 1,
+                position: "absolute",
+                top: "16px",
+                right: "16px",
               }}
             >
               <IconButton onClick={onClose}>
