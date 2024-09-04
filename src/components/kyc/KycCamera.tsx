@@ -134,7 +134,7 @@ const KycCamera: React.FC<KycCameraProps> = ({
 const StyledContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   height: 'calc(var(--vh, 1vh) * 100)',
-  width: '100vw',
+  width: '100%',
   maxWidth: '520px',
   overflow: 'hidden',
   margin: '0 auto',
