@@ -10,7 +10,7 @@ interface CameraViewportOptions {
 };
 
 export const useCameraViewport = ({ maxWidth = 520 }: CameraViewportOptions = {}): CameraViewport => {
-  const [cameraViewport, setCameraViewport] = useState<CameraViewport>({ height: 234, width: 375 });
+  const [cameraViewport, setCameraViewport] = useState<CameraViewport>({ height: 244, width: 375 });
 
   const updateCameraViewport = useCallback(() => {
     const screenWidth = Math.min(window.innerWidth, maxWidth);
