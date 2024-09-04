@@ -43,7 +43,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
 
   const handleClear = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation(); // Prevent the DatePicker from opening
-    handleDateChange(null);
+    onDateChange(null);
   };
 
   const onDateChange = (date: PickerValidDate | null) => {

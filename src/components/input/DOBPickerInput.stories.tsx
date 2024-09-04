@@ -32,6 +32,7 @@ export const Default: Story = {
   args: {
     label: "Date of birth",
     helperText: "Please select your date of birth",
+    onChange: (date) => console.log(date),
   },
 };
 
