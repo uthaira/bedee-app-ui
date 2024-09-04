@@ -20,6 +20,7 @@ interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' |
   backgroundColor?: string;
   disabled?: boolean;
   error?: boolean;
+  placeholder?: string;
 }
 
 const DOBPicker: React.FC<DOBPickerProps> = ({
@@ -79,6 +80,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
         onClose={handleClose}
         value={selectedDate}
         onChange={onDateChange}
+        slotProps={{ textField: { placeholder: props.placeholder } }}
         slots={{
           textField: (props) => (
             <TextInput
