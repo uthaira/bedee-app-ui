@@ -208,6 +208,7 @@ interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' |
     backgroundColor?: string;
     disabled?: boolean;
     error?: boolean;
+    placeholder?: string;
 }
 declare const DOBPicker: React__default.FC<DOBPickerProps>;
 
