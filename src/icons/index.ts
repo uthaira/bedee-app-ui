@@ -32,6 +32,8 @@ import ChevronRightIcon from "./ChevronRight";
 
 import CouponIcon from "./CouponIcon";
 import CameraIcon from "./CameraIcon";
+import IdCardVerified from "./IdCardVerified";
+import PassportVerified from "./PassportVerified";
 
 // Social media
 import LineIcon from "./line";
@@ -121,4 +123,6 @@ export {
   CouponIcon,
   ChevronRightIcon,
   CameraIcon,
+  IdCardVerified,
+  PassportVerified,
 };
