@@ -924,14 +924,17 @@ declare enum EPaymentMethod {
     invoice = "invoice",
     insurance = "insurance"
 }
+interface EPaymentOption {
+    title: string;
+    value: EPaymentMethod;
+    image: React__default.ReactNode;
+}
 interface PaymentMethodProps {
     onSelected?: (paymentType: EPaymentMethod) => void;
-    allowPaymentOptions?: EPaymentMethod[];
+    paymentsOption: EPaymentOption[];
     currentPaymentType?: EPaymentMethod;
     title?: string;
     hideTitle?: boolean;
-    promptpayLabel?: string;
-    creditCardLabel?: string;
     alertText?: string;
     withAlert?: boolean;
 }

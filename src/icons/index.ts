@@ -126,5 +126,5 @@ export {
   CameraIcon,
   IdCardVerified,
   PassportVerified,
-  ProviderIcon,
+  ProviderIcon
 };

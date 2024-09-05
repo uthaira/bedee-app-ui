@@ -18,15 +18,17 @@ export enum EPaymentMethod {
   invoice = 'invoice',
   insurance = 'insurance',
 }
-
+interface EPaymentOption {
+  title: string
+  value: EPaymentMethod
+  image: React.ReactNode;
+}
 interface PaymentMethodProps {
   onSelected?: (paymentType: EPaymentMethod) => void;
-  allowPaymentOptions?: EPaymentMethod[]
+  paymentsOption: EPaymentOption[]
   currentPaymentType?: EPaymentMethod;
   title?: string;
   hideTitle?: boolean;
-  promptpayLabel?: string;
-  creditCardLabel?: string;
   alertText?: string;
   withAlert?: boolean;
 }
@@ -34,10 +36,8 @@ interface PaymentMethodProps {
 const PaymentMethod: React.FC<PaymentMethodProps> = (props) => {
   const {
     title = 'วิธีชำระเงิน',
-    promptpayLabel = 'QR พร้อมเพย์',
-    creditCardLabel = 'บัตรเครดิต / เดบิต',
     alertText = 'กรุณาทำรายการต่อ เพื่อยืนยันการรับคำปรึกษาภายใน 10 นาที',
-    allowPaymentOptions = [EPaymentMethod.promptpay, EPaymentMethod.creditCard],
+    paymentsOption = [],
     onSelected,
     currentPaymentType,
     withAlert = false,
@@ -45,32 +45,12 @@ const PaymentMethod: React.FC<PaymentMethodProps> = (props) => {
   } = props;
   const disabledSelect = !onSelected;
 
-  const getPaymentTypeOptions = (paymentType: EPaymentMethod) => {
-    switch (paymentType) {
-      case EPaymentMethod.promptpay:
-        return {
-          title: promptpayLabel,
-          value: EPaymentMethod.promptpay,
-          image: <img src={'/images/thaiqrcode.png'} alt='Thaiqrcode' height={32} />,
-        };
-      case EPaymentMethod.creditCard:
-        return {
-          title: creditCardLabel,
-          value: EPaymentMethod.creditCard,
-          image: <img src={'/images/creditcard.png'} alt='Credit Card' height={18} />,
-        };
-      default:
-        return null;
-    }
-  };
-
-  const paymentMethod = (paymentType: EPaymentMethod) => {
-    const paymentData = getPaymentTypeOptions(paymentType);
+  const paymentMethod = (paymentData: EPaymentOption) => {
     if (!paymentData) return;
-    const isSelected = paymentType === currentPaymentType;
+    const isSelected = paymentData.value === currentPaymentType;
     return (
       <PaymentMethodItem
-        onClick={() => !disabledSelect && onSelected(paymentType)}
+        onClick={() => !disabledSelect && onSelected(paymentData.value)}
         className={isSelected ? 'selected' : ''}
         style={{ cursor: disabledSelect ? 'auto' : 'pointer' }}
       >
@@ -102,7 +82,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = (props) => {
       }
       <PaymentMethodWrapper>
         <Stack direction='column' alignItems='start' gap={'12px'}>
-          {allowPaymentOptions.map((type: any) => paymentMethod(type))}
+          {paymentsOption.map((type: any) => paymentMethod(type))}
           {withAlert && (
             <Warning>
               <Alert

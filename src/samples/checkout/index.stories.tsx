@@ -30,7 +30,20 @@ export const SampleCheckout = () => {
         />
       </Item>
       <Item>
-        <PaymentMethod currentPaymentType={paymentType} onSelected={setPaymentType} withAlert />
+        <PaymentMethod currentPaymentType={paymentType} onSelected={setPaymentType} withAlert
+          paymentsOption={[
+            {
+              title: 'QR พร้อมเพย์',
+              value: EPaymentMethod.promptpay,
+              image: <img src={'/images/thaiqrcode.png'} alt='Thaiqrcode' height={32} />,
+            },
+            {
+              title: 'บัตรเครดิต / เดบิต',
+              value: EPaymentMethod.creditCard,
+              image: <img src={'/images/creditcard.png'} alt='Thaiqrcode' height={18} />,
+            }
+          ]}
+        />
       </Item>
     </Box>
   )
