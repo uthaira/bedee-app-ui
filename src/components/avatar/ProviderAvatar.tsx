@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@mui/material/styles'
 import { Box } from '@mui/system';
 import { ProviderIcon } from '../../icons';
 import { Colors } from '../../colors';
