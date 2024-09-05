@@ -67,6 +67,12 @@ import InfoNotificationIcon from "./alert/InfoNotificationIcon";
 import SuccessNotificationIcon from "./alert/SuccessNotificationIcon";
 import WarningNotificationIcon from "./alert/WarningNotificationIcon";
 
+// payment
+import VisaIcon from "./payment/VisaIcon";
+import JCBIcon from "./payment/JCBIcon";
+import MasterCardIcon from "./payment/MasterCardIcon";
+import ThaiQrIcon from "./payment/ThaiQrIcon";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -126,5 +132,9 @@ export {
   CameraIcon,
   IdCardVerified,
   PassportVerified,
-  ProviderIcon
+  ProviderIcon,
+  VisaIcon,
+  JCBIcon,
+  MasterCardIcon,
+  ThaiQrIcon,
 };

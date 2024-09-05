@@ -21,12 +21,10 @@ export const PaymentMethodTemplete: PaymentMethodStory = {
       {
         title: 'QR พร้อมเพย์',
         value: EPaymentMethod.promptpay,
-        image: <img src={'/images/thaiqrcode.png'} alt='Thaiqrcode' height={32} />,
       },
       {
         title: 'บัตรเครดิต / เดบิต',
         value: EPaymentMethod.creditCard,
-        image: <img src={'/images/creditcard.png'} alt='Thaiqrcode' height={32} />,
       }
     ],
     hideTitle: false,

@@ -7,7 +7,7 @@ import {
   Lead2,
 } from '../components';
 import React from 'react';
-import { PaymentIcon } from '../icons';
+import { JCBIcon, MasterCardIcon, PaymentIcon, ThaiQrIcon, VisaIcon } from '../icons';
 import { Colors } from '../colors';
 
 export enum EPaymentMethod {
@@ -21,7 +21,7 @@ export enum EPaymentMethod {
 interface EPaymentOption {
   title: string
   value: EPaymentMethod
-  image: React.ReactNode;
+  image?: React.ReactNode;
 }
 interface PaymentMethodProps {
   onSelected?: (paymentType: EPaymentMethod) => void;
@@ -45,6 +45,25 @@ const PaymentMethod: React.FC<PaymentMethodProps> = (props) => {
   } = props;
   const disabledSelect = !onSelected;
 
+  const getPaymentIcon = (type: EPaymentMethod) => {
+    switch (type) {
+      case EPaymentMethod.creditCard:
+        return (
+          <Stack direction={"row"} spacing={1} alignItems="center">
+            <VisaIcon />
+            <MasterCardIcon />
+            <JCBIcon />
+          </Stack>
+        )
+      case EPaymentMethod.promptpay:
+        return (
+          <ThaiQrIcon />
+        )
+      default:
+        break;
+    }
+  }
+
   const paymentMethod = (paymentData: EPaymentOption) => {
     if (!paymentData) return;
     const isSelected = paymentData.value === currentPaymentType;
@@ -64,7 +83,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = (props) => {
             />
             <Lead2 text={paymentData.title} />
           </Stack>
-          {paymentData.image && paymentData.image}
+          {paymentData.image ? paymentData.image : getPaymentIcon(paymentData.value)}
         </Box>
       </PaymentMethodItem>
     );

@@ -772,6 +772,20 @@ declare const SuccessNotificationIcon: (props: IconProps) => react_jsx_runtime.J
 
 declare const WarningNotificationIcon: () => react_jsx_runtime.JSX.Element;
 
+declare const VisaIcon: ({ width, height }: {
+    width?: number | undefined;
+    height?: number | undefined;
+}) => react_jsx_runtime.JSX.Element;
+
+declare const JCBIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const MasterCardIcon: () => react_jsx_runtime.JSX.Element;
+
+declare const ThaiQrIcon: ({ width, height }: {
+    width?: number | undefined;
+    height?: number | undefined;
+}) => react_jsx_runtime.JSX.Element;
+
 declare const toPattern: (value: string, pattern: string) => string;
 declare const clearPattern: (text?: string, ch?: string) => string;
 declare const removeZeroPrefix: (phoneNumber: string) => string;
@@ -927,7 +941,7 @@ declare enum EPaymentMethod {
 interface EPaymentOption {
     title: string;
     value: EPaymentMethod;
-    image: React__default.ReactNode;
+    image?: React__default.ReactNode;
 }
 interface PaymentMethodProps {
     onSelected?: (paymentType: EPaymentMethod) => void;
@@ -952,4 +966,4 @@ interface ProviderInfoProps {
 }
 declare const ProviderSection: React__default.FC<ProviderInfoProps>;
 
-export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon$1 as CalendarIcon, CameraFrame, CameraFrameOverlay, CameraIcon, CameraViewPort, ChatIcon, Check as CheckIcon, ChestPainIcon, ChevronRightIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, CornerMark, CouponIcon, DOBPicker as DOBPickerInput, CalendarIcon as DateIcon, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DrugsIcon, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, IdCardFrame, IdCardIcon, IdCardVerified, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, KycCamera, KycStepIcon, Language, LanguageSwitch, Lead1, Lead2, LineIcon, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, MedicalCertificateIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PassportFrame, PassportIcon, PassportVerified, Icon$2 as PaymentIcon, PaymentMethod, PhoneIcon, PhoneNoForm as PhoneNumberForm, PhoneOutgoingIcon, PhotoIcon, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, ProviderAvatar, ProviderIcon, ProviderSection, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelectionCard, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, StepList, StepListItem, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TakePhotoIcon, TeleIcon, TextArea, TextInput, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, VideoIcon, WarningIcon, WarningNotificationIcon, WeaknessIcon, useCameraViewport, useFileUploader, useViewportHeight };
+export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon$1 as CalendarIcon, CameraFrame, CameraFrameOverlay, CameraIcon, CameraViewPort, ChatIcon, Check as CheckIcon, ChestPainIcon, ChevronRightIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, CornerMark, CouponIcon, DOBPicker as DOBPickerInput, CalendarIcon as DateIcon, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DrugsIcon, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, IdCardFrame, IdCardIcon, IdCardVerified, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, JCBIcon, KycCamera, KycStepIcon, Language, LanguageSwitch, Lead1, Lead2, LineIcon, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, MasterCardIcon, MedicalCertificateIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PassportFrame, PassportIcon, PassportVerified, Icon$2 as PaymentIcon, PaymentMethod, PhoneIcon, PhoneNoForm as PhoneNumberForm, PhoneOutgoingIcon, PhotoIcon, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, ProviderAvatar, ProviderIcon, ProviderSection, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelectionCard, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, StepList, StepListItem, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TakePhotoIcon, TeleIcon, TextArea, TextInput, ThaiQrIcon, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, VideoIcon, VisaIcon, WarningIcon, WarningNotificationIcon, WeaknessIcon, useCameraViewport, useFileUploader, useViewportHeight };
