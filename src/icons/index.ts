@@ -34,6 +34,7 @@ import CouponIcon from "./CouponIcon";
 import CameraIcon from "./CameraIcon";
 import IdCardVerified from "./IdCardVerified";
 import PassportVerified from "./PassportVerified";
+import ProviderIcon from "./ProviderIcon";
 
 // Social media
 import LineIcon from "./line";
@@ -125,4 +126,5 @@ export {
   CameraIcon,
   IdCardVerified,
   PassportVerified,
+  ProviderIcon,
 };

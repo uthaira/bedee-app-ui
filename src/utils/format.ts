@@ -35,7 +35,10 @@ export const randomString = (length: number) => {
   return result;
 };
 
-export const formatPriceWithCommas = (price: number, currentcy: string = '฿'): string => {
+export const formatPriceWithCommas = (price: number, currentcy: string = '฿' , isThai : boolean = false): string => {
+  if(isThai){
+    return `${price.toLocaleString('en-US')} ${currentcy}`
+  }
   return `${currentcy} ${price.toLocaleString('en-US')}`
 };
 
