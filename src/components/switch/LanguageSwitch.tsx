@@ -43,6 +43,7 @@ const LanguageSwitch = (props: LanguageSwitchProps) => {
                 color: localeLanguage === ELanguage.TH ? Colors.white : Colors.gray3,
                 borderRadius: 25,
                 border: 'none',
+                marginRight:'1px',
                 '&:hover': {
                   backgroundColor: localeLanguage === ELanguage.TH ? Colors.primary002 : Colors.gray6,
                 },
