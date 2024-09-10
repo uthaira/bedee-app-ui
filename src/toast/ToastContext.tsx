@@ -159,7 +159,8 @@ const ToastProvider = ({
           showCloseButton={toast.showCloseButton}
           sx={{
             borderRadius: '8px',
-            width: '100%',
+            width: 'calc(100vw - 32px)',
+            maxWidth: '400px',
           }}
         />
       </Snackbar>
