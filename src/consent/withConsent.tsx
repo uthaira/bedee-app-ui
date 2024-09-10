@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ConsentData } from "./consentContext";
 import { Consent } from ".";
 
  const withConsent = (Component: React.ComponentType) => {
@@ -8,7 +7,7 @@ import { Consent } from ".";
 
     useEffect(() => {
       const redirectUrl = window.location.href;
-      if (!consentData?.medicalTreatmentConsent) {
+      if (consentData && !consentData?.medicalTreatmentConsent) {
         window.location.href = `/home/consent/start/?redirectUrl=${redirectUrl}`
         return
       } 
