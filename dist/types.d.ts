@@ -1,7 +1,7 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import { ButtonProps as ButtonProps$1, TypographyProps, SxProps, Theme, SlideProps, TextFieldProps, SelectProps } from '@mui/material';
 import * as React$1 from 'react';
-import React__default, { FC } from 'react';
+import React__default, { FC, ReactNode } from 'react';
 import { SxProps as SxProps$1, Theme as Theme$1 } from '@mui/material/styles';
 import { DatePickerProps, PickerValidDate } from '@mui/x-date-pickers';
 import * as i18next from 'i18next';
@@ -371,6 +371,8 @@ interface IAlert {
     style?: AlertStyle;
     showCloseButton?: boolean;
     elevation?: number;
+    sx?: SxProps<Theme>;
+    onClose?: () => void;
 }
 declare const Alert: (props: IAlert) => react_jsx_runtime.JSX.Element | null;
 
@@ -470,6 +472,10 @@ declare function IdCardFrame(): react_jsx_runtime.JSX.Element;
 declare function PassportFrame(): react_jsx_runtime.JSX.Element;
 
 declare const Colors: {
+    toastBackgroundSuccess: string;
+    toastBackgroundError: string;
+    toastBackgroundInfo: string;
+    toastBackgroundWarning: string;
     textSuccess: string;
     textError: string;
     textRoyalBlue: string;
@@ -516,6 +522,7 @@ declare const Colors: {
     gray5: string;
     gray6: string;
     gray7: string;
+    gray8: string;
     black: string;
     white: string;
 };
@@ -895,6 +902,27 @@ declare const Authentication: {
     withAuth: (WrappedComponent: React$1.FC) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
+interface ConsentData {
+    time: string;
+    version: number;
+    medicalTreatmentConsent: boolean;
+    insuranceConsent: boolean;
+    medicalTreatmentDataSharingConsent: boolean;
+    marketingDataSharingConsent: boolean;
+}
+interface ConsentContextType {
+    consentData: ConsentData | null;
+}
+interface ConsentProviderProps {
+    children: React__default.ReactNode;
+}
+
+declare const Consent: {
+    ConsentProvider: React$1.FC<ConsentProviderProps>;
+    useConsent: () => ConsentContextType;
+    withConsent: (Component: React.ComponentType) => (props: any) => react_jsx_runtime.JSX.Element;
+};
+
 interface LanguageContextProps {
     lang: string;
     changeLanguage: (language: string) => void;
@@ -978,4 +1006,71 @@ interface ProviderInfoProps {
 }
 declare const ProviderSection: React__default.FC<ProviderInfoProps>;
 
-export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon$1 as CalendarIcon, CameraFrame, CameraFrameOverlay, CameraIcon, CameraViewPort, ChatIcon, Check as CheckIcon, ChestPainIcon, ChevronRightIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, CornerMark, CouponIcon, DOBPicker as DOBPickerInput, CalendarIcon as DateIcon, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DrugsIcon, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, IdCardFrame, IdCardIcon, IdCardVerified, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, JCBIcon, KycCamera, KycStepIcon, Language, LanguageSwitch, Lead1, Lead2, LineIcon, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, MasterCardIcon, MedicalCertificateIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PassportFrame, PassportIcon, PassportVerified, Icon$2 as PaymentIcon, PaymentMethod, PhoneIcon, PhoneNoForm as PhoneNumberForm, PhoneOutgoingIcon, PhotoIcon, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, ProviderAvatar, ProviderIcon, ProviderSection, RadioButton, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelectionCard, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, StepList, StepListItem, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TakePhotoIcon, TeleIcon, TextArea, TextInput, ThaiQrIcon, Tiny, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, VideoIcon, VisaIcon, WarningIcon, WarningNotificationIcon, WeaknessIcon, useCameraViewport, useFileUploader, useViewportHeight };
+declare enum ToastType {
+    Success = "SUCCESS",
+    Error = "ERROR",
+    Info = "INFO",
+    Warning = "WARNING",
+    Notice = "NOTICE"
+}
+declare enum ToastStyle {
+    Plain = "PLAIN",
+    Fill = "FILL"
+}
+
+declare enum ToastPosition {
+    TopLeft = "top-left",
+    TopCenter = "top-center",
+    TopRight = "top-right",
+    BottomLeft = "bottom-left",
+    BottomCenter = "bottom-center",
+    BottomRight = "bottom-right"
+}
+interface ToastProviderProps {
+    children: ReactNode;
+    position?: ToastPosition;
+    duration?: number;
+    transitionComponent?: any;
+    showCloseButton?: boolean;
+}
+declare const ToastProvider: ({ children, transitionComponent, position, duration, showCloseButton, }: ToastProviderProps) => react_jsx_runtime.JSX.Element;
+
+declare const useToast: ({ position: defaultPosition, duration: defaultDuration, showCloseButton: defaultShowCloseButton, }?: {
+    position?: ToastPosition;
+    duration?: number;
+    showCloseButton?: boolean;
+}) => {
+    success: (message: string, options?: {
+        position?: ToastPosition;
+        duration?: number;
+        showCloseButton?: boolean;
+    }) => void;
+    error: (message: string, options?: {
+        position?: ToastPosition;
+        duration?: number;
+        showCloseButton?: boolean;
+    }) => void;
+    info: (message: string, options?: {
+        position?: ToastPosition;
+        duration?: number;
+        showCloseButton?: boolean;
+    }) => void;
+    warn: (message: string, options?: {
+        position?: ToastPosition;
+        duration?: number;
+        showCloseButton?: boolean;
+    }) => void;
+};
+
+interface IToast {
+    text: string | JSX.Element;
+    type?: ToastType;
+    style?: ToastStyle;
+    showCloseButton?: boolean;
+    elevation?: number;
+    sx?: SxProps<Theme>;
+    onClose?: () => void;
+}
+declare const Toast: ({ text, type, style, showCloseButton, elevation, onClose, sx, }: IToast) => react_jsx_runtime.JSX.Element | null;
+
+export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon$1 as CalendarIcon, CameraFrame, CameraFrameOverlay, CameraIcon, CameraViewPort, ChatIcon, Check as CheckIcon, ChestPainIcon, ChevronRightIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, Consent, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, CornerMark, CouponIcon, DOBPicker as DOBPickerInput, CalendarIcon as DateIcon, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DrugsIcon, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, IdCardFrame, IdCardIcon, IdCardVerified, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, JCBIcon, KycCamera, KycStepIcon, Language, LanguageSwitch, Lead1, Lead2, LineIcon, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, MasterCardIcon, MedicalCertificateIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PassportFrame, PassportIcon, PassportVerified, Icon$2 as PaymentIcon, PaymentMethod, PhoneIcon, PhoneNoForm as PhoneNumberForm, PhoneOutgoingIcon, PhotoIcon, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, ProviderAvatar, ProviderIcon, ProviderSection, RadioButton, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelectionCard, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, StepList, StepListItem, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TakePhotoIcon, TeleIcon, TextArea, TextInput, ThaiQrIcon, Tiny, Toast, ToastProvider, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, VideoIcon, VisaIcon, WarningIcon, WarningNotificationIcon, WeaknessIcon, useCameraViewport, useFileUploader, useToast, useViewportHeight };
