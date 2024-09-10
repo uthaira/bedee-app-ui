@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Box, IconButton, Paper, Stack } from "@mui/material";
+import { Box, IconButton, Paper, Stack, SxProps, Theme } from "@mui/material";
 import { AlertStyle, AlertType } from "./alert.type";
 import {
   AttentionNotificationIcon,
@@ -18,7 +18,9 @@ interface IAlert {
   type?: AlertType;
   style?: AlertStyle;
   showCloseButton?: boolean;
-  elevation?: number
+  elevation?: number;
+  sx?: SxProps<Theme>;
+  onClose?: () => void;
 }
 
 const getBgColor = (style: AlertStyle, type: AlertType): string => {
@@ -81,6 +83,8 @@ const Alert = (props: IAlert) => {
     style = AlertStyle.Plain,
     showCloseButton = true,
     elevation = 6,
+    onClose,
+    sx,
   } = props;
 
   const [alertVisible, setAlertVisible] = useState(true);
@@ -95,6 +99,7 @@ const Alert = (props: IAlert) => {
         padding: 2,
         borderRadius: 2,
         marginY: 1,
+        ...sx,
       }}
     >
       <Stack
@@ -119,7 +124,10 @@ const Alert = (props: IAlert) => {
         </Stack>
         {showCloseButton && (
           <IconButton
-            onClick={() => setAlertVisible(false)}
+            onClick={() => {
+              setAlertVisible(false)
+              onClose && onClose();
+            }}
             size="small"
             sx={{ padding: 0 }}
           >
