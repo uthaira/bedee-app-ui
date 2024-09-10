@@ -16,7 +16,7 @@ export interface ConsentContextType {
 
 export const ConsentContext = createContext<ConsentContextType | undefined>(undefined);
 
-interface ConsentProviderProps {
+export interface ConsentProviderProps {
   children: React.ReactNode;
 }
 
