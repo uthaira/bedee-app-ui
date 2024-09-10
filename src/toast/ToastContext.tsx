@@ -1,6 +1,7 @@
 import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
 import { Slide, Snackbar, SnackbarOrigin } from '@mui/material';
-import { Alert, AlertType, AlertStyle } from '../components/alert';
+import { ToastType, ToastStyle } from './toast.type';
+import Toast from './toast';
 
 export enum ToastCloseReason {
   ClickAway = 'clickaway',
@@ -35,7 +36,7 @@ export interface ToastProviderProps {
 
 export interface ToastState {
   message: string;
-  alertType: AlertType;
+  toastType: ToastType;
   open: boolean;
   position: ToastPosition;
   duration: number;
@@ -53,7 +54,7 @@ const ToastProvider = ({
 }: ToastProviderProps) => {
   const initialState = {
     message: '',
-    alertType: AlertType.Success,
+    toastType: ToastType.Success,
     open: false,
     position,
     duration,
@@ -75,10 +76,10 @@ const ToastProvider = ({
   };
 
   const showToast = useCallback(
-    (message: string, alertType: AlertType, position?: ToastPosition, duration?: number, showCloseButton?: boolean) => {
+    (message: string, toastType: ToastType, position?: ToastPosition, duration?: number, showCloseButton?: boolean) => {
       setToast({
         message,
-        alertType,
+        toastType,
         open: true,
         position: position ?? initialState.position,
         duration: duration ?? initialState.duration,
@@ -90,28 +91,28 @@ const ToastProvider = ({
 
   const success = useCallback(
     (message: string, position?: ToastPosition, duration?: number, showCloseButton?: boolean) => {
-      showToast(message, AlertType.Success, position ?? initialState.position, duration, showCloseButton);
+      showToast(message, ToastType.Success, position ?? initialState.position, duration, showCloseButton);
     },
     [showToast]
   );
 
   const error = useCallback(
     (message: string, position?: ToastPosition, duration?: number, showCloseButton?: boolean) => {
-      showToast(message, AlertType.Error, position ?? initialState.position, duration, showCloseButton);
+      showToast(message, ToastType.Error, position ?? initialState.position, duration, showCloseButton);
     },
     [showToast]
   );
 
   const info = useCallback(
     (message: string, position?: ToastPosition, duration?: number, showCloseButton?: boolean) => {
-      showToast(message, AlertType.Info, position ?? initialState.position, duration, showCloseButton);
+      showToast(message, ToastType.Info, position ?? initialState.position, duration, showCloseButton);
     },
     [showToast]
   );
 
   const warn = useCallback(
     (message: string, position?: ToastPosition, duration?: number, showCloseButton?: boolean) => {
-      showToast(message, AlertType.Warning, position ?? initialState.position, duration, showCloseButton);
+      showToast(message, ToastType.Warning, position ?? initialState.position, duration, showCloseButton);
     },
     [showToast]
   );
@@ -150,10 +151,10 @@ const ToastProvider = ({
         anchorOrigin={getPosition(toast.position)}
         TransitionComponent={transitionComponent}
       >
-        <Alert
+        <Toast
           text={toast.message}
-          type={toast.alertType}
-          style={AlertStyle.Fill}
+          type={toast.toastType}
+          style={ToastStyle.Fill}
           onClose={closeToast}
           elevation={2}
           showCloseButton={toast.showCloseButton}
