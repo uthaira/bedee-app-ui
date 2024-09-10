@@ -1,11 +1,6 @@
-import React from 'react';
 import { Button, Stack } from '@mui/material';
 
 import { ToastProvider, useToast } from '../toast';
-
-const NoTransition = React.forwardRef(function NoTransition(props, ref) {
-  return <div ref={ref} {...props} />;
-});
 
 export default {
   title: 'Toast',
@@ -13,7 +8,6 @@ export default {
   decorators: [
     (Story) => (
       <ToastProvider
-        transitionComponent={NoTransition}
         position='top-center'
       >
         <div style={{ minHeight: '100vh' }}>
