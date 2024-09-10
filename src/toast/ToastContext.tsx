@@ -1,7 +1,8 @@
-import { createContext, useContext, useState, useCallback, ReactNode } from 'react';
-import { Slide, Snackbar, SnackbarOrigin } from '@mui/material';
+import { createContext, useState, useCallback, ReactNode } from 'react';
+import { Snackbar, SnackbarOrigin } from '@mui/material';
 import { ToastType, ToastStyle } from './toast.type';
 import Toast from './toast';
+import React from 'react';
 
 export enum ToastCloseReason {
   ClickAway = 'clickaway',
@@ -45,9 +46,13 @@ export interface ToastState {
 
 export const ToastContext = createContext<ToastContextType | undefined>(undefined);
 
+const NoTransition = React.forwardRef(function NoTransition(props, ref) {
+  return <div ref={ref as any} {...props} />;
+});
+
 const ToastProvider = ({
   children,
-  transitionComponent = Slide,
+  transitionComponent = NoTransition,
   position = ToastPosition.TopRight,
   duration = 3000,
   showCloseButton = true,
@@ -164,7 +169,7 @@ const ToastProvider = ({
             maxWidth: '400px',
           }}
         />
-      </Snackbar>
+    </Snackbar>
     </ToastContext.Provider>
   );
 };
