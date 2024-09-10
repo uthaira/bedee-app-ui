@@ -7,4 +7,5 @@ export default {
   gray5: "#747B84",
   gray6: "#4A5568",
   gray7: "#323A43",
+  gray8: "#1F1F1F",
 }

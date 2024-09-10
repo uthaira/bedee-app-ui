@@ -8,6 +8,7 @@ import brand from './brand'
 import form from './form'
 import background from './background'
 import functionalMessage from './functionalMessage'
+import toastBackground from './toast'
 
 export const Colors = {
   ...neutral,
@@ -20,4 +21,5 @@ export const Colors = {
   ...form,
   ...background,
   ...functionalMessage,
+  ...toastBackground
 }
