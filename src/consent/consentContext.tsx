@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { getConsentDataFromCookies } from './consentUtils';
+import { getCookie } from '../utils/cookie';
 
 export interface ConsentData {
   time: string;
@@ -24,7 +24,8 @@ const ConsentProvider: React.FC<ConsentProviderProps> = ({ children }) => {
   const [consentData, setConsentData] = useState<ConsentData | null>(null);
 
   useEffect(() => {
-    const parsedConsent = getConsentDataFromCookies();
+    const consentCookie = getCookie('consentData');
+    const parsedConsent = consentCookie ? JSON.parse(consentCookie) : null;
     if (parsedConsent) {
       setConsentData(parsedConsent);
     }
