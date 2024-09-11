@@ -49,7 +49,7 @@ const ProviderSection: React.FC<ProviderInfoProps> = (props) => {
               <Lead1 text={fullName} />
               <P2 text={positionName} />
               <Lead1
-                text={`${Format.formatPriceWithCommas(netConsultationFee)}/${consultationTime} ${unitMins}`}
+                text={`${Format.formatPrice(netConsultationFee)}/${consultationTime} ${unitMins}`}
               />
             </Stack>
           </Stack>
