@@ -1,29 +1,43 @@
-import React from 'react';
-import { Box } from '@mui/material';
-import { styled } from '@mui/material/styles';
-import { Colors } from '../../colors';
-import { Lead1, P1, P2 } from '../font';
-import { OtpTimer } from '../timer';
-import OutlinedBtn from '../button/OutlinedBtn';
-import OtpInput from '../input/OtpInput';
+import React from 'react'
+import { Box } from '@mui/material'
+import { styled } from '@mui/material/styles'
+import { Colors } from '../../colors'
+import { Lead1, P1, P2 } from '../font'
+import { OtpTimer } from '../timer'
+import OutlinedBtn from '../button/OutlinedBtn'
+import OtpInput from '../input/OtpInput'
 
 interface OtpFormProps {
-  length: number;
-  value: string;
+  length: number
+  value: string
   refcode: string
-  onChange: (val: string) => void;
-  onResend: () => void;
+  onChange: (val: string) => void
+  onResend: () => void
   errorMessage?: string
   refcodeLabel?: string
   resendLabel?: string
   unitLabel?: string
   resendBtnText?: string
   timeRemain: number
+  isInvalid?: boolean
 }
 
 const OtpForm: React.FC<OtpFormProps> = (props) => {
-  const { length, value, onChange, errorMessage = '', refcode, refcodeLabel = 'หมายเลขอ้างอิง', resendLabel = 'ขอรหัสอีกครั้งใน', unitLabel = 'นาที', onResend, resendBtnText = 'ขอรหัสอีกครั้ง', timeRemain = 0 } = props;
-  
+  const {
+    length,
+    value,
+    onChange,
+    errorMessage = '',
+    refcode,
+    refcodeLabel = 'หมายเลขอ้างอิง',
+    resendLabel = 'ขอรหัสอีกครั้งใน',
+    unitLabel = 'นาที',
+    onResend,
+    resendBtnText = 'ขอรหัสอีกครั้ง',
+    timeRemain = 0,
+    isInvalid = false,
+  } = props
+
   const renderResendTimer = () => {
     if (timeRemain > 0) {
       return (
@@ -41,7 +55,7 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
             <Lead1 text={unitLabel} color={Colors.royalBlue} />
           </Box>
         </StyledTimmer>
-      );
+      )
     } else {
       return (
         <Box
@@ -54,10 +68,9 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
         >
           <OutlinedBtn bdSize="md" onClick={onResend} text={resendBtnText} width="fit" />
         </Box>
-      );
+      )
     }
-  };
-
+  }
 
   return (
     <Box
@@ -67,7 +80,7 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
       }}
     >
       <Box>
-        <OtpInput value={value} onChange={onChange} length={length} />
+        <OtpInput value={value} onChange={onChange} length={length} isInvalid={isInvalid} />
         {errorMessage && (
           <StyledTextError>
             <P2 text={errorMessage} color={Colors.error} />
@@ -89,21 +102,21 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
       </StyledRefCode>
       {renderResendTimer()}
     </Box>
-  );
-};
+  )
+}
 
 const StyledTextError = styled('div')`
   margin-top: 12px;
   text-align: center;
-`;
+`
 
 const StyledRefCode = styled('div')`
   margin-top: 48px;
   text-align: center;
-`;
+`
 
 const StyledTimmer = styled('div')`
   text-align: center;
-`;
+`
 
-export default OtpForm;
+export default OtpForm
