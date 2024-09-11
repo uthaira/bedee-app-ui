@@ -143,7 +143,7 @@ const OtpInput = (props: IOTP) => {
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => handleChange(event, index)}
             onClick={(event: React.MouseEvent<HTMLInputElement>) => handleClick(event, index)}
             onPaste={(event: React.ClipboardEvent<HTMLInputElement>) => handlePaste(event, index)}
-            value={value[index] ?? "-"}
+            value={value[index]}
             type="number"
             hasValue={Boolean(value[index])}
             isInvalid={isInvalid}
