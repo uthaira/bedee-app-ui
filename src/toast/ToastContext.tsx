@@ -1,7 +1,6 @@
 import { createContext, useState, useCallback, ReactNode, useMemo } from 'react';
-import { ToastAlignment, ToastType } from './toast.type';
-import Toast, { ToastPosition, ToastPositionEnum } from './toast';
-
+import { ToastAlignment, ToastType, ToastPositionEnum, ToastPosition, ToastAlignmentEnum } from './toast.type';
+import Toast from './toast';
 
 export interface ToastContextType {
   success: (message: string, position?: ToastPosition, duration?: number, showCloseButton?: boolean, showBackdrop?: boolean, alignment?: ToastAlignment) => void;
@@ -43,7 +42,7 @@ const ToastProvider = ({
   duration = 3000,
   showCloseButton = true,
   showBackdrop = false,
-  alignment = ToastAlignment.Center,
+  alignment = ToastAlignmentEnum.Center,
 }: ToastProviderProps) => {
   const initialState = {
     message: '',
