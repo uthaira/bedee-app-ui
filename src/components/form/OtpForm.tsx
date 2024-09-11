@@ -1,25 +1,25 @@
-import React from 'react'
-import { Box } from '@mui/material'
-import { styled } from '@mui/material/styles'
-import { Colors } from '../../colors'
-import { Lead1, P1, P2 } from '../font'
-import { OtpTimer } from '../timer'
-import OutlinedBtn from '../button/OutlinedBtn'
-import OtpInput from '../input/OtpInput'
+import React from "react";
+import { Box } from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { Colors } from "../../colors";
+import { Lead1, P1, P2 } from "../font";
+import { OtpTimer } from "../timer";
+import OutlinedBtn from "../button/OutlinedBtn";
+import OtpInput from "../input/OtpInput";
 
 interface OtpFormProps {
-  length: number
-  value: string
-  refcode: string
-  onChange: (val: string) => void
-  onResend: () => void
-  errorMessage?: string
-  refcodeLabel?: string
-  resendLabel?: string
-  unitLabel?: string
-  resendBtnText?: string
-  timeRemain: number
-  isInvalid?: boolean
+  length: number;
+  value: string;
+  refcode: string;
+  onChange: (val: string) => void;
+  onResend: () => void;
+  errorMessage?: string;
+  refcodeLabel?: string;
+  resendLabel?: string;
+  unitLabel?: string;
+  resendBtnText?: string;
+  timeRemain: number;
+  isInvalid?: boolean;
 }
 
 const OtpForm: React.FC<OtpFormProps> = (props) => {
@@ -27,16 +27,16 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
     length,
     value,
     onChange,
-    errorMessage = '',
+    errorMessage = "",
     refcode,
-    refcodeLabel = 'หมายเลขอ้างอิง',
-    resendLabel = 'ขอรหัสอีกครั้งใน',
-    unitLabel = 'นาที',
+    refcodeLabel = "หมายเลขอ้างอิง",
+    resendLabel = "ขอรหัสอีกครั้งใน",
+    unitLabel = "นาที",
     onResend,
-    resendBtnText = 'ขอรหัสอีกครั้ง',
+    resendBtnText = "ขอรหัสอีกครั้ง",
     timeRemain = 0,
     isInvalid = false,
-  } = props
+  } = props;
 
   const renderResendTimer = () => {
     if (timeRemain > 0) {
@@ -44,9 +44,9 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
         <StyledTimmer>
           <Box
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
               gap: 1,
             }}
           >
@@ -55,28 +55,28 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
             <Lead1 text={unitLabel} color={Colors.royalBlue} />
           </Box>
         </StyledTimmer>
-      )
+      );
     } else {
       return (
         <Box
           sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             gap: 1,
           }}
         >
           <OutlinedBtn bdSize="md" onClick={onResend} text={resendBtnText} width="fit" />
         </Box>
-      )
+      );
     }
-  }
+  };
 
   return (
     <Box
       sx={{
-        display: 'flex',
-        flexDirection: 'column',
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Box>
@@ -90,9 +90,9 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
       <StyledRefCode>
         <Box
           sx={{
-            display: 'flex',
-            alignItems: 'end',
-            justifyContent: 'center',
+            display: "flex",
+            alignItems: "end",
+            justifyContent: "center",
             gap: 1,
           }}
         >
@@ -102,21 +102,21 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
       </StyledRefCode>
       {renderResendTimer()}
     </Box>
-  )
-}
+  );
+};
 
-const StyledTextError = styled('div')`
+const StyledTextError = styled("div")`
   margin-top: 12px;
   text-align: center;
-`
+`;
 
-const StyledRefCode = styled('div')`
+const StyledRefCode = styled("div")`
   margin-top: 48px;
   text-align: center;
-`
+`;
 
-const StyledTimmer = styled('div')`
+const StyledTimmer = styled("div")`
   text-align: center;
-`
+`;
 
-export default OtpForm
+export default OtpForm;
