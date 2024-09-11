@@ -1,6 +1,7 @@
 import { Button, Stack } from '@mui/material';
 
-import { ToastProvider, useToast } from '../toast';
+import { ToastProvider, useToast } from '.';
+import { Meta } from '@storybook/react';
 
 export default {
   title: 'Toast',
@@ -16,7 +17,7 @@ export default {
       </ToastProvider>
     ),
   ]
-};
+} as Meta<typeof ToastProvider>;
 
 const ToastButtons = () => {
   const toast = useToast();
@@ -71,4 +72,3 @@ const ToastButtons = () => {
 const Template = () => <ToastButtons />;
 
 export const Default = Template.bind({});
-Default.args = {};

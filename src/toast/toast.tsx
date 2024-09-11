@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Backdrop, Box, IconButton, Paper, Snackbar, SnackbarOrigin, Stack, SxProps, Theme } from "@mui/material";
-import { ToastAlignment, ToastStyle, ToastType } from "./toast.type";
+import { ToastAlignment, ToastAlignmentEnum, ToastCloseReason, ToastPosition, ToastPositionEnum, ToastStyle, ToastType } from "./toast.type";
 import {
   AttentionNotificationIcon,
   CloseNotificationIcon,
@@ -11,21 +11,6 @@ import {
 } from "../icons";
 import { Colors } from "../colors";
 import { P1 } from "../components/font";
-
-export enum ToastCloseReason {
-  ClickAway = 'clickaway',
-}
-
-export enum ToastPositionEnum {
-  TopLeft = 'top-left',
-  TopCenter = 'top-center',
-  TopRight = 'top-right',
-  BottomLeft = 'bottom-left',
-  BottomCenter = 'bottom-center',
-  BottomRight = 'bottom-right',
-}
-
-export type ToastPosition = typeof ToastPositionEnum[keyof typeof ToastPositionEnum];
 
 const getPosition = (position?: ToastPosition): SnackbarOrigin => {
   if (position && Object.values(ToastPositionEnum).includes(position as ToastPositionEnum)) {
@@ -47,11 +32,11 @@ const getPosition = (position?: ToastPosition): SnackbarOrigin => {
 
 const getAlignment = (alignment: ToastAlignment) => {
   switch (alignment) {
-    case ToastAlignment.Top:
+    case ToastAlignmentEnum.Top:
       return "flex-start";
-    case ToastAlignment.Center:
+    case ToastAlignmentEnum.Center:
       return "center";
-    case ToastAlignment.Bottom:
+    case ToastAlignmentEnum.Bottom:
       return "flex-end";
     default:
       return "center";
@@ -78,7 +63,7 @@ const Toast = ({
   open = false,
   type = ToastType.Error,
   style = ToastStyle.Fill,
-  alignment = ToastAlignment.Center,
+  alignment = ToastAlignmentEnum.Center,
   showCloseButton = true,
   showBackdrop = false,
   elevation = 6,

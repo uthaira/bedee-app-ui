@@ -11,8 +11,25 @@ export enum ToastStyle {
   Fill = 'FILL'
 }
 
-export enum ToastAlignment {
+export enum ToastAlignmentEnum {
   Top = 'top',
   Center = 'center',
   Bottom = 'bottom'
 }
+
+export enum ToastCloseReason {
+  ClickAway = 'clickaway',
+}
+
+export enum ToastPositionEnum {
+  TopLeft = 'top-left',
+  TopCenter = 'top-center',
+  TopRight = 'top-right',
+  BottomLeft = 'bottom-left',
+  BottomCenter = 'bottom-center',
+  BottomRight = 'bottom-right',
+}
+
+
+export type ToastAlignment = `${ToastAlignmentEnum}`;
+export type ToastPosition = `${ToastPositionEnum}`;
