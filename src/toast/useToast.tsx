@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { ToastContext } from "./ToastContext";
-import { ToastPosition } from "./toast";
-import { ToastAlignment } from "./toast.type";
+import { ToastAlignment, ToastPosition } from "./toast.type";
 
 const useToast = ({
   position: defaultPosition,
