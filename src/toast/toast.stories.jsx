@@ -41,11 +41,28 @@ const ToastButtons = () => {
       })}>
         Show Warning Toast
       </Button>
+      <Button variant="contained" color="success" onClick={() => toast.success('Success Message with alignment top', {
+        position: 'top-right',
+        alignment: 'top',
+      })}>
+        Show Success Toast with alignment to top
+      </Button>
+
       <Button variant="contained" color="success" onClick={() => toast.success('Success Message with not showing close button', {
         position: 'top-right',
         showCloseButton: false,
+        alignment: 'top',
       })}>
         Show Success Toast with not showing close button
+      </Button>
+
+      <Button variant="contained" color="error" onClick={() => toast.error('Error Message with backdrop', {
+        position: 'top-center',
+        showCloseButton: true,
+        alignment: 'center',
+        showBackdrop: true,
+      })}>
+        Show Error Toast with Backdrop
       </Button>
     </Stack>
   );

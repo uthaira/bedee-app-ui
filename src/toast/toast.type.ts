@@ -10,3 +10,9 @@ export enum ToastStyle {
   Plain = 'PLAIN',
   Fill = 'FILL'
 }
+
+export enum ToastAlignment {
+  Top = 'top',
+  Center = 'center',
+  Bottom = 'bottom'
+}
