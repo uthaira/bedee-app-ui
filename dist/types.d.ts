@@ -125,6 +125,7 @@ interface OtpFormProps {
     unitLabel?: string;
     resendBtnText?: string;
     timeRemain: number;
+    isInvalid?: boolean;
 }
 declare const OtpForm: React__default.FC<OtpFormProps>;
 
@@ -159,6 +160,7 @@ interface IOTP {
     length: number;
     value: string;
     onChange: (val: string) => void;
+    isInvalid: boolean;
 }
 declare const OtpInput: (props: IOTP) => react_jsx_runtime.JSX.Element;
 
@@ -805,6 +807,8 @@ declare const ThaiQrIcon: ({ width, height }: {
     height?: number | undefined;
 }) => react_jsx_runtime.JSX.Element;
 
+declare const ConsentTcTpReview: React$1.FC<React$1.SVGProps<SVGSVGElement>>;
+
 declare const toPattern: (value: string, pattern: string) => string;
 declare const clearPattern: (text?: string, ch?: string) => string;
 declare const removeZeroPrefix: (phoneNumber: string) => string;
@@ -914,6 +918,8 @@ interface ConsentData {
 }
 interface ConsentContextType {
     consentData: ConsentData | null;
+    setConsentData: (consentData: ConsentData) => void;
+    isRequiredFetchConsent: boolean;
 }
 interface ConsentProviderProps {
     children: React__default.ReactNode;
@@ -1101,4 +1107,4 @@ interface IToast {
 }
 declare const Toast: ({ text, open, type, style, alignment, showCloseButton, showBackdrop, elevation, duration, position, onClose, sx, }: IToast) => react_jsx_runtime.JSX.Element;
 
-export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon$1 as CalendarIcon, CameraFrame, CameraFrameOverlay, CameraIcon, CameraViewPort, ChatIcon, Check as CheckIcon, ChestPainIcon, ChevronRightIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, Consent, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, CornerMark, CouponIcon, DOBPicker as DOBPickerInput, CalendarIcon as DateIcon, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DrugsIcon, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, IdCardFrame, IdCardIcon, IdCardVerified, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, JCBIcon, KycCamera, KycStepIcon, Language, LanguageSwitch, Lead1, Lead2, LineIcon, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, MasterCardIcon, MedicalCertificateIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PassportFrame, PassportIcon, PassportVerified, Icon$2 as PaymentIcon, PaymentMethod, PhoneIcon, PhoneNoForm as PhoneNumberForm, PhoneOutgoingIcon, PhotoIcon, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, ProviderAvatar, ProviderIcon, ProviderSection, RadioButton, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelectionCard, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, StepList, StepListItem, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TakePhotoIcon, TeleIcon, TextArea, TextInput, ThaiQrIcon, Tiny, Toast, type ToastAlignment, ToastAlignmentEnum, ToastCloseReason, type ToastPosition, ToastPositionEnum, ToastProvider, ToastStyle, ToastType, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, VideoIcon, VisaIcon, WarningIcon, WarningNotificationIcon, WeaknessIcon, useCameraViewport, useFileUploader, useToast, useViewportHeight };
+export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon$1 as CalendarIcon, CameraFrame, CameraFrameOverlay, CameraIcon, CameraViewPort, ChatIcon, Check as CheckIcon, ChestPainIcon, ChevronRightIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, Consent, ConsentTcTpReview, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, CornerMark, CouponIcon, DOBPicker as DOBPickerInput, CalendarIcon as DateIcon, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DrugsIcon, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, Globe, H1, H2, H3, H4, H5, H6, type HeadingProps, IdCardFrame, IdCardIcon, IdCardVerified, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, JCBIcon, KycCamera, KycStepIcon, Language, LanguageSwitch, Lead1, Lead2, LineIcon, LoadingWidget, Logo as LogoIcon, manageAuth as ManageAuth, MasterCardIcon, MedicalCertificateIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PassportFrame, PassportIcon, PassportVerified, Icon$2 as PaymentIcon, PaymentMethod, PhoneIcon, PhoneNoForm as PhoneNumberForm, PhoneOutgoingIcon, PhotoIcon, PinForm, PinKeyBoard as PinKeyboard, ProfileHeader, ProviderAvatar, ProviderIcon, ProviderSection, RadioButton, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelectionCard, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, StepList, StepListItem, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TakePhotoIcon, TeleIcon, TextArea, TextInput, ThaiQrIcon, Tiny, Toast, type ToastAlignment, ToastAlignmentEnum, ToastCloseReason, type ToastPosition, ToastPositionEnum, ToastProvider, ToastStyle, ToastType, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, VideoIcon, VisaIcon, WarningIcon, WarningNotificationIcon, WeaknessIcon, useCameraViewport, useFileUploader, useToast, useViewportHeight };
