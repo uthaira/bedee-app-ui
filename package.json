@@ -15,7 +15,7 @@
     "build-storybook": "storybook build",
     "dev": "npm run storybook",
     "build": "npm run build-storybook",
-    "publish": "./publish.sh"
+    "publish-package": "./publish.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.23.6",
