@@ -35,11 +35,27 @@ export const randomString = (length: number) => {
   return result;
 };
 
-export const formatPriceWithCommas = (price: number, currentcy: string = '฿' , isThai : boolean = false): string => {
-  if(isThai){
-    return `${price.toLocaleString('en-US')} ${currentcy}`
+// export const formatPriceWithCommas = (price: number, currentcy: string = '฿' , isThai : boolean = false): string => {
+//   if(isThai){
+//     return `${price.toLocaleString('en-US')} ${currentcy}`
+//   }
+  
+// };
+
+export const formatPrice = (price: number) => {
+  return `฿ ${price.toLocaleString('en-US')}`
+}
+
+export const formatFullPrice = (price: number, isThai: boolean = false) => {
+  const formattedPrice = price.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits:2
+  });
+
+  if (isThai) {
+    return `${formattedPrice} บาท`;
   }
-  return `${currentcy} ${price.toLocaleString('en-US')}`
+  return `${formattedPrice} THB`;
 };
 
 export const to2Digits = (val: number) => {

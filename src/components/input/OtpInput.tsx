@@ -150,7 +150,10 @@ const OtpInput = (props: IOTP) => {
             inputRef={(ele) => {
               inputRefs.current[index] = ele;
             }}
-            inputProps={{ style: { textAlign: 'center', color: Colors.formTextActive } }}
+            inputProps={{
+              style: { textAlign: 'center', color: Colors.formTextActive },
+              placeholder: '-',
+            }}
             onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) =>
               handleKeyDown(event, index)
             }
@@ -186,6 +189,10 @@ const CustomTextField = styled(TextField)(({ hasValue }: { hasValue: boolean }) 
     fontWeight: 600,
     lineHeight: "28px",
     textAlign: "center",
+    "&::placeholder": {
+      color: Colors.gray7,
+      opacity: 1
+    },
   },
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
