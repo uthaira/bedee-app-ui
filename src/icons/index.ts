@@ -73,6 +73,9 @@ import JCBIcon from "./payment/JCBIcon";
 import MasterCardIcon from "./payment/MasterCardIcon";
 import ThaiQrIcon from "./payment/ThaiQrIcon";
 
+// consent
+import ConsentTcTpReview from "./consent/ConsentTcTpReview";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -137,4 +140,5 @@ export {
   JCBIcon,
   MasterCardIcon,
   ThaiQrIcon,
+  ConsentTcTpReview
 };
