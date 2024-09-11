@@ -1,23 +1,20 @@
-import { useEffect, useState } from "react";
-import { ConsentData } from "./consentContext";
-import { Consent } from ".";
+import { useEffect, useState } from 'react';
+import { Consent } from '.';
 
- const withConsent = (Component: React.ComponentType) => {
+const withConsent = (Component: React.ComponentType) => {
   return (props: any) => {
     const { consentData } = Consent.useConsent();
 
     useEffect(() => {
       const redirectUrl = window.location.href;
-      if (!consentData?.medicalTreatmentConsent) {
-        window.location.href = `/home/consent/start/?redirectUrl=${redirectUrl}`
-        return
-      } 
+      if (consentData && !consentData?.medicalTreatmentConsent) {
+        window.location.href = `/home/consent/start?consentType=Consult&redirectUrl=${redirectUrl}`;
+        return;
+      }
     }, [consentData]);
 
-    return (
-      <Component {...props} />
-    );
+    return <Component {...props} />;
   };
 };
 
-export default withConsent
+export default withConsent;
