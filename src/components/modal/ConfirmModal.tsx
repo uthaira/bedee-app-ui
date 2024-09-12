@@ -103,6 +103,7 @@ const DescriptionTextStyled = styled(P1)(() => ({
   color: "#4A5568",
   display: "flex",
   textAlign: "center",
+  whiteSpace: "pre-line"
 }))
 
 const XCloseButtonStyled = styled(IconButton)(() => ({

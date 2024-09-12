@@ -49,6 +49,7 @@ const DialogModal: React.FC<DialogModalProps> = ({
         sx: {
           border: "solid 1px gray",
           bgcolor: 'transparent',
+          outline: 'none',
         }
       }}
     >
@@ -60,7 +61,7 @@ const DialogModal: React.FC<DialogModalProps> = ({
               sx={{ padding: '4px' }}
               onClick={() => handleListItemClick(option.id)} key={option.id}
             >
-                <ListItemText sx={{ textAlign: 'center' }} primary={option.title} />
+              <ListItemText sx={{ textAlign: 'center' }} primary={option.title} />
             </ListItem>
             {index + 1 < options.length && (
               <Divider component="li" />
@@ -76,7 +77,7 @@ const DialogModal: React.FC<DialogModalProps> = ({
             sx={{ padding: '4px' }}
             onClick={() => handleClose()}
           >
-              <ListItemText sx={{ textAlign: 'center' }} primary={cancelText} />
+            <ListItemText sx={{ textAlign: 'center' }} primary={cancelText} />
           </ListItem>
         </StyledList>
       )}

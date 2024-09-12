@@ -76,6 +76,11 @@ import ThaiQrIcon from "./payment/ThaiQrIcon";
 // consent
 import ConsentTcTpReview from "./consent/ConsentTcTpReview";
 
+//modal
+import PaymentErrorImg from "./modal/PaymentErrorImg";
+import PaymentSuccessImg from "./modal/PaymentSuccessImg";
+import DoctorUnavailableImg from "./modal/DoctorUnavailableImg";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -140,5 +145,8 @@ export {
   JCBIcon,
   MasterCardIcon,
   ThaiQrIcon,
-  ConsentTcTpReview
+  ConsentTcTpReview,
+  PaymentErrorImg,
+  PaymentSuccessImg,
+  DoctorUnavailableImg,
 };

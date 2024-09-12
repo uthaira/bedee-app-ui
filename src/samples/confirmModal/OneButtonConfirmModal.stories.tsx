@@ -13,7 +13,8 @@ export const OneButtonConfirmModal = () => {
     <Container>
       <ConfirmModal
         title="One Button Example"
-        message="This modal has one primary button."
+        message="This modal has one primary button.
+        Second line"
         image={<ExampleImgModal />}
         isVisible={isOpen}
         isCloseIcon={true}
