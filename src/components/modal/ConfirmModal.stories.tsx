@@ -1,18 +1,18 @@
 import { Meta, StoryObj } from "@storybook/react"
-import BaseModal from "./BaseModal"
+import ConfirmModal from "./ConfirmModal"
 import ExampleImgModal from "../../icons/ExampleImgModal"
 
 export default {
-  title: "Components/BaseModal",
-  component: BaseModal,
-} as Meta<typeof BaseModal>
+  title: "Components/ConfirmModal",
+  component: ConfirmModal,
+} as Meta<typeof ConfirmModal>
 
-type BaseModalStory = StoryObj<typeof BaseModal>
+type ConfirmModalStory = StoryObj<typeof ConfirmModal>
 
-export const Default: BaseModalStory = {
+export const Default: ConfirmModalStory = {
   args: {
     title: "Example Modal Title",
-    message: "This is an example message for the BaseModal component.",
+    message: "This is an example message for the ConfirmModal component.",
     isVisible: true,
     isCloseIcon: true,
     handleClose: () => console.log("Modal closed"),

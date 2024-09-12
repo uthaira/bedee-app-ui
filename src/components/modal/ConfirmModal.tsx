@@ -5,7 +5,7 @@ import { CloseIcon } from "../../icons"
 import { BdPrimaryButton, BdSecondaryButton } from "../button"
 import neutral from "../../colors/neutral"
 
-interface BaseModalProps {
+interface ConfirmModalProps {
   title: string
   message: string
   isVisible: boolean
@@ -18,7 +18,7 @@ interface BaseModalProps {
   image?: React.ReactNode
 }
 
-const BaseModal = ({
+const ConfirmModal = ({
   title,
   message,
   isVisible,
@@ -29,7 +29,7 @@ const BaseModal = ({
   textPrimaryButton,
   textSecondaryButton,
   image,
-}: BaseModalProps) => {
+}: ConfirmModalProps) => {
   return (
     <Modal open={isVisible}>
       <ModalStyledBox>
@@ -80,7 +80,7 @@ const ModalContent = ({ title, message }: ContentProps) => (
   </Stack>
 )
 
-export default BaseModal
+export default ConfirmModal
 
 const ModalStyledBox = styled(Stack)(({ theme }) => ({
   position: "absolute",
