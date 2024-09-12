@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Pull the latest changes from the main branch
+echo "Pulling the latest changes from the main branch..."
+git pull origin main
+
 # Update patch version in package.json
 echo "Updating patch version in package.json..."
 npm version patch --no-git-tag-version
