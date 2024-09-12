@@ -137,6 +137,8 @@ const Toast = ({
             backgroundColor,
             padding: 2,
             borderRadius: 2,
+            width: '100%',
+            maxWidth: '400px',
             ...sx,
           }}
         >
