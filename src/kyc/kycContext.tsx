@@ -67,8 +67,8 @@ export const KycProvider: React.FC<{ children: React.ReactNode }> = ({
         if (!onCheckKyc) return;
 
         const kycStatus = await onCheckKyc();
-        if (!kycStatus) {
-          setKycStatus(false);
+        if (kycStatus) {
+          setKycStatus(true);
         } else if (kycUrl) {
           checkAndRedirectForKyc(kycUrl, redirectUrl || '');
         }
