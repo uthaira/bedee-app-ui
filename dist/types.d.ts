@@ -928,6 +928,12 @@ declare const Authentication: {
     withAuth: (WrappedComponent: React$1.FC) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
+interface IWithConsentOptions {
+    onFetchConsent?: () => Promise<any>;
+    consentUrl?: string;
+    redirectUrl?: string;
+}
+
 interface ConsentData {
     time: string;
     version: number;
@@ -948,7 +954,7 @@ interface ConsentProviderProps {
 declare const Consent: {
     ConsentProvider: React$1.FC<ConsentProviderProps>;
     useConsent: () => ConsentContextType;
-    withConsent: (Component: React.ComponentType) => (props: any) => react_jsx_runtime.JSX.Element;
+    withConsent: (Component: React.ComponentType, options?: IWithConsentOptions) => (props: any) => react_jsx_runtime.JSX.Element;
 };
 
 interface LanguageContextProps {
