@@ -1,14 +1,39 @@
 import { useEffect, useState } from 'react';
-import { Consent } from '.';
+import useConsent from './useConsent';
+import { ConsentData } from './consentContext';
 
-const withConsent = (Component: React.ComponentType) => {
+export interface IWithConsentOptions {
+  onFetchConsent?: () => Promise<any>;
+  consentUrl?: string;
+  redirectUrl?: string;
+}
+
+const withConsent = (
+  Component: React.ComponentType,
+  options: IWithConsentOptions = {}
+) => {
   return (props: any) => {
-    const { consentData } = Consent.useConsent();
+    const { consentData, setConsentData, isRequiredFetchConsent } =
+      useConsent();
+
+    const { onFetchConsent, consentUrl, redirectUrl } = options;
 
     useEffect(() => {
-      const redirectUrl = window.location.href;
+      if (isRequiredFetchConsent) {
+        onFetchConsent?.().then((data: ConsentData) => {
+          setConsentData(data);
+        });
+      }
+    }, [isRequiredFetchConsent]);
+
+    useEffect(() => {
+      const redirectToUrlValue = redirectUrl || window.location.href;
+
       if (consentData && !consentData?.medicalTreatmentConsent) {
-        window.location.href = `/home/consent/start?consentType=Consult&redirectUrl=${redirectUrl}`;
+        const composedUrl = new URL(consentUrl ?? '');
+        composedUrl.searchParams.append('redirectUrl', redirectToUrlValue);
+
+        window.location.replace(composedUrl.toString());
         return;
       }
     }, [consentData]);
