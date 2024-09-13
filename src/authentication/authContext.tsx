@@ -70,6 +70,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       const isAccessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken || '');
       const refreshTokenExpired = ValidateOAuthToken.checkIsTokenExpired(refreshToken || '');
       if (isAccessTokenExpired || refreshTokenExpired) {
+        Cookie.removeCookie('accessToken');
         setIsAuthenticated(true);
         setIsRequiredPin(true);
       }

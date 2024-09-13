@@ -38,7 +38,6 @@ const ConfirmModal = ({
             <CloseIcon />
           </XCloseButtonStyled>
         )}
-
         <Stack gap={2}>
           {image && (
             <Box display="flex" justifyContent="center">
@@ -92,6 +91,10 @@ const ModalStyledBox = styled(Stack)(({ theme }) => ({
   alignItems: "center",
   padding: "64px 16px 16px 16px",
   borderRadius: "12px",
+  outline: "none", // This removes the outline
+  "&:focus-visible": {
+    outline: "none", // This ensures there's no focus outline when the modal is clicked
+  },
 }))
 
 const TitleTextStyled = styled(H5)(() => ({
