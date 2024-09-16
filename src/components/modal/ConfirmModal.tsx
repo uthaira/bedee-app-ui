@@ -16,6 +16,7 @@ interface ConfirmModalProps {
   textPrimaryButton?: string
   textSecondaryButton?: string
   image?: React.ReactNode
+  padding?: string
 }
 
 const ConfirmModal = ({
@@ -29,10 +30,11 @@ const ConfirmModal = ({
   textPrimaryButton,
   textSecondaryButton,
   image,
+  padding = "64px 16px 16px 16px",
 }: ConfirmModalProps) => {
   return (
     <Modal open={isVisible}>
-      <ModalStyledBox>
+      <ModalStyledBox padding={padding}>
         {isCloseIcon && (
           <XCloseButtonStyled onClick={handleClose}>
             <CloseIcon />
@@ -81,7 +83,7 @@ const ModalContent = ({ title, message }: ContentProps) => (
 
 export default ConfirmModal
 
-const ModalStyledBox = styled(Stack)(({ theme }) => ({
+const ModalStyledBox = styled(Stack)<{ padding: string }>(({ padding }) => ({
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -89,7 +91,7 @@ const ModalStyledBox = styled(Stack)(({ theme }) => ({
   backgroundColor: neutral.white,
   minWidth: "320px",
   alignItems: "center",
-  padding: "64px 16px 16px 16px",
+  padding: padding,
   borderRadius: "12px",
   outline: "none", // This removes the outline
   "&:focus-visible": {
