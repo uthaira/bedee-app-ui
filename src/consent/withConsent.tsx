@@ -13,8 +13,7 @@ const withConsent = (
   options: IWithConsentOptions = {}
 ) => {
   return (props: any) => {
-    const { consentData, setConsentData, isRequiredFetchConsent } =
-      useConsent();
+    const { consentData, setConsentData, isRequiredFetchConsent } = useConsent();
 
     const { onFetchConsent, consentUrl, redirectUrl } = options;
 
@@ -37,6 +36,10 @@ const withConsent = (
         return;
       }
     }, [consentData]);
+
+    if (!consentData || !consentData?.medicalTreatmentConsent) {
+      return null;
+    }
 
     return <Component {...props} />;
   };
