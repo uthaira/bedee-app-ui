@@ -957,7 +957,7 @@ interface ConsentProviderProps {
 declare const Consent: {
     ConsentProvider: React$1.FC<ConsentProviderProps>;
     useConsent: () => ConsentContextType;
-    withConsent: (Component: React.ComponentType, options?: IWithConsentOptions) => (props: any) => react_jsx_runtime.JSX.Element;
+    withConsent: (Component: React.ComponentType, options?: IWithConsentOptions) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
 interface LanguageContextProps {
