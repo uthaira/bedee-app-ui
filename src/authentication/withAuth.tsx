@@ -9,6 +9,7 @@ const withAuth = (WrappedComponent: React.FC) => {
     useEffect(() => {
       if (isAuthenticated == null || isRequiredPin == null) return;
       const redirectUrl = window.location.href;
+
       if (!isAuthenticated) {
         Redirect.gotoLoginPhoneNumberPage(redirectUrl)
         return;
@@ -20,7 +21,7 @@ const withAuth = (WrappedComponent: React.FC) => {
       }
     }, [isAuthenticated, isRequiredPin]);
 
-    if (!isAuthenticated || isRequiredPin) {
+    if (isAuthenticated == null || isRequiredPin == null || !isAuthenticated || isRequiredPin) {
       return null;
     }
 
