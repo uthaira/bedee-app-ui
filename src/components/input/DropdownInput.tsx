@@ -4,11 +4,15 @@ import { styled, SxProps, Theme } from "@mui/material/styles";
 import { Colors } from "../../colors";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { P2 } from "../font";
 
 const StyledSelect = styled(Select)<{ backgroundColor?: string }>(
   ({ theme, backgroundColor }) => ({
+    "&.MuiInputBase-root": {
+      height: '56px',
+    },
     "& .MuiSelect-select": {
-      padding: "14px 16px",
+      padding: "15px 16px",
       color: Colors.gray7,
       borderRadius: "8px",
       fontSize: "14px",
@@ -22,8 +26,12 @@ const StyledSelect = styled(Select)<{ backgroundColor?: string }>(
     "&:hover > .MuiOutlinedInput-notchedOutline": {
       borderColor: Colors.primary001,
     },
-    "&.Mui-focused > .MuiOutlinedInput-notchedOutline": {
-      borderColor: Colors.primary001,
+    "&.Mui-focused": {
+      outline: 0,
+        
+      "& > .MuiOutlinedInput-notchedOutline": {
+        border: `1px solid ${Colors.primary001}`,
+      }
     },
     "&.Mui-disabled > .MuiOutlinedInput-notchedOutline": {
       borderColor: Colors.gray2,
@@ -67,6 +75,13 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
         IconComponent={ExpandMoreIcon}
         sx={inputSx}
         backgroundColor={backgroundColor}
+        displayEmpty
+        renderValue={(value: any) => {
+          if (!value) {
+            return <P2 text={props.placeholder ?? ''} color={Colors.gray4} />;
+          }
+          return value;
+        }}
         {...props}
       >
         {options.map((option) => (

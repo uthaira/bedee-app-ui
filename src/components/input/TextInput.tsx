@@ -10,12 +10,13 @@ const StyledTextField = styled(TextField)<{ backgroundColor?: string }>(
       borderRadius: "8px",
       fontSize: "14px",
       backgroundColor: backgroundColor ?? Colors.white,
+      height: '56px',
 
       "&.Mui-disabled": {
         backgroundColor: Colors.gray2,
       },
       "& input": {
-        padding: "15.44px 16px",
+        padding: "15px 16px",
       },
       "& fieldset": {
         borderColor: Colors.gray2,
@@ -23,8 +24,12 @@ const StyledTextField = styled(TextField)<{ backgroundColor?: string }>(
       "&:hover fieldset": {
         borderColor: Colors.primary001,
       },
-      "&.Mui-focused fieldset": {
-        borderColor: Colors.primary001,
+      "&.Mui-focused": {
+        outline: 0,
+        
+        "& fieldset": {
+          border: `1px solid ${Colors.primary001}`,
+        }
       },
       "&.Mui-disabled fieldset": {
         borderColor: Colors.gray2,
