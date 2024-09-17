@@ -99,6 +99,7 @@ interface InternationalPhoneProps {
     onChange?: (country: ICountriesPhone) => void;
     defaultCountry?: ICountriesPhone;
     countryList: ICountriesPhone[];
+    inputStyled?: React__default.CSSProperties;
 }
 declare const InternationalPhone: FC<InternationalPhoneProps>;
 
@@ -110,6 +111,7 @@ interface PhoneNoFormProps {
     isInvalid?: boolean;
     placeholder?: string;
     defaultCountry?: ICountriesPhone;
+    fontSize?: string;
 }
 declare const PhoneNoForm: React__default.FC<PhoneNoFormProps>;
 
@@ -153,6 +155,7 @@ interface InputProps {
     containerStyled?: React__default.CSSProperties;
     inputStyled?: React__default.CSSProperties;
     rightComponent?: React__default.ReactNode;
+    sx?: SxProps$1<Theme$1>;
 }
 declare const MobileInput: React__default.FC<InputProps>;
 
