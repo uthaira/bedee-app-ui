@@ -22,6 +22,7 @@ export const PhoneNumberFormTemplete: PhoneNumberFormStory = {
     },
     onChangeMobile: (mobile: string) => {
       console.log('mobile-->',mobile)
-    }
+    },
+    fontSize: '14px',
   },
 }

@@ -12,6 +12,7 @@ interface PhoneNoFormProps {
   isInvalid?: boolean;
   placeholder?: string;
   defaultCountry?: ICountriesPhone;
+  fontSize?: string;
 }
 
 const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
@@ -23,6 +24,7 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
     mobile,
     placeholder = '',
     defaultCountry,
+    fontSize
   } = props;
 
   return (
@@ -41,6 +43,9 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
               countryList={countryList}
               onChange={onChangeCountry}
               defaultCountry={defaultCountry}
+              inputStyled={{
+                fontSize: fontSize ?? '16px',
+              }}
             />
           </Box>
         }
@@ -49,6 +54,7 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
         }}
         inputStyled={{
           background: 'none',
+          fontSize: fontSize ?? '16px',
         }}
       />
     </Phone>
