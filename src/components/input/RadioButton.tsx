@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { Check as CheckIcon } from "@mui/icons-material";
 import { Colors } from "../../colors";
+import { BaseText } from "../font";
 
 interface RadioButtonProps {
   value?: boolean | null;
@@ -21,6 +22,7 @@ interface RadioButtonProps {
   unCheckStyle?: React.CSSProperties;
   fontSize?: number;
   sx?: SxProps<Theme>;
+  errorMessage?: string;
 }
 
 const RadioButton: React.FC<RadioButtonProps> = (props) => {
@@ -34,58 +36,71 @@ const RadioButton: React.FC<RadioButtonProps> = (props) => {
     unCheckStyle,
     fontSize,
     sx,
+    errorMessage,
   } = props;
 
   return (
-    <StyledBox onClick={onPress} disabled={disabled}>
-      <Radio
-        checked={!!value}
-        onClick={onPress}
-        disabled={disabled}
-        sx={sx}
-        icon={
-          <Box
-            sx={{
-              ...unCheckStyle,
-              width: 24,
-              height: 24,
-              borderRadius: "50%",
-              backgroundColor: Colors.gray2,
-            }}
-          />
-        }
-        checkedIcon={
-          <IconButton
-            sx={{
-              ...checkedStyle,
-              width: 24,
-              height: 24,
-              backgroundColor: color,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <CheckIcon sx={{ color: "white", width: 16, height: 16 }} />
-          </IconButton>
-        }
-      />
-      {message &&
-        (typeof message === "string" ? (
-          <Typography
-            sx={{
-              ml: 1,
-              fontSize: fontSize ?? 16,
-              color: "#000A0A",
-              fontWeight: 600,
-            }}
-          >
-            {message}
-          </Typography>
-        ) : (
-          message
-        ))}
-    </StyledBox>
+    <Box>
+      <StyledBox onClick={onPress} disabled={disabled}>
+        <Radio
+          checked={!!value}
+          onClick={onPress}
+          disabled={disabled}
+          sx={sx}
+          icon={
+            <Box
+              sx={{
+                ...unCheckStyle,
+                width: 24,
+                height: 24,
+                borderRadius: "50%",
+                backgroundColor: Colors.gray2,
+              }}
+            />
+          }
+          checkedIcon={
+            <IconButton
+              sx={{
+                ...checkedStyle,
+                width: 24,
+                height: 24,
+                backgroundColor: color,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <CheckIcon sx={{ color: "white", width: 16, height: 16 }} />
+            </IconButton>
+          }
+        />
+        {message &&
+          (typeof message === "string" ? (
+            <Typography
+              sx={{
+                ml: 1,
+                fontSize: fontSize ?? 16,
+                color: "#000A0A",
+                fontWeight: 600,
+              }}
+            >
+              {message}
+            </Typography>
+          ) : (
+            message
+          ))}
+      </StyledBox>
+      {errorMessage && (
+        <BaseText
+          sx={{
+            color: Colors.error,
+            fontSize: "13px",
+            mt: "3px",
+          }}
+          text={errorMessage}
+        />
+      )}
+    </Box>
   );
 };
 

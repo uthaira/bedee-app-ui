@@ -98,11 +98,9 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
           variant="caption"
           component="p"
           sx={{
-            color: props.error ? "error.main" : "text.secondary",
-            mt: "3px",
-            ...(props.error ? {
-              color: Colors.error,
-              fontSize: "13px"}: {})
+            color: props.error ? Colors.error : "text.secondary",
+            fontSize: "13px",
+            mt: "3px"
           }}
         >
           {helperText}
