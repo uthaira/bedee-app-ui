@@ -12,6 +12,10 @@ const StyledTextField = styled(TextField)<{ backgroundColor?: string }>(
       backgroundColor: backgroundColor ?? Colors.white,
       height: '56px',
 
+      "&.Mui-error fieldset": {
+        borderColor: Colors.error,
+      },
+      
       "&.Mui-disabled": {
         backgroundColor: Colors.gray2,
       },
@@ -37,6 +41,10 @@ const StyledTextField = styled(TextField)<{ backgroundColor?: string }>(
     },
     "& .MuiFormHelperText-root": {
       marginLeft: 0,
+      "&.Mui-error": {
+          color: Colors.error,
+          fontSize: "13px"
+        }
     },
   })
 );
