@@ -23,3 +23,8 @@ export const gotoLoginPinPage = (url: string) => {
   const loginPath = '/home/pin-login';
   window.location.href = getNewUrl(url, loginPath)
 }
+
+export const gotoCreatePinPage = (url: string) => {
+  const path = '/home/pin-create';
+  window.location.href = getNewUrl(url, path)
+}

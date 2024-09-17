@@ -81,6 +81,7 @@ import PaymentErrorImg from "./modal/PaymentErrorImg";
 import PaymentSuccessImg from "./modal/PaymentSuccessImg";
 import DoctorUnavailableImg from "./modal/DoctorUnavailableImg";
 import PincodeLockImg from './modal/PincodeLockImg'
+import GetAccessImg from './modal/GetAccessImg'
 
 export {
   LogoIcon,
@@ -150,5 +151,6 @@ export {
   PaymentErrorImg,
   PaymentSuccessImg,
   DoctorUnavailableImg,
-  PincodeLockImg
+  PincodeLockImg,
+  GetAccessImg
 };
