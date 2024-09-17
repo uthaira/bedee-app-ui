@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       const isAccessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken || '');
       const refreshTokenExpired = ValidateOAuthToken.checkIsTokenExpired(refreshToken || '');
       if (isAccessTokenExpired || refreshTokenExpired) {
-        Cookie.removeCookie('accessToken');
+        Cookie.removeCookie('accessToken' , { path: '/'});
         setIsAuthenticated(true);
         setIsRequiredPin(true);
       }
@@ -81,7 +81,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (accessToken) {
       const accessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken);
       if (accessTokenExpired) {
-        Cookie.removeCookie('accessToken');
+        Cookie.removeCookie('accessToken' , { path: '/'});
         setIsRequiredPin(true);
         return;
       }
