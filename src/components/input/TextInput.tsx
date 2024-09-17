@@ -10,12 +10,13 @@ const StyledTextField = styled(TextField)<{ backgroundColor?: string }>(
       borderRadius: "8px",
       fontSize: "14px",
       backgroundColor: backgroundColor ?? Colors.white,
+      height: '56px',
 
       "&.Mui-disabled": {
         backgroundColor: Colors.gray2,
       },
       "& input": {
-        padding: "15.44px 16px",
+        padding: "15px 16px",
       },
       "& fieldset": {
         borderColor: Colors.gray2,

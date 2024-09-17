@@ -29,6 +29,7 @@ interface InternationalPhoneProps {
   onChange?: (country: ICountriesPhone) => void;
   defaultCountry?: ICountriesPhone;
   countryList: ICountriesPhone[];
+  inputStyled?: React.CSSProperties;
 }
 
 const SCROLL_POSITION_TO_SEE_DEFAULT_COUNTRY = 59;
@@ -37,6 +38,7 @@ const InternationalPhone: FC<InternationalPhoneProps> = ({
   onChange,
   defaultCountry = DEFAULT_COUNTRY_PHONE,
   countryList = [],
+  inputStyled
 }) => {
   const [selectedCountry, setSelectedCountry] =
     useState<ICountriesPhone>(defaultCountry);
@@ -140,7 +142,7 @@ const InternationalPhone: FC<InternationalPhoneProps> = ({
       <Typography
         data-testid='international-selected-code'
         fontWeight='500'
-        fontSize='16px'
+        fontSize={inputStyled?.fontSize ? inputStyled.fontSize : '16px'}
         borderLeft='1px solid #c3cad4'
         margin='6px 10px'
         paddingLeft='12px'

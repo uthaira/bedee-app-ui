@@ -23,6 +23,7 @@ export const Default: Story = {
   args: {
     label: "Select an option",
     helperText: "Please select an option from the dropdown",
+    placeholder: "Select an option",
     options: [
       { value: "option1", label: "Option 1" },
       { value: "option2", label: "Option 2" },

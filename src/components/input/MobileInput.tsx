@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { styled } from '@mui/material/styles';
+import { styled, SxProps, Theme } from '@mui/material/styles';
 import { InputBase } from '@mui/material';
 import { Format } from '../../utils';
 import { Colors } from '../../colors';
@@ -20,6 +20,7 @@ interface InputProps {
   containerStyled?: React.CSSProperties;
   inputStyled?: React.CSSProperties;
   rightComponent?: React.ReactNode;
+  sx?: SxProps<Theme>;
 }
 
 const MobileInput: React.FC<InputProps> = ({
