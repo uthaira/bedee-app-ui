@@ -24,8 +24,12 @@ const StyledTextField = styled(TextField)<{ backgroundColor?: string }>(
       "&:hover fieldset": {
         borderColor: Colors.primary001,
       },
-      "&.Mui-focused fieldset": {
-        borderColor: Colors.primary001,
+      "&.Mui-focused": {
+        outline: 0,
+        
+        "& fieldset": {
+          border: `1px solid ${Colors.primary001}`,
+        }
       },
       "&.Mui-disabled fieldset": {
         borderColor: Colors.gray2,

@@ -102,6 +102,10 @@ const Content = styled('div')({
   border: `1px solid ${Colors.gray2}`,
   display: 'flex',
 
+  '&:hover': {
+    border: `1px solid ${Colors.primary001}`,
+  },
+
   '&.active': {
     border: `1px solid ${Colors.primary001}`,
   },

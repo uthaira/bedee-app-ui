@@ -26,8 +26,12 @@ const StyledSelect = styled(Select)<{ backgroundColor?: string }>(
     "&:hover > .MuiOutlinedInput-notchedOutline": {
       borderColor: Colors.primary001,
     },
-    "&.Mui-focused > .MuiOutlinedInput-notchedOutline": {
-      borderColor: Colors.primary001,
+    "&.Mui-focused": {
+      outline: 0,
+        
+      "& > .MuiOutlinedInput-notchedOutline": {
+        border: `1px solid ${Colors.primary001}`,
+      }
     },
     "&.Mui-disabled > .MuiOutlinedInput-notchedOutline": {
       borderColor: Colors.gray2,
