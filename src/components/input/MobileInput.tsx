@@ -15,6 +15,7 @@ interface InputProps {
   isNumber?: boolean;
   limit?: number;
   onChange?: (value: string, name: string, tag?: string) => void;
+  onBlur?: (value: string, name: string, tag?: string) => void;
   invalid?: boolean;
   type?: string;
   containerStyled?: React.CSSProperties;
@@ -34,6 +35,7 @@ const MobileInput: React.FC<InputProps> = ({
   isNumber,
   limit = 900000,
   onChange = () => { },
+  onBlur = () => { },
   invalid,
   type = 'text',
   containerStyled,
@@ -85,7 +87,10 @@ const MobileInput: React.FC<InputProps> = ({
         value={text}
         onChange={onValue}
         onFocus={onActive}
-        onBlur={onInactive}
+        onBlur={() => {
+          onBlur(text, name, tag);
+          onInactive();
+        }}
         style={inputStyled}
       />
       <Invalid>{invalid || ''} </Invalid>
