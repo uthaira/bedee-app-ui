@@ -29,6 +29,7 @@ import IdCardIcon from "./IdCardIcon";
 import PassportIcon from "./PassportIcon";
 import KycStepIcon from "./KycStepIcon";
 import ChevronRightIcon from "./ChevronRight";
+import ArrowLeftIcon from "./ArrowLeftIcon";
 
 import CouponIcon from "./CouponIcon";
 import CameraIcon from "./CameraIcon";
@@ -139,6 +140,7 @@ export {
   KycStepIcon,
   CouponIcon,
   ChevronRightIcon,
+  ArrowLeftIcon,
   CameraIcon,
   IdCardVerified,
   PassportVerified,
