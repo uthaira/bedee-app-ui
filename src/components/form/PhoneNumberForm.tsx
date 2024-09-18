@@ -13,6 +13,7 @@ interface PhoneNoFormProps {
   placeholder?: string;
   defaultCountry?: ICountriesPhone;
   fontSize?: string;
+  onBlur?: (value: string, name: string, tag?: string) => void;
 }
 
 const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
@@ -24,7 +25,8 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
     mobile,
     placeholder = '',
     defaultCountry,
-    fontSize
+    fontSize,
+    onBlur
   } = props;
 
   return (
@@ -35,6 +37,7 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
         label={placeholder}
         value={mobile}
         onChange={onChangeMobile}
+        onBlur={onBlur}
         isNumber
         invalid={isInvalid}
         rightComponent={

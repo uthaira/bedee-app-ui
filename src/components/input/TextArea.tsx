@@ -89,6 +89,10 @@ const TextArea: React.FC<TextAreaProps> = ({
             "&.Mui-disabled fieldset": {
               borderColor: Colors.gray2,
             },
+
+            '&.Mui-error fieldset': {
+              borderColor: Colors.error,
+            },
           },
   
           '& .MuiInputBase-input::placeholder': {
@@ -105,6 +109,8 @@ const TextArea: React.FC<TextAreaProps> = ({
 
           '& .MuiFormHelperText-root.Mui-error': {
             marginLeft: 0,
+            color: Colors.error,
+            fontSize: "13px"
           },
 
           '& .MuiFormHelperText-contained.Mui-error': {

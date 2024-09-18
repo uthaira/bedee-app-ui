@@ -107,8 +107,9 @@ const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
           variant="caption"
           component="p"
           sx={{
-            color: error ? "error.main" : "text.secondary",
-            mt: "3px",
+            color: error ? Colors.error : "text.secondary",
+            fontSize: "13px",
+            mt: "3px"
           }}
         >
           {helperText}
