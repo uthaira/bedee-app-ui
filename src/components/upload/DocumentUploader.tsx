@@ -82,14 +82,24 @@ export default function DocumentUploader({
         ?.slice(0, maxFileCount - existingFileCount)
         ?.map(file => {
         const isMaxSize = file.size > maxFileSizeMB * 1024 * 1024;
+        let newFileName = file.name;
+
+        if (newFileName.startsWith('image.')) {
+          const fileExtension = newFileName.split('.').pop();
+          const baseFileName = newFileName.replace(`.${fileExtension}`, '');
+          newFileName = `${baseFileName}_${Date.now()}.${fileExtension}`;
+        }
+          
+        const newFile = new File([file], newFileName, { type: file.type });
+    
         return {
-          file,
-            id: Date.now() + Math.random(),
-            isUploaded: false,
-            isFailed: isMaxSize,
-            isInProgress: false,
-            errorMessage: isMaxSize ? errorMessageConfig.maxFileSizeErrorMessage : errorMessageConfig.networkErrorMessage,
-            imageUrl: URL.createObjectURL(file),
+          file: newFile,
+          id: Date.now() + Math.random(),
+          isUploaded: false,
+          isFailed: isMaxSize,
+          isInProgress: false,
+          errorMessage: isMaxSize ? errorMessageConfig.maxFileSizeErrorMessage : errorMessageConfig.networkErrorMessage,
+          imageUrl: URL.createObjectURL(file),
         }
       });
 
