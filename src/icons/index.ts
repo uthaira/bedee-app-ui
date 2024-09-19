@@ -84,6 +84,12 @@ import DoctorUnavailableImg from "./modal/DoctorUnavailableImg";
 import PincodeLockImg from './modal/PincodeLockImg'
 import GetAccessImg from './modal/GetAccessImg'
 
+//kycReject
+import KycRejectImg from "./kycReject/KycRejectImg";
+import KycExpireIcon from "./kycReject/KycExpireIcon";
+import KycBlurIcon from "./kycReject/KycBlurIcon";
+import KycInvalidIcon from "./kycReject/KycInvalidIcon";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -154,5 +160,9 @@ export {
   PaymentSuccessImg,
   DoctorUnavailableImg,
   PincodeLockImg,
-  GetAccessImg
+  GetAccessImg,
+  KycRejectImg,
+  KycExpireIcon,
+  KycBlurIcon,
+  KycInvalidIcon
 };
