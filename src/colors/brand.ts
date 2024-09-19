@@ -4,4 +4,5 @@ export default {
   royalBlue: '#1E6AF6',
   cherry: '#EE6E3A',
   offWhite: '#F7F8F9',
+  lightRed: '#FEE8E7'
 }
