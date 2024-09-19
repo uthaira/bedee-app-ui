@@ -36,3 +36,9 @@ export const Disabled: Story = {
     disabled: true
   }
 }
+
+export const WithError: Story = {
+  args: {
+    errorMessage: 'This is an error message'
+  }
+}

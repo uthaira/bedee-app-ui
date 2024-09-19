@@ -19,6 +19,11 @@ export const gotoLoginPhoneNumberPage = (url: string) => {
   window.location.href = getNewUrl(url, loginPath)
 }
 
+export const gotoWelcomePage = (url: string) => {
+  const loginPath = '/home/welcome';
+  window.location.href = getNewUrl(url, loginPath)
+}
+
 export const gotoLoginPinPage = (url: string) => {
   const loginPath = '/home/pin-login';
   window.location.href = getNewUrl(url, loginPath)

@@ -11,7 +11,7 @@ const withAuth = (WrappedComponent: React.FC) => {
       const redirectUrl = window.location.href;
 
       if (!isAuthenticated) {
-        Redirect.gotoLoginPhoneNumberPage(redirectUrl)
+        Redirect.gotoWelcomePage(redirectUrl)
         return;
       }
 

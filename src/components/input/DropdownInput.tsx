@@ -8,6 +8,9 @@ import { P2 } from "../font";
 
 const StyledSelect = styled(Select)<{ backgroundColor?: string }>(
   ({ theme, backgroundColor }) => ({
+    "&.Mui-error > .MuiOutlinedInput-notchedOutline": {
+      borderColor: Colors.error,
+    },
     "&.MuiInputBase-root": {
       height: '56px',
     },
@@ -95,8 +98,9 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
           variant="caption"
           component="p"
           sx={{
-            color: props.error ? "error.main" : "text.secondary",
-            mt: "3px",
+            color: props.error ? Colors.error : "text.secondary",
+            fontSize: "13px",
+            mt: "3px"
           }}
         >
           {helperText}
