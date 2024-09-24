@@ -30,6 +30,7 @@ import PassportIcon from "./PassportIcon";
 import KycStepIcon from "./KycStepIcon";
 import ChevronRightIcon from "./ChevronRight";
 import ArrowLeftIcon from "./ArrowLeftIcon";
+import ArrowRightProviderBadgeIcon from "./ArrowRightProviderBadge";
 
 import CouponIcon from "./CouponIcon";
 import CameraIcon from "./CameraIcon";
@@ -81,8 +82,8 @@ import ConsentTcTpReview from "./consent/ConsentTcTpReview";
 import PaymentErrorImg from "./modal/PaymentErrorImg";
 import PaymentSuccessImg from "./modal/PaymentSuccessImg";
 import DoctorUnavailableImg from "./modal/DoctorUnavailableImg";
-import PincodeLockImg from './modal/PincodeLockImg'
-import GetAccessImg from './modal/GetAccessImg'
+import PincodeLockImg from "./modal/PincodeLockImg";
+import GetAccessImg from "./modal/GetAccessImg";
 
 //kycReject
 import KycRejectImg from "./kycReject/KycRejectImg";
@@ -164,5 +165,6 @@ export {
   KycRejectImg,
   KycExpireIcon,
   KycBlurIcon,
-  KycInvalidIcon
+  KycInvalidIcon,
+  ArrowRightProviderBadgeIcon,
 };
