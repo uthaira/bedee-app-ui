@@ -16,6 +16,7 @@ type TextType =
   | 'tiny'
   | 'badges'
   | 'badgesBold'
+  | 'header1'
 
 type Style = {
   fontSize: number
@@ -93,6 +94,10 @@ export const BaseText = (props: BaseTextProps) => {
         fontSize: 12,
         fontWeight: 600,
       },
+      header1: {
+        fontSize: 18,
+        fontWeight: 600,
+      }
     }
 
     return bdType ? map[bdType] : { fontSize: 16, fontWeight: 400 }
