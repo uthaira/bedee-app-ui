@@ -91,6 +91,10 @@ import KycExpireIcon from "./kycReject/KycExpireIcon";
 import KycBlurIcon from "./kycReject/KycBlurIcon";
 import KycInvalidIcon from "./kycReject/KycInvalidIcon";
 
+import DeleteAccountIcon from "./deleteProfile/DeleteAccount";
+import DeleteAccountSuccessIcon from "./deleteProfile/DeleteAccountSuccess";
+import DeleteAccountEmailIcon from "./deleteProfile/DeleteAccountEmail";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -167,4 +171,7 @@ export {
   KycBlurIcon,
   KycInvalidIcon,
   ArrowRightProviderBadgeIcon,
+  DeleteAccountIcon,
+  DeleteAccountSuccessIcon,
+  DeleteAccountEmailIcon
 };
