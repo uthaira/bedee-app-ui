@@ -4,7 +4,7 @@ interface IconProps {
   size?: number;
 }
 
-const DeleteAccountIcon = ({ size = 1 }: IconProps) => {
+const DeleteAccountSuccessIcon = ({ size = 1 }: IconProps) => {
   const width = `${Math.ceil(250 * size)}`;
   const height = `${Math.ceil(264 * size)}`;
   return (
@@ -79,4 +79,4 @@ const DeleteAccountIcon = ({ size = 1 }: IconProps) => {
   );
 };
 
-export default DeleteAccountIcon;
+export default DeleteAccountSuccessIcon;
