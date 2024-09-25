@@ -57,7 +57,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       <TextField
         value={value}
         placeholder={placeholder}
-        inputProps={inputProps ?? { maxLength }}
+        inputProps={{ maxLength, ...inputProps }}
         helperText={helperText}
         error={error}
         rows={rows}
