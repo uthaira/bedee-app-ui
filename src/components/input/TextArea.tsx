@@ -18,6 +18,7 @@ export interface TextAreaProps {
   placeholderColor?: string;
   rows?: number;
   sx?: SxProps<Theme>;
+  inputProps: React.InputHTMLAttributes<HTMLTextAreaElement>;
   helperText?: string;
   error?: boolean;
   disabled?: boolean;
@@ -35,6 +36,7 @@ const TextArea: React.FC<TextAreaProps> = ({
   borderActiveColor,
   rows = DEFAULT_ROWS,
   sx,
+  inputProps,
   helperText,
   error,
   disabled = false,
@@ -55,7 +57,7 @@ const TextArea: React.FC<TextAreaProps> = ({
       <TextField
         value={value}
         placeholder={placeholder}
-        inputProps={{ maxLength }}
+        inputProps={{ maxLength, ...inputProps }}
         helperText={helperText}
         error={error}
         rows={rows}
