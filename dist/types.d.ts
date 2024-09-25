@@ -559,17 +559,17 @@ type LogoProps = {
 };
 declare const Logo: (props: LogoProps) => react_jsx_runtime.JSX.Element;
 
-type IconProps$z = {
+type IconProps$C = {
     size?: number;
     color?: string;
 };
-declare const Circle: (props: IconProps$z) => react_jsx_runtime.JSX.Element;
+declare const Circle: (props: IconProps$C) => react_jsx_runtime.JSX.Element;
 
-type IconProps$y = {
+type IconProps$B = {
     size?: number;
     color?: string;
 };
-declare const Del: (props: IconProps$y) => react_jsx_runtime.JSX.Element;
+declare const Del: (props: IconProps$B) => react_jsx_runtime.JSX.Element;
 
 declare const Remove: () => react_jsx_runtime.JSX.Element;
 
@@ -581,198 +581,198 @@ interface CloseIconProps {
 }
 declare function CloseIcon(props: CloseIconProps): react_jsx_runtime.JSX.Element;
 
+type IconProps$A = {
+    size?: number;
+    color?: string;
+};
+declare const Check: (props: IconProps$A) => react_jsx_runtime.JSX.Element;
+
+type IconProps$z = {
+    size?: number;
+    color?: string;
+};
+declare const CalendarIcon$1: (props: IconProps$z) => react_jsx_runtime.JSX.Element;
+
+type IconProps$y = {
+    size?: number;
+    color?: string;
+};
+declare const DocumentText: (props: IconProps$y) => react_jsx_runtime.JSX.Element;
+
 type IconProps$x = {
     size?: number;
     color?: string;
 };
-declare const Check: (props: IconProps$x) => react_jsx_runtime.JSX.Element;
+declare const EditIcon: (props: IconProps$x) => react_jsx_runtime.JSX.Element;
 
 type IconProps$w = {
     size?: number;
     color?: string;
 };
-declare const CalendarIcon$1: (props: IconProps$w) => react_jsx_runtime.JSX.Element;
+declare const UserIcon: (props: IconProps$w) => react_jsx_runtime.JSX.Element;
 
 type IconProps$v = {
     size?: number;
     color?: string;
 };
-declare const DocumentText: (props: IconProps$v) => react_jsx_runtime.JSX.Element;
+declare const Globe: (props: IconProps$v) => react_jsx_runtime.JSX.Element;
 
 type IconProps$u = {
     size?: number;
     color?: string;
 };
-declare const EditIcon: (props: IconProps$u) => react_jsx_runtime.JSX.Element;
+declare const Identification: (props: IconProps$u) => react_jsx_runtime.JSX.Element;
 
 type IconProps$t = {
     size?: number;
     color?: string;
 };
-declare const UserIcon: (props: IconProps$t) => react_jsx_runtime.JSX.Element;
+declare const PhoneIcon: (props: IconProps$t) => react_jsx_runtime.JSX.Element;
 
 type IconProps$s = {
     size?: number;
     color?: string;
 };
-declare const Globe: (props: IconProps$s) => react_jsx_runtime.JSX.Element;
+declare const ShieldCheckIcon: (props: IconProps$s) => react_jsx_runtime.JSX.Element;
 
 type IconProps$r = {
     size?: number;
     color?: string;
 };
-declare const Identification: (props: IconProps$r) => react_jsx_runtime.JSX.Element;
+declare const SpeakerphoneIcon: (props: IconProps$r) => react_jsx_runtime.JSX.Element;
 
 type IconProps$q = {
     size?: number;
     color?: string;
 };
-declare const PhoneIcon: (props: IconProps$q) => react_jsx_runtime.JSX.Element;
+declare const TrashbinIcon: (props: IconProps$q) => react_jsx_runtime.JSX.Element;
 
 type IconProps$p = {
     size?: number;
     color?: string;
 };
-declare const ShieldCheckIcon: (props: IconProps$p) => react_jsx_runtime.JSX.Element;
+declare const PhoneOutgoingIcon: (props: IconProps$p) => react_jsx_runtime.JSX.Element;
 
 type IconProps$o = {
     size?: number;
     color?: string;
 };
-declare const SpeakerphoneIcon: (props: IconProps$o) => react_jsx_runtime.JSX.Element;
+declare const Icon$3: (props: IconProps$o) => react_jsx_runtime.JSX.Element;
 
 type IconProps$n = {
     size?: number;
     color?: string;
 };
-declare const TrashbinIcon: (props: IconProps$n) => react_jsx_runtime.JSX.Element;
+declare const Icon$2: (props: IconProps$n) => react_jsx_runtime.JSX.Element;
 
 type IconProps$m = {
-    size?: number;
+    width?: number;
+    height?: number;
     color?: string;
 };
-declare const PhoneOutgoingIcon: (props: IconProps$m) => react_jsx_runtime.JSX.Element;
+declare const Icon$1: (props: IconProps$m) => react_jsx_runtime.JSX.Element;
 
 type IconProps$l = {
     size?: number;
     color?: string;
 };
-declare const Icon$3: (props: IconProps$l) => react_jsx_runtime.JSX.Element;
+declare const CalendarIcon: (props: IconProps$l) => react_jsx_runtime.JSX.Element;
 
 type IconProps$k = {
     size?: number;
     color?: string;
 };
-declare const Icon$2: (props: IconProps$k) => react_jsx_runtime.JSX.Element;
+declare const ChatIcon: (props: IconProps$k) => react_jsx_runtime.JSX.Element;
 
 type IconProps$j = {
-    width?: number;
-    height?: number;
+    size?: number;
     color?: string;
 };
-declare const Icon$1: (props: IconProps$j) => react_jsx_runtime.JSX.Element;
+declare const DrugsIcon: (props: IconProps$j) => react_jsx_runtime.JSX.Element;
 
 type IconProps$i = {
     size?: number;
     color?: string;
 };
-declare const CalendarIcon: (props: IconProps$i) => react_jsx_runtime.JSX.Element;
+declare const MedicalCertificateIcon: (props: IconProps$i) => react_jsx_runtime.JSX.Element;
 
 type IconProps$h = {
     size?: number;
     color?: string;
 };
-declare const ChatIcon: (props: IconProps$h) => react_jsx_runtime.JSX.Element;
+declare const PhotoIcon: (props: IconProps$h) => react_jsx_runtime.JSX.Element;
 
 type IconProps$g = {
     size?: number;
     color?: string;
 };
-declare const DrugsIcon: (props: IconProps$g) => react_jsx_runtime.JSX.Element;
+declare const TeleIcon: (props: IconProps$g) => react_jsx_runtime.JSX.Element;
 
 type IconProps$f = {
     size?: number;
     color?: string;
 };
-declare const MedicalCertificateIcon: (props: IconProps$f) => react_jsx_runtime.JSX.Element;
+declare const VideoIcon: (props: IconProps$f) => react_jsx_runtime.JSX.Element;
 
-type IconProps$e = {
-    size?: number;
-    color?: string;
-};
-declare const PhotoIcon: (props: IconProps$e) => react_jsx_runtime.JSX.Element;
-
-type IconProps$d = {
-    size?: number;
-    color?: string;
-};
-declare const TeleIcon: (props: IconProps$d) => react_jsx_runtime.JSX.Element;
-
-type IconProps$c = {
-    size?: number;
-    color?: string;
-};
-declare const VideoIcon: (props: IconProps$c) => react_jsx_runtime.JSX.Element;
-
-interface IconProps$b {
+interface IconProps$e {
     size?: number;
 }
-declare const IdCardIcon: (props: IconProps$b) => react_jsx_runtime.JSX.Element;
+declare const IdCardIcon: (props: IconProps$e) => react_jsx_runtime.JSX.Element;
 
-interface IconProps$a {
+interface IconProps$d {
     size?: number;
 }
-declare const PassportIcon: (props: IconProps$a) => react_jsx_runtime.JSX.Element;
+declare const PassportIcon: (props: IconProps$d) => react_jsx_runtime.JSX.Element;
 
-interface IconProps$9 {
+interface IconProps$c {
     size?: number;
 }
-declare const KycStepIcon: (props: IconProps$9) => react_jsx_runtime.JSX.Element;
+declare const KycStepIcon: (props: IconProps$c) => react_jsx_runtime.JSX.Element;
 
-type IconProps$8 = {
+type IconProps$b = {
     width?: number;
     height?: number;
     color?: string;
 };
-declare const ChevronRightIcon: (props: IconProps$8) => react_jsx_runtime.JSX.Element;
+declare const ChevronRightIcon: (props: IconProps$b) => react_jsx_runtime.JSX.Element;
 
-interface IconProps$7 {
+interface IconProps$a {
     size?: number;
     color?: string;
 }
-declare const ArrowLeftIcon: (props: IconProps$7) => react_jsx_runtime.JSX.Element;
+declare const ArrowLeftIcon: (props: IconProps$a) => react_jsx_runtime.JSX.Element;
 
 declare const ArrowRightProviderBadge: () => react_jsx_runtime.JSX.Element;
 
 declare const CouponIcon: () => react_jsx_runtime.JSX.Element;
 
-interface IconProps$6 {
+interface IconProps$9 {
     size?: number;
     color?: string;
 }
-declare const CameraIcon: (props: IconProps$6) => react_jsx_runtime.JSX.Element;
+declare const CameraIcon: (props: IconProps$9) => react_jsx_runtime.JSX.Element;
 
-interface IconProps$5 {
+interface IconProps$8 {
     size?: number;
 }
-declare const IdCardVerified: (props: IconProps$5) => react_jsx_runtime.JSX.Element;
+declare const IdCardVerified: (props: IconProps$8) => react_jsx_runtime.JSX.Element;
 
-interface IconProps$4 {
+interface IconProps$7 {
     size?: number;
 }
-declare const PassportVerified: (props: IconProps$4) => react_jsx_runtime.JSX.Element;
+declare const PassportVerified: (props: IconProps$7) => react_jsx_runtime.JSX.Element;
 
-type IconProps$3 = {
+type IconProps$6 = {
     width?: number;
     height?: number;
     color?: string;
 };
-declare const ProviderIcon: (props: IconProps$3) => react_jsx_runtime.JSX.Element;
+declare const ProviderIcon: (props: IconProps$6) => react_jsx_runtime.JSX.Element;
 
-type IconProps$2 = {
+type IconProps$5 = {
     size?: number;
 };
-declare const LineIcon: ({ size }: IconProps$2) => react_jsx_runtime.JSX.Element;
+declare const LineIcon: ({ size }: IconProps$5) => react_jsx_runtime.JSX.Element;
 
 declare const AggressionToOthersIcon: () => react_jsx_runtime.JSX.Element;
 
@@ -780,11 +780,11 @@ declare const ChestPainIcon: () => react_jsx_runtime.JSX.Element;
 
 declare const DyspneaIcon: () => react_jsx_runtime.JSX.Element;
 
-type IconProps$1 = {
+type IconProps$4 = {
     size?: number;
     color?: string;
 };
-declare const Icon: (props: IconProps$1) => react_jsx_runtime.JSX.Element;
+declare const Icon: (props: IconProps$4) => react_jsx_runtime.JSX.Element;
 
 declare const PalpitationIcon: () => react_jsx_runtime.JSX.Element;
 
@@ -818,11 +818,11 @@ declare const ErrorNotificationIcon: () => react_jsx_runtime.JSX.Element;
 
 declare const InfoNotificationIcon: () => react_jsx_runtime.JSX.Element;
 
-interface IconProps {
+interface IconProps$3 {
     size?: number;
     color?: string;
 }
-declare const SuccessNotificationIcon: (props: IconProps) => react_jsx_runtime.JSX.Element;
+declare const SuccessNotificationIcon: (props: IconProps$3) => react_jsx_runtime.JSX.Element;
 
 declare const WarningNotificationIcon: () => react_jsx_runtime.JSX.Element;
 
@@ -859,6 +859,21 @@ declare const KycExpireIcon: () => react_jsx_runtime.JSX.Element;
 declare const KycBlurIcon: () => react_jsx_runtime.JSX.Element;
 
 declare const KycInvalidIcon: () => react_jsx_runtime.JSX.Element;
+
+interface IconProps$2 {
+    size?: number;
+}
+declare const DeleteAccountIcon: ({ size }: IconProps$2) => react_jsx_runtime.JSX.Element;
+
+interface IconProps$1 {
+    size?: number;
+}
+declare const DeleteAccountSuccessIcon: ({ size }: IconProps$1) => react_jsx_runtime.JSX.Element;
+
+interface IconProps {
+    size?: number;
+}
+declare const DeleteAccountEmailIcon: ({ size }: IconProps) => react_jsx_runtime.JSX.Element;
 
 declare const toPattern: (value: string, pattern: string) => string;
 declare const clearPattern: (text?: string, ch?: string) => string;
@@ -1202,4 +1217,4 @@ declare const Kyc: {
     withKyc: (Component: React.ComponentType, options?: IWithKycOptions) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
-export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, ArrowLeftIcon, ArrowRightProviderBadge as ArrowRightProviderBadgeIcon, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon$1 as CalendarIcon, CameraFrame, CameraFrameOverlay, CameraIcon, CameraViewPort, ChatIcon, Check as CheckIcon, ChestPainIcon, ChevronRightIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, ConfirmModal, Consent, ConsentTcTpReview, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, CornerMark, CouponIcon, DOBPicker as DOBPickerInput, CalendarIcon as DateIcon, Del as DelIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DoctorUnavailableImg, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DrugsIcon, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, GetAccessImg, Globe, H1, H2, H3, H4, H5, H6, Header1, type HeadingProps, IdCardFrame, IdCardIcon, IdCardVerified, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, JCBIcon, Kyc, KycBlurIcon, KycCamera, KycExpireIcon, KycInvalidIcon, KycRejectImg, KycStepIcon, Language, LanguageSwitch, Lead1, Lead2, LineIcon, LoadingWidget, localStorage as LocalStorage, Logo as LogoIcon, manageAuth as ManageAuth, MasterCardIcon, MedicalCertificateIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PassportFrame, PassportIcon, PassportVerified, PaymentErrorImg, Icon$2 as PaymentIcon, PaymentMethod, PaymentSuccessImg, PhoneIcon, PhoneNoForm as PhoneNumberForm, PhoneOutgoingIcon, PhotoIcon, PinForm, PinKeyBoard as PinKeyboard, PincodeLockImg, ProfileHeader, ProviderAvatar, ProviderIcon, ProviderSection, RadioButton, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelectionCard, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, StepList, StepListItem, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TakePhotoIcon, TeleIcon, TextArea, TextInput, ThaiQrIcon, Tiny, Toast, type ToastAlignment, ToastAlignmentEnum, ToastCloseReason, type ToastPosition, ToastPositionEnum, ToastProvider, ToastStyle, ToastType, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, VideoIcon, VisaIcon, WarningIcon, WarningNotificationIcon, WeaknessIcon, useCameraViewport, useFileUploader, useToast, useViewportHeight };
+export { AggressionToOthersIcon, Alert, AlertStyle, AlertType, ArrowLeftIcon, ArrowRightProviderBadge as ArrowRightProviderBadgeIcon, AttentionNotificationIcon, Authentication, Icon$1 as BGProviderIcon, Badge, type BadgeProps, Badges, BadgesBold, BaseText, BottomSheet as BdBottomSheet, Button as BdButton, OutlinedBtn as BdOutlinedButton, PrimaryBtn as BdPrimaryButton, RemoveBtn as BdRemoveButton, SecondaryBtn as BdSecondaryButton, CalendarIcon$1 as CalendarIcon, CameraFrame, CameraFrameOverlay, CameraIcon, CameraViewPort, ChatIcon, Check as CheckIcon, ChestPainIcon, ChevronRightIcon, Circle as CircleIcon, CloseIcon, CloseNotificationIcon, Colors, ConfirmModal, Consent, ConsentTcTpReview, Icon$3 as ConsultIcon, ConsultationIcon, cookie as Cookie, CornerMark, CouponIcon, DOBPicker as DOBPickerInput, CalendarIcon as DateIcon, Del as DelIcon, DeleteAccountEmailIcon, DeleteAccountIcon, DeleteAccountSuccessIcon, DialogModal, DoctorEducationIcon, DoctorFeeIcon, DoctorHospitalIcon, DoctorLanguageIcon, DoctorSpecializeIcon, DoctorUnavailableImg, DocumentText as DocumentTextIcon, DocumentUploader, DropdownInput, DrugsIcon, DyspneaIcon, EditIcon, ErrorNotificationIcon, type FileWithUploadStatus, format as Format, GetAccessImg, Globe, H1, H2, H3, H4, H5, H6, Header1, type HeadingProps, IdCardFrame, IdCardIcon, IdCardVerified, Identification, InfoNotificationIcon, Icon as InformationIcon, InternationalPhone, JCBIcon, Kyc, KycBlurIcon, KycCamera, KycExpireIcon, KycInvalidIcon, KycRejectImg, KycStepIcon, Language, LanguageSwitch, Lead1, Lead2, LineIcon, LoadingWidget, localStorage as LocalStorage, Logo as LogoIcon, manageAuth as ManageAuth, MasterCardIcon, MedicalCertificateIcon, Mini, MobileInput, OtpForm, OtpInput, P1, P2, PageHeader, PalpitationIcon, type ParagraphProps, PassportFrame, PassportIcon, PassportVerified, PaymentErrorImg, Icon$2 as PaymentIcon, PaymentMethod, PaymentSuccessImg, PhoneIcon, PhoneNoForm as PhoneNumberForm, PhoneOutgoingIcon, PhotoIcon, PinForm, PinKeyBoard as PinKeyboard, PincodeLockImg, ProfileHeader, ProviderAvatar, ProviderIcon, ProviderSection, RadioButton, redirect as Redirect, Remove as RemoveIcon, SelectionGroupInput as SelectGroupInput, SelectionCard, SelfIcon, SevereAbdominalPainIcon, SevereHeadache as SevereHeadacheIcon, ShieldCheckIcon, type SmallProps, SpeakerphoneIcon, StepList, StepListItem, type StylizeProps, SuccessNotificationIcon, SuccessWidget, TakePhotoIcon, TeleIcon, TextArea, TextInput, ThaiQrIcon, Tiny, Toast, type ToastAlignment, ToastAlignmentEnum, ToastCloseReason, type ToastPosition, ToastPositionEnum, ToastProvider, ToastStyle, ToastType, TrashbinIcon, UserIcon, validateOAuthToken as ValidateOAuthToken, VideoIcon, VisaIcon, WarningIcon, WarningNotificationIcon, WeaknessIcon, useCameraViewport, useFileUploader, useToast, useViewportHeight };
