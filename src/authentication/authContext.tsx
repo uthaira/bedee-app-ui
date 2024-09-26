@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (otpToken) {
       if (!accessToken) {
         const otpTokenExpired = ValidateOAuthToken.checkIsTokenExpired(otpToken || '');
-        if (otpTokenExpired) {
+        if (otpTokenExpired && !refreshToken) {
           removeAuthData()
           onRefresh()
           return;
