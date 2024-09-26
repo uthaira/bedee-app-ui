@@ -124,6 +124,7 @@ const Button = (props: ButtonProps) => {
       sx={{
         borderRadius: s.borderRadius,
         fontSize: s.fontSize,
+        fontWeight: 600,
         paddingY: '8px',
         borderColor: c.borderColor,
         backgroundColor: c.backgroundColor,
@@ -147,7 +148,7 @@ const Button = (props: ButtonProps) => {
     >
       <TextStyled>
         {!isRightIcon && iconImg}
-        <Box style={{ color: c.color, fontSize: s.fontSize }}>{text}</Box>
+        <Box style={{ color: c.color, fontSize: s.fontSize, fontWeight: 600 }}>{text}</Box>
         {isRightIcon && iconImg}
         {displayCounter}
       </TextStyled>

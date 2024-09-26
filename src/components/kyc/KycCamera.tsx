@@ -109,6 +109,7 @@ const KycCamera: React.FC<KycCameraProps> = ({
             color={Colors.white}
             sx={{
               fontWeight: 600,
+              fontSize: '34px',
               whiteSpace: 'pre-wrap',
               wordBreak: 'break-word',
             }}
