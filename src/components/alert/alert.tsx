@@ -77,15 +77,7 @@ const renderIcon = (type: AlertType): JSX.Element => {
 };
 
 const Alert = (props: IAlert) => {
-  const {
-    text,
-    type = AlertType.Error,
-    style = AlertStyle.Plain,
-    showCloseButton = true,
-    elevation = 6,
-    onClose,
-    sx,
-  } = props;
+  const { text, type = AlertType.Error, style = AlertStyle.Plain, showCloseButton = true, elevation = 6, onClose, sx } = props;
 
   const [alertVisible, setAlertVisible] = useState(true);
 
@@ -112,20 +104,16 @@ const Alert = (props: IAlert) => {
           width: "100%",
         }}
       >
-        <Stack direction="row" alignItems={"center"}>
+        <Stack direction="row">
           {renderIcon(type)}
-          <Box sx={{ marginLeft: 1, width: "100%" }}>
-            {typeof text === "string" ? (
-              <P1 text={text} color={getMessageColor(style, type)} />
-            ) : (
-              text
-            )}
-          </Box>
+          <Stack marginLeft={1} width="100%" justifyContent='center'>
+            {typeof text === "string" ? <P1 text={text} color={getMessageColor(style, type)} /> : text}
+          </Stack>
         </Stack>
         {showCloseButton && (
           <IconButton
             onClick={() => {
-              setAlertVisible(false)
+              setAlertVisible(false);
               onClose && onClose();
             }}
             size="small"

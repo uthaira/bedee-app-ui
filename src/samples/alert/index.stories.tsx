@@ -50,6 +50,14 @@ export const SampleAlert = () => {
           elevation={0}
         />
       </AlertContainerStyled>
+      <AlertContainerStyled>
+        <Alert
+          text={"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, "}
+          type={AlertType.Error}
+          style={AlertStyle.Fill}
+          elevation={0}
+        />
+      </AlertContainerStyled>
     </Container>
   );
 };
