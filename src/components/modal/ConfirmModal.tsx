@@ -75,7 +75,7 @@ interface ContentProps {
 }
 
 const ModalContent = ({ title, message }: ContentProps) => (
-  <Stack marginInline={4} gap={1}>
+  <Stack gap={1} width='100%'>
     <TitleTextStyled text={title} sx={{ whiteSpace: "pre-line" }} />
     <DescriptionTextStyled text={message} />
   </Stack>
@@ -108,7 +108,7 @@ const DescriptionTextStyled = styled(P1)(() => ({
   color: "#4A5568",
   display: "flex",
   textAlign: "center",
-  whiteSpace: "pre-line"
+  whiteSpace: "pre-line",
 }))
 
 const XCloseButtonStyled = styled(IconButton)(() => ({
