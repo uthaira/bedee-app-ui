@@ -40,9 +40,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       getCurrentAuthData();
 
     if (otpToken) {
-      if (!accessToken) {
+      if (!accessToken && !refreshToken) {
         const otpTokenExpired = ValidateOAuthToken.checkIsTokenExpired(otpToken || '');
-        if (otpTokenExpired && !refreshToken) {
+        console.log('otpTokenExpired')
+        if (otpTokenExpired) {
           removeAuthData()
           onRefresh()
           return;
@@ -70,6 +71,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       const isAccessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken || '');
       const refreshTokenExpired = ValidateOAuthToken.checkIsTokenExpired(refreshToken || '');
       if (isAccessTokenExpired || refreshTokenExpired) {
+        console.log('accessTokenExpired and refreshTokenExpired')
         Cookie.removeCookie('accessToken' , { path: '/'});
         setIsAuthenticated(true);
         setIsRequiredPin(true);
@@ -81,6 +83,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (accessToken) {
       const accessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken);
       if (accessTokenExpired) {
+        console.log('accessTokenExpired')
         Cookie.removeCookie('accessToken' , { path: '/'});
         setIsRequiredPin(true);
         return;
@@ -92,6 +95,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (refreshToken) {
       const refreshTokenExpired = ValidateOAuthToken.checkIsTokenExpired(refreshToken);
       if (refreshTokenExpired) {
+        console.log('refreshTokenExpired')
         removeAuthData()
         onRefresh()
         return;
@@ -100,6 +104,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   }, [refreshToken])
 
   const removeAuthData = () => {
+    console.log('removeAuthData')
     ManageAuth.removeAuthData()
   };
 
