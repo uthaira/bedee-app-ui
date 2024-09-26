@@ -37,6 +37,7 @@ import CameraIcon from "./CameraIcon";
 import IdCardVerified from "./IdCardVerified";
 import PassportVerified from "./PassportVerified";
 import ProviderIcon from "./ProviderIcon";
+import CameraOutlineIcon from "./CameraOutlineIcon";
 
 // Social media
 import LineIcon from "./line";
@@ -173,5 +174,6 @@ export {
   ArrowRightProviderBadgeIcon,
   DeleteAccountIcon,
   DeleteAccountSuccessIcon,
-  DeleteAccountEmailIcon
+  DeleteAccountEmailIcon,
+  CameraOutlineIcon
 };
