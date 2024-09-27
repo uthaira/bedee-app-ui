@@ -232,7 +232,7 @@ interface TextAreaProps {
     placeholderColor?: string;
     rows?: number;
     sx?: SxProps$1<Theme$1>;
-    inputProps: React__default.InputHTMLAttributes<HTMLTextAreaElement>;
+    inputProps?: React__default.InputHTMLAttributes<HTMLTextAreaElement>;
     helperText?: string;
     error?: boolean;
     disabled?: boolean;

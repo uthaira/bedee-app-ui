@@ -18,7 +18,7 @@ export interface TextAreaProps {
   placeholderColor?: string;
   rows?: number;
   sx?: SxProps<Theme>;
-  inputProps: React.InputHTMLAttributes<HTMLTextAreaElement>;
+  inputProps?: React.InputHTMLAttributes<HTMLTextAreaElement>;
   helperText?: string;
   error?: boolean;
   disabled?: boolean;
