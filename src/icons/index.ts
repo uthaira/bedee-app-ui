@@ -92,9 +92,17 @@ import KycExpireIcon from "./kycReject/KycExpireIcon";
 import KycBlurIcon from "./kycReject/KycBlurIcon";
 import KycInvalidIcon from "./kycReject/KycInvalidIcon";
 
+//deleteAccount
 import DeleteAccountIcon from "./deleteProfile/DeleteAccount";
 import DeleteAccountSuccessIcon from "./deleteProfile/DeleteAccountSuccess";
 import DeleteAccountEmailIcon from "./deleteProfile/DeleteAccountEmail";
+
+//UpdateInfo
+import UpdateInfoIntro from "./updateInfo/UpdateInfoIntro";
+import UpdateInfoStep1 from "./updateInfo/UpdateInfoStep1";
+import UpdateInfoStep2 from "./updateInfo/UpdateInfoStep2";
+import UpdateInfoStep3 from "./updateInfo/UpdateInfoStep3";
+import UpdateInfoProfile from "./updateInfo/UpdateInfoProfile";
 
 export {
   LogoIcon,
@@ -175,5 +183,10 @@ export {
   DeleteAccountIcon,
   DeleteAccountSuccessIcon,
   DeleteAccountEmailIcon,
-  CameraOutlineIcon
+  CameraOutlineIcon,
+  UpdateInfoIntro,
+  UpdateInfoStep1,
+  UpdateInfoStep2,
+  UpdateInfoStep3,
+  UpdateInfoProfile
 };
