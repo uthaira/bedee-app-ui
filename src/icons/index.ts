@@ -104,6 +104,12 @@ import UpdateInfoStep2 from "./updateInfo/UpdateInfoStep2";
 import UpdateInfoStep3 from "./updateInfo/UpdateInfoStep3";
 import UpdateInfoProfile from "./updateInfo/UpdateInfoProfile";
 
+//Rejoin Banner
+import DoctorLogo from "./rejoinBanner/DoctorLogo";
+import AlliedHealthLogo from "./rejoinBanner/AlliedHealthLogo";
+import PharmacistLogo from "./rejoinBanner/PharmacistLogo";
+import TimeSquare from "./rejoinBanner/TimeSquare";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -188,5 +194,9 @@ export {
   UpdateInfoStep1,
   UpdateInfoStep2,
   UpdateInfoStep3,
-  UpdateInfoProfile
+  UpdateInfoProfile,
+  DoctorLogo,
+  AlliedHealthLogo,
+  PharmacistLogo,
+  TimeSquare
 };
