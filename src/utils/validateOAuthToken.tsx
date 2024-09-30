@@ -11,3 +11,8 @@ export const checkIsTokenExpired = (jwtToken: string, leadTime = 0) => {
   
     return diff > leadTime;
   };
+
+  export const getInfoFromToken = (jwtToken: string) => {
+    if (!jwtToken) return true;  
+    return jwtDecode<JwtPayload>(jwtToken);
+  };

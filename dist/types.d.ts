@@ -4,6 +4,7 @@ import * as React$1 from 'react';
 import React__default, { FC, ReactNode } from 'react';
 import { SxProps as SxProps$1, Theme as Theme$1 } from '@mui/material/styles';
 import { DatePickerProps, PickerValidDate } from '@mui/x-date-pickers';
+import { JwtPayload } from 'jwt-decode';
 import * as i18next from 'i18next';
 
 type BdType = 'primary' | 'secondary' | 'outlined' | 'remove';
@@ -927,10 +928,12 @@ declare namespace format {
 }
 
 declare const checkIsTokenExpired: (jwtToken: string, leadTime?: number) => boolean;
+declare const getInfoFromToken: (jwtToken: string) => true | JwtPayload;
 
 declare const validateOAuthToken_checkIsTokenExpired: typeof checkIsTokenExpired;
+declare const validateOAuthToken_getInfoFromToken: typeof getInfoFromToken;
 declare namespace validateOAuthToken {
-  export { validateOAuthToken_checkIsTokenExpired as checkIsTokenExpired };
+  export { validateOAuthToken_checkIsTokenExpired as checkIsTokenExpired, validateOAuthToken_getInfoFromToken as getInfoFromToken };
 }
 
 declare const setCookie: (name: string, value: string | null, options?: {
