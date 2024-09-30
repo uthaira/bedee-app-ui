@@ -63,3 +63,18 @@ export const ErrorState: Story = {
     helperText: "An error occurred",
   },
 };
+
+export const CustomStyle: Story = {
+  args: {
+    name: "gender",
+    options: [
+      { value: "male", label: "ชาย" },
+      { value: "female", label: "หญิง" },
+      { value: "other", label: "ไม่ระบุ" },
+    ],
+    label: <div>เลือกเพศ</div>,
+    inputGroupSx: { width: "260px" },
+    inputSx: { width: "29px" },
+    exclusive: true,
+  },
+};

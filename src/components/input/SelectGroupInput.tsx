@@ -28,7 +28,7 @@ const StyledToggleButton = styled(ToggleButton)(({ theme }) => ({
   position: "relative",
   textTransform: "none",
   fontSize: "14px",
-  
+
   "&.MuiToggleButtonGroup-grouped": {
     borderRadius: "27.26px",
     border: `1px solid ${Colors.gray2}`,
@@ -50,12 +50,13 @@ interface Option {
 interface SelectionGroupInputProps {
   name: string;
   options: Option[];
-  label?: string;
+  label?: React.ReactNode | string;
   exclusive?: boolean;
   value?: string;
   onChange?: (value: string) => void;
   sx?: SxProps<Theme>;
   inputSx?: SxProps<Theme>;
+  inputGroupSx?: SxProps<Theme>;
   helperText?: string;
   error?: boolean;
 }
@@ -69,6 +70,7 @@ const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
   onChange: propOnChange,
   sx = {},
   inputSx,
+  inputGroupSx,
   helperText,
   error,
   ...props
@@ -85,19 +87,25 @@ const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
 
   return (
     <Box sx={sx}>
-      {label && (
+      {label && typeof label === "string" && (
         <Typography sx={{ fontWeight: 400, fontSize: 14, mb: "14px" }}>
           {label}
         </Typography>
       )}
+      {label && typeof label !== "string" && label}
       <StyledToggleButtonGroup
         value={selectedValue}
         exclusive={exclusive}
         onChange={handleChange}
+        sx={inputGroupSx}
         {...props}
       >
         {options.map((option) => (
-          <StyledToggleButton key={option.value} value={option.value}>
+          <StyledToggleButton
+            key={option.value}
+            value={option.value}
+            sx={inputSx}
+          >
             {option.label}
           </StyledToggleButton>
         ))}
@@ -109,7 +117,7 @@ const SelectionGroupInput: React.FC<SelectionGroupInputProps> = ({
           sx={{
             color: error ? Colors.error : "text.secondary",
             fontSize: "13px",
-            mt: "3px"
+            mt: "3px",
           }}
         >
           {helperText}
