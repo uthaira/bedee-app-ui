@@ -38,6 +38,8 @@ import IdCardVerified from "./IdCardVerified";
 import PassportVerified from "./PassportVerified";
 import ProviderIcon from "./ProviderIcon";
 import CameraOutlineIcon from "./CameraOutlineIcon";
+import AddIcon from "./AddIcon";
+import LocationIcon from "./LocationIcon";
 
 // Social media
 import LineIcon from "./line";
@@ -202,5 +204,7 @@ export {
   AlliedHealthLogo,
   PharmacistLogo,
   TimeSquare,
-  BeDeeFullLogo
+  BeDeeFullLogo,
+  AddIcon,
+  LocationIcon
 };
