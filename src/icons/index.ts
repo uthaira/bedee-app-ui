@@ -39,6 +39,7 @@ import PassportVerified from "./PassportVerified";
 import ProviderIcon from "./ProviderIcon";
 import CameraOutlineIcon from "./CameraOutlineIcon";
 import AddIcon from "./AddIcon";
+import AddCircleIcon from "./AddCircleIcon";
 import LocationIcon from "./LocationIcon";
 
 // Social media
@@ -206,5 +207,6 @@ export {
   TimeSquare,
   BeDeeFullLogo,
   AddIcon,
+  AddCircleIcon,
   LocationIcon
 };
