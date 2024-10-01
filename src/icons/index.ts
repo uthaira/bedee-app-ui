@@ -111,7 +111,7 @@ import PharmacistLogo from "./rejoinBanner/PharmacistLogo";
 import TimeSquare from "./rejoinBanner/TimeSquare";
 
 //BeDee
-import BeDeeFullLogo from "./BedeeFullLogo";
+import BeDeeFullLogo from "./BeDeeFullLogo";
 
 export {
   LogoIcon,
