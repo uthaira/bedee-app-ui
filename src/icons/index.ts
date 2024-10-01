@@ -110,6 +110,9 @@ import AlliedHealthLogo from "./rejoinBanner/AlliedHealthLogo";
 import PharmacistLogo from "./rejoinBanner/PharmacistLogo";
 import TimeSquare from "./rejoinBanner/TimeSquare";
 
+//BeDee
+import BeDeeFullLogo from "./BedeeFullLogo";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -198,5 +201,6 @@ export {
   DoctorLogo,
   AlliedHealthLogo,
   PharmacistLogo,
-  TimeSquare
+  TimeSquare,
+  BeDeeFullLogo
 };
