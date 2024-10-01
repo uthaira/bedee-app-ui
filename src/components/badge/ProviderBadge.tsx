@@ -47,7 +47,6 @@ const VerticalBorderComponent = () => {
 };
 
 const GradientContainer = styled(Box)(() => ({
-  height: '24px',
   display: 'flex',
   alignItems: 'center',
   borderRadius: '8px 20px 20px 8px',
