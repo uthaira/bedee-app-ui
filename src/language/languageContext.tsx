@@ -15,12 +15,12 @@ export const LanguageContext = createContext<LanguageContextProps | undefined>(
 export const LanguageProvider: React.FC<{
   children: ReactNode;
   i18n: i18n;
-}> = ({ children, i18n }) => {
+  accessToken?: string,
+}> = ({ children, i18n,accessToken }) => {
   const lang = i18n.language;
 
-  const { accessToken } = Authentication.useAuth()
-  const userInfo = useMemo(() => ValidateOAuthToken.getInfoFromToken(
-    accessToken || ''
+  const userInfo = useMemo(() => accessToken && ValidateOAuthToken.getInfoFromToken(
+    accessToken
   ) as any, [accessToken])
 
   const changeLanguage = (language: string) => {
