@@ -1,6 +1,6 @@
 import React from 'react'
 import { Global } from '@emotion/react'
-import { Box, CssBaseline, IconButton, styled, SwipeableDrawer } from '@mui/material'
+import { Box, IconButton, styled, SwipeableDrawer } from '@mui/material'
 import { CloseIcon } from '../../icons'
 import { Colors } from '../../colors'
 import { grey } from '@mui/material/colors'
@@ -29,7 +29,6 @@ const SwipeableBottomSheet = (props: SwipeableBottomSheetProps) => {
 
   return (
     <>
-      <CssBaseline />
       <Global
         styles={{
           '.MuiDrawer-root > .MuiPaper-root': {
@@ -69,7 +68,6 @@ const SwipeableBottomSheet = (props: SwipeableBottomSheetProps) => {
           <StyledBox
             sx={{
               position: 'absolute',
-              backgroundColor: 'aqua',
               top: 12,
               visibility: 'visible',
               right: 0,
