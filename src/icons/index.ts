@@ -113,6 +113,8 @@ import DoctorLogo from "./rejoinBanner/DoctorLogo";
 import AlliedHealthLogo from "./rejoinBanner/AlliedHealthLogo";
 import PharmacistLogo from "./rejoinBanner/PharmacistLogo";
 import TimeSquare from "./rejoinBanner/TimeSquare";
+import DoctorAvailableImg from "./rejoinBanner/DoctorAvailableImg";
+import WaitingRoomImg from "./rejoinBanner/WaitingRoomImg";
 
 //BeDee
 import BeDeeFullLogo from "./BeDeeFullLogo";
@@ -210,5 +212,7 @@ export {
   AddIcon,
   AddCircleIcon,
   LocationIcon,
-  UserCircleIcon
+  UserCircleIcon,
+  DoctorAvailableImg,
+  WaitingRoomImg,
 };
