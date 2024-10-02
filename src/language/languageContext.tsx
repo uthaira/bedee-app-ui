@@ -1,6 +1,7 @@
 import { i18n } from 'i18next';
-import React, { createContext, ReactNode, useEffect } from 'react';
-import { Cookie } from '../utils';
+import React, { createContext, ReactNode, useEffect, useMemo } from 'react';
+import { Cookie, ValidateOAuthToken } from '../utils';
+import { Authentication } from '../authentication';
 
 export interface LanguageContextProps {
   lang: string;
@@ -17,6 +18,11 @@ export const LanguageProvider: React.FC<{
 }> = ({ children, i18n }) => {
   const lang = i18n.language;
 
+  const { accessToken } = Authentication.useAuth()
+  const userInfo = useMemo(() => ValidateOAuthToken.getInfoFromToken(
+    accessToken || ''
+  ) as any, [accessToken])
+
   const changeLanguage = (language: string) => {
     if (i18n && i18n?.changeLanguage) {
       i18n.changeLanguage(language);
@@ -30,6 +36,14 @@ export const LanguageProvider: React.FC<{
       i18n.changeLanguage(savedLang);
     }
   }, [lang, i18n]);
+
+  useEffect(() => {
+    if (userInfo && userInfo?.preferredLanguage) {
+      if (lang !== userInfo?.preferredLanguage) {
+        changeLanguage(userInfo?.preferredLanguage);
+      }
+    }
+  }, [userInfo])
 
   return (
     <LanguageContext.Provider value={{ lang, changeLanguage }}>
