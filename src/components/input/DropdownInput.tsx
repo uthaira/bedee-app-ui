@@ -83,7 +83,8 @@ const DropdownInput: React.FC<DropdownInputProps> = ({
           if (!value) {
             return <P2 text={props.placeholder ?? ''} color={Colors.gray4} />;
           }
-          return value;
+          const selectedOption = options.find(option => option.value === value);
+          return selectedOption ? selectedOption.label : value;
         }}
         {...props}
       >
