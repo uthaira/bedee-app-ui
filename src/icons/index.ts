@@ -8,6 +8,7 @@ import CalendarIcon from "./calendar";
 import DocumentTextIcon from "./document-text";
 import EditIcon from "./edit";
 import UserIcon from "./user";
+import UserCircleIcon from "./UserCircleIcon";
 import Globe from "./globe";
 import Identification from "./identification";
 import PhoneIcon from "./phone";
@@ -208,5 +209,6 @@ export {
   BeDeeFullLogo,
   AddIcon,
   AddCircleIcon,
-  LocationIcon
+  LocationIcon,
+  UserCircleIcon
 };
