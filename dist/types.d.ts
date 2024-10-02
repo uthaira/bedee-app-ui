@@ -1097,7 +1097,6 @@ declare const Language: {
     LanguageProvider: React$1.FC<{
         children: React$1.ReactNode;
         i18n: i18next.i18n;
-        accessToken?: string;
     }>;
     useLanguage: () => LanguageContextProps;
 };

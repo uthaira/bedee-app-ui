@@ -1,7 +1,6 @@
 import { i18n } from 'i18next';
 import React, { createContext, ReactNode, useEffect, useMemo } from 'react';
 import { Cookie, ValidateOAuthToken } from '../utils';
-import { Authentication } from '../authentication';
 
 export interface LanguageContextProps {
   lang: string;
@@ -15,10 +14,10 @@ export const LanguageContext = createContext<LanguageContextProps | undefined>(
 export const LanguageProvider: React.FC<{
   children: ReactNode;
   i18n: i18n;
-  accessToken?: string,
-}> = ({ children, i18n,accessToken }) => {
+}> = ({ children, i18n }) => {
   const lang = i18n.language;
 
+  const accessToken = Cookie.getCookie('accessToken') || ''
   const userInfo = useMemo(() => accessToken && ValidateOAuthToken.getInfoFromToken(
     accessToken
   ) as any, [accessToken])
