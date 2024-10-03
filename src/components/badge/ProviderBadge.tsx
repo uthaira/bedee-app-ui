@@ -78,7 +78,7 @@ const VerticalBorder = styled(Box)(() => ({
 
   '& > div': {
     width: '2px', // Width of each dash
-    height: '8px', // Height of each dash
+    height: '5px', // Height of each dash
     backgroundColor: Colors.white,
     borderRadius: '4px', // Half the height for rounded dashes
   },
