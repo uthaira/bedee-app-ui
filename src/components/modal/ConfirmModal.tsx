@@ -81,7 +81,7 @@ interface ContentProps {
 }
 
 const ModalContent = ({ title, message }: ContentProps) => (
-  <Stack gap={1} width="100%">
+  <Stack gap={1} width="100%" alignItems="center">
     <TitleTextStyled text={title} sx={{ whiteSpace: "pre-line" }} />
     <DescriptionTextStyled text={message} />
   </Stack>
