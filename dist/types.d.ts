@@ -358,8 +358,9 @@ interface ConfirmModalProps {
     textSecondaryButton?: string;
     image?: React.ReactNode;
     padding?: string;
+    button?: React.ReactNode;
 }
-declare const ConfirmModal: ({ title, message, isVisible, isCloseIcon, handleClose, handleClickPrimary, handleClickSecondary, textPrimaryButton, textSecondaryButton, image, padding, }: ConfirmModalProps) => react_jsx_runtime.JSX.Element;
+declare const ConfirmModal: ({ title, message, isVisible, isCloseIcon, handleClose, handleClickPrimary, handleClickSecondary, textPrimaryButton, textSecondaryButton, image, button, padding, }: ConfirmModalProps) => react_jsx_runtime.JSX.Element;
 
 interface FileWithUploadStatus$1 {
     file: File;
