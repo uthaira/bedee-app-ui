@@ -11,12 +11,13 @@ interface SwipeableBottomSheetV2Props {
   isCloseButton?: boolean
   snapPoints?: number[]
   initialSnap?: number
+  containerStyle?: React.CSSProperties
   onCloseDrawer: () => void
   onSnap?: (snapIndex: number) => void
 }
 
 const SwipeableBottomSheetV2 = (props: SwipeableBottomSheetV2Props) => {
-  const { children, isOpen, snapPoints, initialSnap, isCloseButton = true, onCloseDrawer, onSnap } = props
+  const { children, isOpen, snapPoints, initialSnap, isCloseButton = true, containerStyle, onCloseDrawer, onSnap } = props
 
   const ref = useRef<SheetRef>()
 
@@ -29,7 +30,13 @@ const SwipeableBottomSheetV2 = (props: SwipeableBottomSheetV2Props) => {
       onClose={onCloseDrawer}
       onSnap={onSnap}
     >
-      <Sheet.Container>
+      <Sheet.Container
+        style={{
+          borderTopRightRadius: '32px',
+          borderTopLeftRadius: '32px',
+          ...containerStyle
+        }}
+      >
         <SheetHeaderStyled>
           <StyledBox>
             <StyledBox
