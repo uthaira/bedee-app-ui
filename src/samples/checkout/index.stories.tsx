@@ -21,11 +21,11 @@ export const SampleCheckout = () => {
       <Item>
         <ProviderSection
           title="ปรึกษาออนไลน์"
-          fullName='นพ. อภิสรรค์ จินานุวัฒนา'
+          fullName='นพ. ทดสอบ1 ทดสอบ2'
           positionName='ปรึกษาครอบครัว'
           consultationTime={20}
           netConsultationFee={200}
-          photo='https://dev-api.bdms.tech/doctor-profile/public/file/photo/b4a3e070-5726-4253-8857-ef33448f20b4'
+          photo='https://www.bdms.co.th/images/logo.png'
           unitMins='นาที'
         />
       </Item>
