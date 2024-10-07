@@ -101,6 +101,7 @@ interface SwipeableBottomSheetV2Props {
     isCloseButton?: boolean;
     snapPoints?: number[];
     initialSnap?: number;
+    containerStyle?: React__default.CSSProperties;
     onCloseDrawer: () => void;
     onSnap?: (snapIndex: number) => void;
 }
