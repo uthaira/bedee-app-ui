@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import BottomSheet from './SwipeableBottomSheet'
 import { P1 } from '../font'
-import { useState } from 'react'
 
 export default {
   title: 'Components/BottomSheet/SwipeableBottomSheet',

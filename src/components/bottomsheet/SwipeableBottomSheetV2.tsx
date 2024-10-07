@@ -47,9 +47,11 @@ const SwipeableBottomSheetV2 = (props: SwipeableBottomSheetV2Props) => {
               <Box
                 sx={{
                   position: 'absolute',
-                  top: '0px',
-                  right: '0px',
+                  top: '16px',
+                  right: '16px',
                   zIndex: 999999,
+                  backgroundColor: Colors.gray2,
+                  borderRadius: '50%',
                 }}
               >
                 <IconButton onClick={onCloseDrawer}>
