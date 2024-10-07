@@ -63,7 +63,9 @@
     "/dist"
   ],
   "dependencies": {
+    "framer-motion": "^11.11.1",
     "react-i18next": "^15.0.1",
+    "react-modal-sheet": "^3.1.0",
     "react-webcam": "^7.2.0"
   }
 }
