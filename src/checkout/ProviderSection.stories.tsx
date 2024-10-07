@@ -11,7 +11,7 @@ type ProviderSectionStory = StoryObj<typeof ProviderSection>
 export const ProviderSectionTemplete: ProviderSectionStory = {
   args: {
     title: "ปรึกษาออนไลน์",
-    fullName: 'พญ. ปวีนา ลือขจร',
+    fullName: 'พญ. ปวีนา ทดสอบ',
     positionName: 'ปรึกษาครอบครัว',
     consultationTime: 20,
     netConsultationFee: 200,

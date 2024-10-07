@@ -1,7 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import BottomSheet from './SwipeableBottomSheetV2'
-import { P1 } from '../font'
-import { useState } from 'react'
+import { P1, P2 } from '../font'
 
 export default {
   title: 'Components/BottomSheet/SwipeableBottomSheetV2',
@@ -24,6 +23,11 @@ export const SwipeableBottomSheetV2: SwipeableBottomSheetV2Story = {
     snapPoints,
     initialSnap,
     onCloseDrawer,
-    children: <P1 text="This is SwipeableBottomSheetV2 content" />,
+    children: 
+      <div style={{ backgroundColor: 'aqua' }}>
+        <P1 text="This is P1 SwipeableBottomSheetV2 content" />
+        <P2 text="This is P2 SwipeableBottomSheetV2 content" />
+      </div>
+    ,
   },
 }
