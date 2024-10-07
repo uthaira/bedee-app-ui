@@ -116,6 +116,16 @@ import TimeSquare from "./rejoinBanner/TimeSquare";
 import DoctorAvailableImg from "./rejoinBanner/DoctorAvailableImg";
 import WaitingRoomImg from "./rejoinBanner/WaitingRoomImg";
 
+//Address Icon
+import TrashOutlineIcon from "./address/TrashOutlineIcon";
+import PencilOutlineIcon from "./address/PencilOutlineIcon";
+import AddMapIcon from "./address/AddMapIcon";
+import CurrentLocationIcon from "./address/CurrentLocationIcon";
+import MapPinCircleIcon from "./address/MapPinCircleIcon";
+import MapPinIcon from "./address/MapPinIcon";
+import MarkerIcon from "./address/MarkerIcon";
+import MenuIcon from "./address/MenuIcon";
+
 //BeDee
 import BeDeeFullLogo from "./BeDeeFullLogo";
 
@@ -215,4 +225,12 @@ export {
   UserCircleIcon,
   DoctorAvailableImg,
   WaitingRoomImg,
+  TrashOutlineIcon,
+  PencilOutlineIcon,
+  AddMapIcon,
+  CurrentLocationIcon,
+  MapPinCircleIcon,
+  MapPinIcon,
+  MarkerIcon,
+  MenuIcon,
 };
