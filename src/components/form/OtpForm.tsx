@@ -20,6 +20,7 @@ interface OtpFormProps {
   resendBtnText?: string;
   timeRemain: number;
   isInvalid?: boolean;
+  turnstileComponent?: React.ReactNode
 }
 
 const OtpForm: React.FC<OtpFormProps> = (props) => {
@@ -36,6 +37,7 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
     resendBtnText = "ขอรหัสอีกครั้ง",
     timeRemain = 0,
     isInvalid = false,
+    turnstileComponent
   } = props;
 
   const renderResendTimer = () => {
@@ -87,6 +89,7 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
           </StyledTextError>
         )}
       </Box>
+      {turnstileComponent}
       <StyledRefCode>
         <Box
           sx={{
