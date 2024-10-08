@@ -82,6 +82,7 @@ import ThaiQrIcon from "./payment/ThaiQrIcon";
 
 // consent
 import ConsentTcTpReview from "./consent/ConsentTcTpReview";
+import ConsentMedicalTreatmentIcon from "./consent/ConsentMedicalTreatment";
 
 //modal
 import PaymentErrorImg from "./modal/PaymentErrorImg";
@@ -195,6 +196,7 @@ export {
   MasterCardIcon,
   ThaiQrIcon,
   ConsentTcTpReview,
+  ConsentMedicalTreatmentIcon,
   PaymentErrorImg,
   PaymentSuccessImg,
   DoctorUnavailableImg,
