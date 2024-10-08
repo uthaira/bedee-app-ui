@@ -153,6 +153,7 @@ interface OtpFormProps {
     resendBtnText?: string;
     timeRemain: number;
     isInvalid?: boolean;
+    turnstileComponent?: React__default.ReactNode;
 }
 declare const OtpForm: React__default.FC<OtpFormProps>;
 
