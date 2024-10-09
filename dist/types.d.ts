@@ -81,6 +81,7 @@ interface BottomSheetProps extends SlideProps {
     open?: boolean;
     onClose: () => void;
     isCloseIcon?: boolean;
+    shouldCloseOnOutsideClick?: boolean;
     children: React__default.ReactElement;
 }
 declare const BottomSheet: (props: BottomSheetProps) => react_jsx_runtime.JSX.Element;
