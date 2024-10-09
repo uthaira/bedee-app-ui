@@ -20,7 +20,8 @@ interface OtpFormProps {
   resendBtnText?: string;
   timeRemain: number;
   isInvalid?: boolean;
-  turnstileComponent?: React.ReactNode
+  turnstileComponent?: React.ReactNode;
+  isDisabledResendBtn?: boolean
 }
 
 const OtpForm: React.FC<OtpFormProps> = (props) => {
@@ -37,7 +38,8 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
     resendBtnText = "ขอรหัสอีกครั้ง",
     timeRemain = 0,
     isInvalid = false,
-    turnstileComponent
+    turnstileComponent,
+    isDisabledResendBtn = false
   } = props;
 
   const renderResendTimer = () => {
@@ -68,7 +70,24 @@ const OtpForm: React.FC<OtpFormProps> = (props) => {
             gap: 1,
           }}
         >
-          <OutlinedBtn bdSize="md" onClick={onResend} text={resendBtnText} width="fit" />
+          <OutlinedBtn
+            bdSize="md"
+            onClick={onResend}
+            text={resendBtnText}
+            disabled={isDisabledResendBtn}
+            sx={{
+              borderColor: Colors.white,
+              "&.Mui-disabled": {
+                borderColor: Colors.white,
+                opacity: '50%'
+              },
+              '&:hover': {
+                borderColor: Colors.white,
+                backgroundColor: 'transparent'
+              },
+            }}
+            width="fit"
+          />
         </Box>
       );
     }
