@@ -1,35 +1,43 @@
-import React, { useRef, useEffect } from 'react'
-import { Box, Slide as MuiSlide, IconButton, SlideProps as MuiSlideProps } from '@mui/material'
-import CloseIcon from '../../icons/CloseIcon'
+import React, { useRef, useEffect } from 'react';
+import { Box, Slide as MuiSlide, IconButton, SlideProps as MuiSlideProps } from '@mui/material';
+import CloseIcon from '../../icons/CloseIcon';
 
 export interface BottomSheetProps extends MuiSlideProps {
-  height?: string
-  open?: boolean
-  onClose: () => void
-  isCloseIcon?: boolean
-  children: React.ReactElement
+  height?: string;
+  open?: boolean;
+  onClose: () => void;
+  isCloseIcon?: boolean;
+  shouldCloseOnOutsideClick?: boolean;
+  children: React.ReactElement;
 }
 
 const BottomSheet = (props: BottomSheetProps) => {
-  const { height = '50%', open, onClose, isCloseIcon, children } = props
-  const bottomSheetRef = useRef<HTMLDivElement>(null)
+  const {
+    height = '50%',
+    open,
+    onClose,
+    isCloseIcon,
+    shouldCloseOnOutsideClick = true,
+    children,
+  } = props;
+  const bottomSheetRef = useRef<HTMLDivElement>(null);
 
-  // Close the bottom sheet when clicking outside
+  // Close the bottom sheet when clicking outside, if allowed by shouldCloseOnOutsideClick
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (bottomSheetRef.current && !bottomSheetRef.current.contains(event.target as Node)) {
-        onClose()
+      if (shouldCloseOnOutsideClick && bottomSheetRef.current && !bottomSheetRef.current.contains(event.target as Node)) {
+        onClose();
       }
-    }
+    };
 
     if (open) {
-      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [open, onClose])
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [open, onClose, shouldCloseOnOutsideClick]);
 
   return (
     <>
@@ -45,7 +53,7 @@ const BottomSheet = (props: BottomSheetProps) => {
             backgroundColor: 'rgba(0, 0, 0, 0.3)',
             zIndex: (theme) => theme.zIndex.modal - 1,
           }}
-          onClick={onClose}
+          onClick={shouldCloseOnOutsideClick ? onClose : undefined} // Respect the flag here as well
         />
       )}
 
@@ -69,9 +77,9 @@ const BottomSheet = (props: BottomSheetProps) => {
           {isCloseIcon && (
             <Box
               sx={{
-                position: "absolute",
-                top: "16px",
-                right: "16px",
+                position: 'absolute',
+                top: '16px',
+                right: '16px',
               }}
             >
               <IconButton onClick={onClose}>
@@ -83,7 +91,7 @@ const BottomSheet = (props: BottomSheetProps) => {
         </Box>
       </MuiSlide>
     </>
-  )
-}
+  );
+};
 
-export default BottomSheet
+export default BottomSheet;
