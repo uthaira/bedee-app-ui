@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import useConsent from './useConsent';
 import { ConsentData } from './consentContext';
+import { buildUrl } from './consentUtils';
 
 export interface IWithConsentOptions {
   onFetchConsent?: () => Promise<any>;
@@ -26,14 +27,20 @@ const withConsent = (
     }, [isRequiredFetchConsent]);
 
     useEffect(() => {
-      const redirectToUrlValue = redirectUrl || window.location.href;
-
-      if (consentData && !consentData?.medicalTreatmentConsent) {
-        const composedUrl = new URL(consentUrl ?? '');
-        composedUrl.searchParams.append('redirectUrl', redirectToUrlValue);
-
-        window.location.replace(composedUrl.toString());
-        return;
+      
+      if (consentData) {
+        const redirectToUrlValue = window.location.href;
+      
+        if (consentData.medicalTreatmentConsent == null) {
+          const redirectUrl = buildUrl(consentUrl ?? '', { redirectUrl: redirectToUrlValue });
+          window.location.replace(redirectUrl);
+        } else if (consentData.medicalTreatmentConsent === false) {
+          const providerListUrl = buildUrl(redirectUrl ?? '', {
+            redirectUrl: redirectToUrlValue,
+            isShowConsentBottomSheet: 'true'
+          });
+          window.location.replace(providerListUrl);
+        }
       }
     }, [consentData]);
 
