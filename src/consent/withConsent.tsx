@@ -27,19 +27,19 @@ const withConsent = (
     }, [isRequiredFetchConsent]);
 
     useEffect(() => {
-      
       if (consentData) {
         const redirectToUrlValue = window.location.href;
-      
         if (consentData.medicalTreatmentConsent == null) {
           const redirectUrl = buildUrl(consentUrl ?? '', { redirectUrl: redirectToUrlValue });
           window.location.replace(redirectUrl);
+          return;
         } else if (consentData.medicalTreatmentConsent === false) {
           const providerListUrl = buildUrl(redirectUrl ?? '', {
             redirectUrl: redirectToUrlValue,
             isShowConsentBottomSheet: 'true'
           });
           window.location.replace(providerListUrl);
+          return;
         }
       }
     }, [consentData]);
