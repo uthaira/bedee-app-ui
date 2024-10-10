@@ -26,7 +26,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
     <PageHeaderContainer
       elevated={elevated}
       fixed={fixed}
-      sx={{ backgroundColor: bgColor }}
+      sx={{ background: bgColor }}
     >
       {onBack && (
         <IconButtonLeft onClick={onBack}>
