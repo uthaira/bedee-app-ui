@@ -554,6 +554,7 @@ declare const Colors: {
     aliceBlue: string;
     warning: string;
     backgroundOrange: string;
+    backgroundGradient: string;
     formBorderActive: string;
     formTextActive: string;
     formBorder: string;
