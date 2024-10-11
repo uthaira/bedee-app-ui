@@ -108,6 +108,7 @@ import UpdateInfoStep1 from "./updateInfo/UpdateInfoStep1";
 import UpdateInfoStep2 from "./updateInfo/UpdateInfoStep2";
 import UpdateInfoStep3 from "./updateInfo/UpdateInfoStep3";
 import UpdateInfoProfile from "./updateInfo/UpdateInfoProfile";
+import UpdateInfoModal from './updateInfo/UpdateInfoModal';
 
 //Rejoin Banner
 import DoctorLogo from "./rejoinBanner/DoctorLogo";
@@ -216,6 +217,7 @@ export {
   UpdateInfoStep2,
   UpdateInfoStep3,
   UpdateInfoProfile,
+  UpdateInfoModal,
   DoctorLogo,
   AlliedHealthLogo,
   PharmacistLogo,
