@@ -131,6 +131,9 @@ import MenuIcon from "./address/MenuIcon";
 //BeDee
 import BeDeeFullLogo from "./BeDeeFullLogo";
 
+import SearchIcon from "./SearchIcon";
+import EmptyIcon from "./EmptyIcon";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -237,4 +240,6 @@ export {
   MapPinIcon,
   MarkerIcon,
   MenuIcon,
+  SearchIcon,
+  EmptyIcon,
 };
