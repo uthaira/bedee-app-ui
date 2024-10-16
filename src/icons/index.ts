@@ -136,6 +136,9 @@ import AddressDefaultIcon from "./address/AddressDefaultIcon";
 //BeDee
 import BeDeeFullLogo from "./BeDeeFullLogo";
 
+import SearchIcon from "./SearchIcon";
+import EmptyIcon from "./EmptyIcon";
+
 export {
   LogoIcon,
   CircleIcon,
@@ -247,4 +250,6 @@ export {
   AddressDefaultIcon,
   UploadErrorIcon,
   KycPermissionIcon,
+  SearchIcon,
+  EmptyIcon,
 };
