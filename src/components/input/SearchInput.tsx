@@ -51,7 +51,7 @@ const SearchInput: React.FC<ISearchProps> = (props: ISearchProps) => {
         <SearchIcon />
       </IconButton>
       <InputBase
-        sx={{ ml: 1, flex: 1, fontSize: '16px', color: Colors.gray6 }}
+        sx={{ ml: 1, flex: 1, fontSize: '14px', color: Colors.gray6 }}
         placeholder={placeholder}
         inputProps={{ 'aria-label': placeholder }}
         readOnly={readOnly}
