@@ -78,4 +78,5 @@ const TabItem = styled(Tab)({
   },
   fontSize: '16px',
   whiteSpace: 'nowrap',
+  textTransform: 'none',
 });

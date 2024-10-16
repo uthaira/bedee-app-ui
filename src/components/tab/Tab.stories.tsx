@@ -11,15 +11,15 @@ type TabStory = StoryObj<typeof Tab>
 const tabs = [
   {
     value: 'all',
-    label: 'ทั้งหมด',
+    label: 'All',
   },
   {
     value: 'doctor',
-    label: 'หมอ',
+    label: 'Doctor',
   },
   {
     value: 'alliedHealth',
-    label: 'ปรึกษาผู้เชี่ยวชาญ',
+    label: 'Health Expert',
   },
 ];
 
