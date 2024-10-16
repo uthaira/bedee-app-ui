@@ -32,6 +32,7 @@ import KycStepIcon from "./KycStepIcon";
 import ChevronRightIcon from "./ChevronRight";
 import ArrowLeftIcon from "./ArrowLeftIcon";
 import ArrowRightProviderBadgeIcon from "./ArrowRightProviderBadge";
+import KycPermissionIcon from "./KycPermissionIcon";
 
 import CouponIcon from "./CouponIcon";
 import CameraIcon from "./CameraIcon";
@@ -42,6 +43,7 @@ import CameraOutlineIcon from "./CameraOutlineIcon";
 import AddIcon from "./AddIcon";
 import AddCircleIcon from "./AddCircleIcon";
 import LocationIcon from "./LocationIcon";
+import UploadErrorIcon from "./UploadErrorIcon";
 
 // Social media
 import LineIcon from "./line";
@@ -127,6 +129,9 @@ import MapPinCircleIcon from "./address/MapPinCircleIcon";
 import MapPinIcon from "./address/MapPinIcon";
 import MarkerIcon from "./address/MarkerIcon";
 import MenuIcon from "./address/MenuIcon";
+import MapOutlineIcon from "./address/MapOutlineIcon";
+import OutOfServiceAreaIcon from "./address/OutOfServiceAreaIcon";
+import AddressDefaultIcon from "./address/AddressDefaultIcon";
 
 //BeDee
 import BeDeeFullLogo from "./BeDeeFullLogo";
@@ -237,4 +242,9 @@ export {
   MapPinIcon,
   MarkerIcon,
   MenuIcon,
+  MapOutlineIcon,
+  OutOfServiceAreaIcon,
+  AddressDefaultIcon,
+  UploadErrorIcon,
+  KycPermissionIcon,
 };
