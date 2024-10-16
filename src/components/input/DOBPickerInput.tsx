@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Box, IconButton, InputAdornment, Typography } from "@mui/material";
 import {
   ClearIcon,
   DatePicker,
   DatePickerProps,
-  PickersActionBar,
   PickerValidDate,
 } from "@mui/x-date-pickers";
 import { SxProps, Theme } from "@mui/material/styles";
@@ -12,7 +11,11 @@ import TextInput from "./TextInput";
 import { Colors } from "../../colors";
 import { CalendarIcon } from "../../icons";
 
-interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' | 'onOpen' | 'onClose'> {
+interface DOBPickerProps
+  extends Omit<
+    DatePickerProps<PickerValidDate>,
+    "open" | "onOpen" | "onClose"
+  > {
   label?: string;
   helperText?: string;
   sx?: SxProps<Theme>;
@@ -37,7 +40,9 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedDate, handleDateChange] = useState<PickerValidDate | null>(defaultValue || null);
+  const [selectedDate, handleDateChange] = useState<PickerValidDate | null>(
+    defaultValue || null
+  );
 
   const handleOpen = () => setIsOpen(true);
   const handleClose = () => setIsOpen(false);
@@ -59,6 +64,40 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
       handleDateChange(value);
     }
   }, [value]);
+
+  const CustomTextField = useCallback(
+    (props: any) => (
+      <TextInput
+        {...props}
+        backgroundColor={backgroundColor}
+        error={error}
+        disabled={disabled}
+        sx={inputSx}
+        helperText={helperText}
+        InputProps={{
+          ...props.InputProps,
+          endAdornment: (
+            <InputAdornment position="end">
+              {props.value && (
+                <IconButton
+                  edge="end"
+                  onClick={handleClear}
+                  disabled={disabled}
+                  size="small"
+                >
+                  <ClearIcon fontSize="small" />
+                </IconButton>
+              )}
+              <IconButton edge="end" onClick={handleOpen} disabled={disabled}>
+                <CalendarIcon />
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
+      />
+    ),
+    []
+  );
 
   return (
     <Box sx={sx}>
@@ -82,40 +121,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
         onChange={onDateChange}
         slotProps={{ textField: { placeholder: props.placeholder } }}
         slots={{
-          textField: (props) => (
-            <TextInput
-              {...props}
-              backgroundColor={backgroundColor}
-              error={error}
-              disabled={disabled}
-              sx={inputSx}
-              helperText={helperText}
-              InputProps={{
-                ...props.InputProps,
-                endAdornment: (
-                  <InputAdornment position="end">
-                    {props.value && (
-                      <IconButton
-                        edge="end"
-                        onClick={handleClear}
-                        disabled={disabled}
-                        size="small"
-                      >
-                        <ClearIcon fontSize="small" />
-                      </IconButton>
-                    )}
-                    <IconButton 
-                      edge="end" 
-                      onClick={handleOpen}
-                      disabled={disabled}
-                    >
-                      <CalendarIcon />
-                    </IconButton>
-                  </InputAdornment>
-                ),
-              }}
-            />
-          ),
+          textField: CustomTextField,
           openPickerIcon: () => <CalendarIcon />,
         }}
         disabled={disabled}
