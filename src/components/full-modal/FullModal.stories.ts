@@ -11,6 +11,8 @@ type FullModalStory = StoryObj<typeof FullModal>
 export const FullModalStory: FullModalStory = {
   args: {
     open: true,
-    isCloseIcon: true
+    isCloseIcon: true,
+    closeIconStyle: 'close-circle',
+    hidePadding: false,
   },
 }

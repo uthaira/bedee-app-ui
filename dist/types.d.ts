@@ -546,6 +546,8 @@ interface FullModalProps extends SlideProps {
     onClose: () => void;
     isCloseIcon?: boolean;
     children: React__default.ReactElement;
+    hidePadding?: boolean;
+    closeIconStyle?: 'close' | 'close-circle';
 }
 declare const FullModal: (props: FullModalProps) => react_jsx_runtime.JSX.Element;
 

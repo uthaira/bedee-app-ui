@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Slide as MuiSlide, IconButton, SlideProps as MuiSlideProps } from '@mui/material'
+import { Box, Slide as MuiSlide, IconButton, SlideProps as MuiSlideProps, styled } from '@mui/material'
 import CloseIcon from '../../icons/CloseIcon'
 
 export interface FullModalProps extends MuiSlideProps {
@@ -7,10 +7,12 @@ export interface FullModalProps extends MuiSlideProps {
   onClose: () => void
   isCloseIcon?: boolean
   children: React.ReactElement
+  hidePadding?: boolean
+  closeIconStyle?: 'close' | 'close-circle'
 }
 
 const FullModal = (props: FullModalProps) => {
-  const { open, onClose, isCloseIcon, children } = props
+  const { open, onClose, isCloseIcon, children, hidePadding = false ,closeIconStyle = 'close' } = props
 
   return (
     <>
@@ -24,7 +26,7 @@ const FullModal = (props: FullModalProps) => {
             right: 0,
             backgroundColor: 'background.paper',
             boxShadow: 24,
-            p: 2,
+            p: hidePadding ? 0 : 2,
             overflowY: 'auto',
             zIndex: (theme) => theme.zIndex.modal,
           }}
@@ -37,9 +39,15 @@ const FullModal = (props: FullModalProps) => {
                 right: "16px",
               }}
             >
-              <IconButton onClick={onClose}>
-                <CloseIcon />
-              </IconButton>
+              {
+              closeIconStyle === 'close' ? 
+                <IconButton onClick={onClose}>
+                  <CloseIcon />
+                </IconButton>:
+                <XCloseButtonStyled onClick={onClose}>
+                  <CloseIcon />
+                </XCloseButtonStyled>
+              }
             </Box>
           )}
           <Box sx={{ mt: 2 }}>{children}</Box>
@@ -50,3 +58,19 @@ const FullModal = (props: FullModalProps) => {
 }
 
 export default FullModal
+
+const XCloseButtonStyled = styled(IconButton)(() => ({
+  position: "absolute",
+  borderRadius: "50%",
+  width: 32,
+  height: 32,
+  minWidth: 0,
+  padding: 0,
+  top: 16,
+  right: 16,
+  backgroundColor: "#EAEEF6",
+  color: "#323A43",
+  "&:hover": {
+    backgroundColor: "rgba(234, 238, 246, 0.7)",
+  },
+}));
