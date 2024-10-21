@@ -33,3 +33,7 @@ export const gotoCreatePinPage = (url: string) => {
   const path = '/home/pin-create';
   window.location.href = getNewUrl(url, path)
 }
+
+export const gotoCustomPage = (path: string) => {
+  window.location.href = path;
+}
