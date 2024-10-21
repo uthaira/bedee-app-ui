@@ -1120,13 +1120,15 @@ declare const gotoLoginPhoneNumberPage: (url: string) => void;
 declare const gotoWelcomePage: (url: string) => void;
 declare const gotoLoginPinPage: (url: string) => void;
 declare const gotoCreatePinPage: (url: string) => void;
+declare const gotoCustomPage: (path: string) => void;
 
 declare const redirect_gotoCreatePinPage: typeof gotoCreatePinPage;
+declare const redirect_gotoCustomPage: typeof gotoCustomPage;
 declare const redirect_gotoLoginPhoneNumberPage: typeof gotoLoginPhoneNumberPage;
 declare const redirect_gotoLoginPinPage: typeof gotoLoginPinPage;
 declare const redirect_gotoWelcomePage: typeof gotoWelcomePage;
 declare namespace redirect {
-  export { redirect_gotoCreatePinPage as gotoCreatePinPage, redirect_gotoLoginPhoneNumberPage as gotoLoginPhoneNumberPage, redirect_gotoLoginPinPage as gotoLoginPinPage, redirect_gotoWelcomePage as gotoWelcomePage };
+  export { redirect_gotoCreatePinPage as gotoCreatePinPage, redirect_gotoCustomPage as gotoCustomPage, redirect_gotoLoginPhoneNumberPage as gotoLoginPhoneNumberPage, redirect_gotoLoginPinPage as gotoLoginPinPage, redirect_gotoWelcomePage as gotoWelcomePage };
 }
 
 interface IAuthData {
@@ -1169,6 +1171,10 @@ declare namespace localStorage {
   export { localStorage_getItem as getItem, localStorage_isJsonString as isJsonString, localStorage_removeItem as removeItem, localStorage_setItem as setItem };
 }
 
+interface WithAuthOptions {
+    unauthenRedirectUrl: string;
+}
+
 interface AuthContextProps {
     isAuthenticated: boolean | null;
     isRequiredPin: boolean | null;
@@ -1184,7 +1190,7 @@ declare const Authentication: {
         children: React$1.ReactNode;
     }) => react_jsx_runtime.JSX.Element;
     useAuth: () => AuthContextProps;
-    withAuth: (WrappedComponent: React$1.FC) => (props: any) => react_jsx_runtime.JSX.Element | null;
+    withAuth: (WrappedComponent: React$1.FC, options?: WithAuthOptions) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };
 
 interface IWithConsentOptions {
