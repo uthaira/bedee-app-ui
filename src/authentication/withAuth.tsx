@@ -2,7 +2,11 @@ import React, { useEffect } from 'react';
 import { Authentication } from '.';
 import { Redirect } from '../utils';
 
-const withAuth = (WrappedComponent: React.FC) => {
+export interface WithAuthOptions {
+  unauthenRedirectUrl : string;
+}
+
+const withAuth = (WrappedComponent: React.FC, options?: WithAuthOptions) => {
   return (props: any) => {
     const { isAuthenticated, isRequiredPin } = Authentication.useAuth();
 
@@ -11,6 +15,11 @@ const withAuth = (WrappedComponent: React.FC) => {
       const redirectUrl = window.location.href;
 
       if (!isAuthenticated) {
+        if(options?.unauthenRedirectUrl){
+          Redirect.gotoCustomPage(options?.unauthenRedirectUrl)
+          return;
+        }
+
         Redirect.gotoWelcomePage(redirectUrl)
         return;
       }
