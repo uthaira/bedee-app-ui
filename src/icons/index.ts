@@ -138,6 +138,7 @@ import BeDeeFullLogo from "./BeDeeFullLogo";
 
 import SearchIcon from "./SearchIcon";
 import EmptyIcon from "./EmptyIcon";
+import RefreshIcon from "./RefreshIcon";
 
 export {
   LogoIcon,
@@ -252,4 +253,5 @@ export {
   KycPermissionIcon,
   SearchIcon,
   EmptyIcon,
+  RefreshIcon,
 };
