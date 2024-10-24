@@ -1,19 +1,21 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { Box, IconButton, InputAdornment, Typography } from "@mui/material";
+import React, { useCallback, useEffect, useState } from 'react';
+import { Box, IconButton, InputAdornment, Typography } from '@mui/material';
 import {
   ClearIcon,
   DatePicker,
   DatePickerProps,
+  LocalizationProvider,
   PickerValidDate,
-} from "@mui/x-date-pickers";
-import { SxProps, Theme } from "@mui/material/styles";
-import TextInput from "./TextInput";
-import { CalendarIcon } from "../../icons";
+} from '@mui/x-date-pickers';
+import { SxProps, Theme } from '@mui/material/styles';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { CalendarIcon } from '../../icons';
+import TextInput from './TextInput';
 
 interface DOBPickerProps
   extends Omit<
     DatePickerProps<PickerValidDate>,
-    "open" | "onOpen" | "onClose"
+    'open' | 'onOpen' | 'onClose'
   > {
   label?: string;
   helperText?: string;
@@ -38,6 +40,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
   defaultValue,
   onChange,
   onBlur,
+  placeholder,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,22 +78,23 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
         disabled={disabled}
         sx={inputSx}
         helperText={helperText}
+        placeholder={placeholder}
         onBlur={onBlur}
         InputProps={{
           ...props.InputProps,
           endAdornment: (
-            <InputAdornment position="end">
+            <InputAdornment position='end'>
               {props.value && (
                 <IconButton
-                  edge="end"
+                  edge='end'
                   onClick={handleClear}
                   disabled={disabled}
-                  size="small"
+                  size='small'
                 >
-                  <ClearIcon fontSize="small" />
+                  <ClearIcon fontSize='small' />
                 </IconButton>
               )}
-              <IconButton edge="end" onClick={handleOpen} disabled={disabled}>
+              <IconButton edge='end' onClick={handleOpen} disabled={disabled}>
                 <CalendarIcon />
               </IconButton>
             </InputAdornment>
@@ -98,37 +102,38 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
         }}
       />
     ),
-    []
+    [backgroundColor, error, disabled, helperText, onBlur, inputSx, placeholder]
   );
 
   return (
-    <Box sx={sx}>
-      {label && (
-        <Typography
-          sx={{
-            fontWeight: 400,
-            fontSize: 14,
-            mb: "14px",
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
+      <Box sx={sx}>
+        {label && (
+          <Typography
+            sx={{
+              fontWeight: 400,
+              fontSize: 14,
+              mb: '14px',
+            }}
+          >
+            {label}
+          </Typography>
+        )}
+        <DatePicker
+          {...props}
+          open={isOpen}
+          onOpen={handleOpen}
+          onClose={handleClose}
+          value={selectedDate}
+          onChange={onDateChange}
+          slots={{
+            textField: CustomTextField,
+            openPickerIcon: () => <CalendarIcon />,
           }}
-        >
-          {label}
-        </Typography>
-      )}
-      <DatePicker
-        {...props}
-        open={isOpen}
-        onOpen={handleOpen}
-        onClose={handleClose}
-        value={selectedDate}
-        onChange={onDateChange}
-        slotProps={{ textField: { placeholder: props.placeholder } }}
-        slots={{
-          textField: CustomTextField,
-          openPickerIcon: () => <CalendarIcon />,
-        }}
-        disabled={disabled}
-      />
-    </Box>
+          disabled={disabled}
+        />
+      </Box>
+    </LocalizationProvider>
   );
 };
 
