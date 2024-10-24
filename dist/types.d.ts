@@ -235,7 +235,7 @@ interface DropdownInputProps extends Omit<SelectProps, "variant"> {
 }
 declare const DropdownInput: React__default.FC<DropdownInputProps>;
 
-interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, "open" | "onOpen" | "onClose"> {
+interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' | 'onOpen' | 'onClose'> {
     label?: string;
     helperText?: string;
     sx?: SxProps$1<Theme$1>;
