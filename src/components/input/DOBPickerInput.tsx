@@ -8,7 +8,6 @@ import {
 } from "@mui/x-date-pickers";
 import { SxProps, Theme } from "@mui/material/styles";
 import TextInput from "./TextInput";
-import { Colors } from "../../colors";
 import { CalendarIcon } from "../../icons";
 
 interface DOBPickerProps
@@ -24,6 +23,7 @@ interface DOBPickerProps
   disabled?: boolean;
   error?: boolean;
   placeholder?: string;
+  onBlur?: React.ReactNode
 }
 
 const DOBPicker: React.FC<DOBPickerProps> = ({
@@ -37,6 +37,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
   value,
   defaultValue,
   onChange,
+  onBlur,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -74,6 +75,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
         disabled={disabled}
         sx={inputSx}
         helperText={helperText}
+        onBlur={onBlur}
         InputProps={{
           ...props.InputProps,
           endAdornment: (
