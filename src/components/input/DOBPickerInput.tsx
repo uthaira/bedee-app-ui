@@ -23,7 +23,7 @@ interface DOBPickerProps
   disabled?: boolean;
   error?: boolean;
   placeholder?: string;
-  onBlur?: React.ReactNode
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
 }
 
 const DOBPicker: React.FC<DOBPickerProps> = ({
