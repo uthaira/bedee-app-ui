@@ -238,7 +238,6 @@ declare const DropdownInput: React__default.FC<DropdownInputProps>;
 interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' | 'onOpen' | 'onClose'> {
     label?: string;
     helperText?: string;
-    sx?: SxProps$1<Theme$1>;
     inputSx?: SxProps$1<Theme$1>;
     backgroundColor?: string;
     disabled?: boolean;
@@ -328,8 +327,10 @@ interface ProfileHeaderProps {
     nameText?: string;
     isLogin?: boolean;
     localeLanguage?: string;
+    badgeText?: string;
     updatedSwitchData?: (lang: ELanguage) => void;
     onActivity?: () => void;
+    onCart?: () => void;
     onProfile?: () => void;
     onLogin?: () => void;
     onRegister?: () => void;

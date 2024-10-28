@@ -132,7 +132,7 @@ const OtpInput = (props: IOTP) => {
       {new Array(length).fill(null).map((_, index) => (
         <React.Fragment key={index}>
           <CustomTextField
-            inputRef={(ele) => {
+            inputRef={(ele: HTMLInputElement | null) => {
               inputRefs.current[index] = ele;
             }}
             inputProps={{

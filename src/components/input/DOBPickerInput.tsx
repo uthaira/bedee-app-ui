@@ -19,7 +19,7 @@ interface DOBPickerProps
   > {
   label?: string;
   helperText?: string;
-  sx?: SxProps<Theme>;
+  // sx?: SxProps<Theme>;
   inputSx?: SxProps<Theme>;
   backgroundColor?: string;
   disabled?: boolean;
