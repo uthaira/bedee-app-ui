@@ -19,13 +19,14 @@ interface DOBPickerProps
   > {
   label?: string;
   helperText?: string;
-  // sx?: SxProps<Theme>;
+  sx?: SxProps<Theme>;
   inputSx?: SxProps<Theme>;
   backgroundColor?: string;
   disabled?: boolean;
   error?: boolean;
   placeholder?: string;
   onBlur?: React.FocusEventHandler<HTMLInputElement>;
+  onClear?: () => void
 }
 
 const DOBPicker: React.FC<DOBPickerProps> = ({
@@ -41,6 +42,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
   onChange,
   onBlur,
   placeholder,
+  onClear,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,6 +56,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
   const handleClear = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation(); // Prevent the DatePicker from opening
     onDateChange(null);
+    onClear?.()
   };
 
   const onDateChange = (date: PickerValidDate | null) => {
