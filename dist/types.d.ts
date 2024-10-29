@@ -244,6 +244,7 @@ interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' |
     error?: boolean;
     placeholder?: string;
     onBlur?: React__default.FocusEventHandler<HTMLInputElement>;
+    onClear?: () => void;
 }
 declare const DOBPicker: React__default.FC<DOBPickerProps>;
 
