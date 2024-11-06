@@ -1,5 +1,5 @@
 import AccessCodeProvider from './accessCodeProvider'
 
-export const Authentication = {
+export const AccessCode = {
   AccessCodeProvider,
 }
