@@ -1,9 +1,8 @@
 const getNewUrl = (url: string, path: string) => {
   const parsedUrl = new URL(url);
-  const hostMatch = /(dev|qa|uat|services)\-services\.bedee\.com/;
-  const isLocalhost = parsedUrl.hostname === 'localhost'
+  const { isNonProd, isLocalhost } = checkNonProd(url)
 
-  if (isLocalhost || hostMatch.test(parsedUrl.hostname)) {
+  if (isNonProd) {
     const environment = parsedUrl.hostname.split('-')[0];
     if (isLocalhost) {
       return `http://localhost:3000${path}?redirectUrl=${url}`;
@@ -12,6 +11,18 @@ const getNewUrl = (url: string, path: string) => {
     }
   }
   return ''
+}
+
+export const checkNonProd = (url: string) => {
+  const parsedUrl = new URL(url);
+  const hostMatch = /(dev|qa|uat|services)\-services\.bedee\.com/;
+
+  const isLocalhost = parsedUrl.hostname === 'localhost'
+  const isNonProd = isLocalhost || hostMatch.test(parsedUrl.hostname);
+  return {
+    isNonProd,
+    isLocalhost
+  }
 }
 
 export const gotoLoginPhoneNumberPage = (url: string) => {
