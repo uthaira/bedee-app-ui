@@ -1119,19 +1119,24 @@ declare namespace cookie {
   export { cookie_getCookie as getCookie, cookie_removeCookie as removeCookie, cookie_setCookie as setCookie };
 }
 
+declare const checkNonProd: (url: string) => {
+    isNonProd: boolean;
+    isLocalhost: boolean;
+};
 declare const gotoLoginPhoneNumberPage: (url: string) => void;
 declare const gotoWelcomePage: (url: string) => void;
 declare const gotoLoginPinPage: (url: string) => void;
 declare const gotoCreatePinPage: (url: string) => void;
 declare const gotoCustomPage: (path: string) => void;
 
+declare const redirect_checkNonProd: typeof checkNonProd;
 declare const redirect_gotoCreatePinPage: typeof gotoCreatePinPage;
 declare const redirect_gotoCustomPage: typeof gotoCustomPage;
 declare const redirect_gotoLoginPhoneNumberPage: typeof gotoLoginPhoneNumberPage;
 declare const redirect_gotoLoginPinPage: typeof gotoLoginPinPage;
 declare const redirect_gotoWelcomePage: typeof gotoWelcomePage;
 declare namespace redirect {
-  export { redirect_gotoCreatePinPage as gotoCreatePinPage, redirect_gotoCustomPage as gotoCustomPage, redirect_gotoLoginPhoneNumberPage as gotoLoginPhoneNumberPage, redirect_gotoLoginPinPage as gotoLoginPinPage, redirect_gotoWelcomePage as gotoWelcomePage };
+  export { redirect_checkNonProd as checkNonProd, redirect_gotoCreatePinPage as gotoCreatePinPage, redirect_gotoCustomPage as gotoCustomPage, redirect_gotoLoginPhoneNumberPage as gotoLoginPhoneNumberPage, redirect_gotoLoginPinPage as gotoLoginPinPage, redirect_gotoWelcomePage as gotoWelcomePage };
 }
 
 interface IAuthData {
