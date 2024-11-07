@@ -14,11 +14,17 @@ echo "New version: $VERSION"
 
 # Run npm install
 echo "Running npm install..."
-npm install
+if ! npm install; then
+  echo "npm install failed"
+  exit 1
+fi
 
 # Run npm rollup
 echo "Running npm rollup..."
-npm run rollup
+if ! npm run rollup; then
+  echo "npm run rollup failed"
+  exit 1
+fi
 
 # Add all changes to git
 echo "Adding all changes to git..."
@@ -30,7 +36,10 @@ git commit -m "Update to version $VERSION"
 
 # Run npm publish
 echo "Publishing package..."
-npm publish
+if ! npm publish; then
+  echo "npm publish"
+  exit 1
+fi
 
 # Push changes to the main branch
 echo "Pushing changes to main branch..."
