@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import AccessCodeForm from './accessCodeForm'
-import { Cookie } from '../utils'
-import { checkNonProd } from '../utils/redirect'
+import { Cookie } from '../../utils'
+import { checkNonProd } from '../../utils/redirect'
 
 interface AccessCodeProviderProps {
   children: React.ReactNode
