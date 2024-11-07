@@ -1,22 +1,25 @@
-import { styled } from '@mui/material/styles'
-import { Box } from '@mui/system';
-import { ProviderIcon } from '../../icons';
-import { Colors } from '../../colors';
+import { Box } from '@mui/system'
+import { ProviderIcon } from '../../icons'
+import { Colors } from '../../colors'
 
-interface PersonalImageProps {
-  width?: string;
-  height?: string;
-  imageUrl?: string;
+export interface ProviderAvatarProps {
+  width?: string
+  height?: string
+  imageUrl?: string
   hidIcon?: boolean
-  customIcon?: React.ReactNode;
+  customIcon?: React.ReactNode
 }
 
-const ProviderAvatar = (props: PersonalImageProps) => {
-  const { width = '50px', height = '50px', imageUrl, hidIcon = false, customIcon } = props;
+const ProviderAvatar = (props: ProviderAvatarProps) => {
+  const { width = '50px', height = '50px', imageUrl, hidIcon = false, customIcon } = props
   return (
-    <PersonalImageWrapper>
+    <Box
+      sx={{
+        position: 'relative',
+      }}
+    >
       <Box
-        component='div'
+        component="div"
         sx={{
           width,
           height,
@@ -28,24 +31,22 @@ const ProviderAvatar = (props: PersonalImageProps) => {
           position: 'relative',
         }}
       />
-      {!hidIcon && (
-        customIcon ? customIcon :
-          <ProviderIconWrapper>
+      {!hidIcon &&
+        (customIcon ? (
+          customIcon
+        ) : (
+          <Box
+            sx={{
+              position: 'absolute',
+              bottom: '-8px',
+              right: '-2px',
+            }}
+          >
             <ProviderIcon />
-          </ProviderIconWrapper>
-      )}
-    </PersonalImageWrapper>
-  );
-};
+          </Box>
+        ))}
+    </Box>
+  )
+}
 
-export default ProviderAvatar;
-
-export const PersonalImageWrapper = styled('div')`
-  position: relative;
-`;
-
-export const ProviderIconWrapper = styled('div')`
-  position: absolute;
-  bottom: -8px;
-  right: -2px;
-`;
+export default ProviderAvatar
