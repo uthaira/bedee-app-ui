@@ -1,7 +1,7 @@
 import { Box, Paper } from '@mui/material'
 import React, { useState } from 'react'
-import { BaseText, BdPrimaryButton, TextInput } from '../components'
-import { Colors } from '../colors'
+import { BaseText, BdPrimaryButton, TextInput } from '..'
+import { Colors } from '../../colors'
 
 interface AccessCodeFormProps {
   accessCode: string
