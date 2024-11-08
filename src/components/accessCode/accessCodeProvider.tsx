@@ -28,7 +28,7 @@ const AccessCodeProvider = (props: AccessCodeProviderProps) => {
 
   const onAccessCodeSuccess = () => {
     setHasAccess(true)
-    Cookie.setCookie(cookieKey, cookieValue)
+    Cookie.setCookie(cookieKey, cookieValue, { path: '/', days: 30 })
   }
 
   return <>{hasAccess ? <>{children}</> : <AccessCodeForm accessCode={accessCode} onSuccess={onAccessCodeSuccess} />}</>
