@@ -132,6 +132,7 @@ import MenuIcon from "./address/MenuIcon";
 import MapOutlineIcon from "./address/MapOutlineIcon";
 import OutOfServiceAreaIcon from "./address/OutOfServiceAreaIcon";
 import AddressDefaultIcon from "./address/AddressDefaultIcon";
+import AddressPermissionIcon from "./address/AddressPermissionIcon";
 
 //BeDee
 import BeDeeFullLogo from "./BeDeeFullLogo";
@@ -254,4 +255,5 @@ export {
   SearchIcon,
   EmptyIcon,
   RefreshIcon,
+  AddressPermissionIcon,
 };
