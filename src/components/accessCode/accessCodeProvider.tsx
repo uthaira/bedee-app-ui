@@ -18,13 +18,13 @@ const AccessCodeProvider = (props: AccessCodeProviderProps) => {
   const [hasAccess, setHasAccess] = useState(true)
 
   useEffect(() => {
-    if (!checkAccess && domain) {
+    if (cookieKey && accessCode && !checkAccess && domain) {
       const { isNonProd } = checkNonProd(domain)
       if (isNonProd) {
         setHasAccess(false)
       }
     }
-  }, [checkAccess, domain])
+  }, [cookieKey, accessCode, checkAccess, domain])
 
   const onAccessCodeSuccess = () => {
     setHasAccess(true)
