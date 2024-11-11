@@ -8,6 +8,7 @@ interface ISearchProps {
   readOnly?: boolean;
   value?: string;
   onChange?: (val: string) => void;
+  onKeyDown?: (event: any) => void
   autoFocus?: boolean;
 }
 
@@ -18,6 +19,7 @@ const SearchInput: React.FC<ISearchProps> = (props: ISearchProps) => {
     autoFocus = false,
     value = '',
     onChange = () => {},
+    onKeyDown = () => {}
   } = props;
 
   const onClear = () => {
@@ -58,6 +60,7 @@ const SearchInput: React.FC<ISearchProps> = (props: ISearchProps) => {
         value={value}
         onChange={onValue}
         autoFocus={autoFocus}
+        onKeyDown={onKeyDown}
       />
       {value && (
         <XCloseButtonStyled onClick={onClear}>

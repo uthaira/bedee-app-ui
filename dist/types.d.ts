@@ -295,6 +295,7 @@ interface ISearchProps {
     readOnly?: boolean;
     value?: string;
     onChange?: (val: string) => void;
+    onKeyDown?: (event: any) => void;
     autoFocus?: boolean;
 }
 declare const SearchInput: React__default.FC<ISearchProps>;
