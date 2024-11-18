@@ -1,7 +1,8 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useConsent from './useConsent';
 import { ConsentData } from './consentContext';
 import { buildUrl } from './consentUtils';
+import { getCookie } from '../utils/cookie';
 
 export interface IWithConsentOptions {
   onFetchConsent?: () => Promise<any>;
@@ -15,18 +16,32 @@ const withConsent = (
 ) => {
   return (props: any) => {
     const { consentData, setConsentData, isRequiredFetchConsent } = useConsent();
+    const [isUpdatedConsent, setIsUpdatedConsent] = useState(false);
     const { onFetchConsent, consentUrl, redirectUrl } = options;
+
+    const getUpdatedConsentDataFromCookie = useCallback(() => {
+      // Update last consent from cookie
+      const consentCookie = getCookie('consentData');
+      const parsedConsent = consentCookie ? JSON.parse(consentCookie) : null;
+      setIsUpdatedConsent(true);
+      setConsentData(parsedConsent);
+    }, [])
 
     useEffect(() => {
       if (isRequiredFetchConsent) {
         onFetchConsent?.().then((data: ConsentData) => {
+          setIsUpdatedConsent(true);
           setConsentData(data);
         });
       }
     }, [isRequiredFetchConsent, onFetchConsent, setConsentData]);
 
     useEffect(() => {
-      if (consentData) {
+      getUpdatedConsentDataFromCookie();
+    }, []);
+
+    useEffect(() => {
+      if (consentData && isUpdatedConsent) {
         const redirectToUrlValue = window.location.href;
 
         if (consentData.medicalTreatmentConsent == null && consentUrl) {
