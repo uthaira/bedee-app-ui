@@ -21,16 +21,16 @@ export const KycProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const setKycStatus = (status: boolean | undefined | null) => {
     if (status === undefined) {
-      Cookie.removeCookie('isKyc');
+      Cookie.removeCookie('isKycCompleted');
       return;
     }
 
     setIsKyc(status);
-    Cookie.setCookie('isKyc', String(status));
+    Cookie.setCookie('isKycCompleted', String(status), { path: '/', days: 1 });
   };
 
   useEffect(() => {
-    const kycFromCookie = Cookie.getCookie('isKyc');
+    const kycFromCookie = Cookie.getCookie('isKycCompleted');
     if (kycFromCookie === 'true') {
       setIsKyc(true);
     } else {
