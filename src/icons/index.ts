@@ -30,6 +30,7 @@ import IdCardIcon from "./IdCardIcon";
 import PassportIcon from "./PassportIcon";
 import KycStepIcon from "./KycStepIcon";
 import ChevronRightIcon from "./ChevronRight";
+import ChevronUpIcon from "./ChevronUp";
 import ArrowLeftIcon from "./ArrowLeftIcon";
 import ArrowRightProviderBadgeIcon from "./ArrowRightProviderBadge";
 import KycPermissionIcon from "./KycPermissionIcon";
@@ -197,6 +198,7 @@ export {
   KycStepIcon,
   CouponIcon,
   ChevronRightIcon,
+  ChevronUpIcon,
   ArrowLeftIcon,
   CameraIcon,
   IdCardVerified,
