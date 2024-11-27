@@ -61,3 +61,26 @@ export const formatFullPrice = (price: number, isThai: boolean = false) => {
 export const to2Digits = (val: number) => {
   return `${val}`.padStart(2, '0');
 };
+
+export const numberFormat = (
+  number: number,
+  decimal: number,
+  isAutoDecimal?: boolean
+) => {
+  const isDecimal = number % 1 !== 0
+  const decimalConvert = isDecimal ? decimal : 0
+  return isAutoDecimal
+    ? number.toFixed(decimalConvert).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+    : number.toFixed(decimal).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+}
+
+export const currencyFormat = (
+  number: number,
+  decimal: number,
+  isSymbol: boolean = true,
+  isDefaultValue?: boolean
+) => {
+  const symbol = isSymbol ? '฿' : ''
+  const defaultValue = isDefaultValue ? symbol.concat('0') : ''
+  return number && number > 0 ? `${symbol}${numberFormat(number, decimal)}` : defaultValue
+}
