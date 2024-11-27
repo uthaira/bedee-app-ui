@@ -1102,16 +1102,20 @@ declare const randomString: (length: number) => string;
 declare const formatPrice: (price: number) => string;
 declare const formatFullPrice: (price: number, isThai?: boolean) => string;
 declare const to2Digits: (val: number) => string;
+declare const numberFormat: (number: number, decimal: number, isAutoDecimal?: boolean) => string;
+declare const currencyFormat: (number: number, decimal: number, isSymbol?: boolean, isDefaultValue?: boolean) => string;
 
 declare const format_clearPattern: typeof clearPattern;
+declare const format_currencyFormat: typeof currencyFormat;
 declare const format_formatFullPrice: typeof formatFullPrice;
 declare const format_formatPrice: typeof formatPrice;
+declare const format_numberFormat: typeof numberFormat;
 declare const format_randomString: typeof randomString;
 declare const format_removeZeroPrefix: typeof removeZeroPrefix;
 declare const format_to2Digits: typeof to2Digits;
 declare const format_toPattern: typeof toPattern;
 declare namespace format {
-  export { format_clearPattern as clearPattern, format_formatFullPrice as formatFullPrice, format_formatPrice as formatPrice, format_randomString as randomString, format_removeZeroPrefix as removeZeroPrefix, format_to2Digits as to2Digits, format_toPattern as toPattern };
+  export { format_clearPattern as clearPattern, format_currencyFormat as currencyFormat, format_formatFullPrice as formatFullPrice, format_formatPrice as formatPrice, format_numberFormat as numberFormat, format_randomString as randomString, format_removeZeroPrefix as removeZeroPrefix, format_to2Digits as to2Digits, format_toPattern as toPattern };
 }
 
 declare const checkIsTokenExpired: (jwtToken: string, leadTime?: number) => boolean;
