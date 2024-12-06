@@ -83,6 +83,7 @@ const TextInput: React.FC<TextInputProps> = ({
         helperText={helperText}
         sx={inputSx}
         backgroundColor={backgroundColor}
+        autoComplete='off'
         {...props}
       />
     </Box>
