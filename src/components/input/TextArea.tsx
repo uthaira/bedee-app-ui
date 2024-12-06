@@ -123,6 +123,7 @@ const TextArea: React.FC<TextAreaProps> = ({
             marginLeft: 0,
           },  
         }}
+        autoComplete='off'
         {...props}
       />
       {maxLength && (
