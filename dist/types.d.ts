@@ -1127,25 +1127,27 @@ declare namespace validateOAuthToken {
   export { validateOAuthToken_checkIsTokenExpired as checkIsTokenExpired, validateOAuthToken_getInfoFromToken as getInfoFromToken };
 }
 
-declare const setCookie: (name: string, value: string | null, options?: {
+interface CookieOption {
     days?: number;
     secure?: boolean;
     path?: string;
     domain?: string;
-    sameSite?: "None" | "Lax" | "Strict";
+    sameSite?: 'None' | 'Lax' | 'Strict';
     httpOnly?: boolean;
-}) => void;
+}
+declare const setCookie: (name: string, value: string | null, options?: CookieOption) => void;
 declare const getCookie: (name: string) => string | null;
 declare const removeCookie: (name: string, options?: {
     path?: string;
     domain?: string;
 }) => void;
 
+type cookie_CookieOption = CookieOption;
 declare const cookie_getCookie: typeof getCookie;
 declare const cookie_removeCookie: typeof removeCookie;
 declare const cookie_setCookie: typeof setCookie;
 declare namespace cookie {
-  export { cookie_getCookie as getCookie, cookie_removeCookie as removeCookie, cookie_setCookie as setCookie };
+  export { type cookie_CookieOption as CookieOption, cookie_getCookie as getCookie, cookie_removeCookie as removeCookie, cookie_setCookie as setCookie };
 }
 
 declare const checkNonProd: (url: string) => {
