@@ -1132,6 +1132,8 @@ declare const setCookie: (name: string, value: string | null, options?: {
     secure?: boolean;
     path?: string;
     domain?: string;
+    sameSite?: "None" | "Lax" | "Strict";
+    httpOnly?: boolean;
 }) => void;
 declare const getCookie: (name: string) => string | null;
 declare const removeCookie: (name: string, options?: {
