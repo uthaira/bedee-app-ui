@@ -1,15 +1,16 @@
+export interface CookieOption {
+  days?: number;
+  secure?: boolean;
+  path?: string;
+  domain?: string;
+  sameSite?: 'None' | 'Lax' | 'Strict';
+  httpOnly?: boolean;
+}
 
 export const setCookie = (
   name: string,
   value: string | null,
-  options: {
-    days?: number;
-    secure?: boolean;
-    path?: string;
-    domain?: string;
-    sameSite?: 'None' | 'Lax' | 'Strict';
-    httpOnly?: boolean;
-  } = {}
+  options: CookieOption = {}
 ) => {
   if (typeof document === 'undefined') return; // Ensure we're in the browser
   if(!options){
