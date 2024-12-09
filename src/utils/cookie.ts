@@ -7,6 +7,8 @@ export const setCookie = (
     secure?: boolean;
     path?: string;
     domain?: string;
+    sameSite?: 'None' | 'Lax' | 'Strict';
+    httpOnly?: boolean;
   } = {}
 ) => {
   if (typeof document === 'undefined') return; // Ensure we're in the browser
@@ -31,8 +33,16 @@ export const setCookie = (
     cookieString += `domain=${options.domain};`;
   }
 
+  if (options.sameSite) {
+    cookieString += `SameSite=${options.sameSite};`;
+  }
+
   if (options.secure) {
     cookieString += `secure;`;
+  }
+
+  if (options.httpOnly) {
+    cookieString += `HttpOnly;`;
   }
 
   document.cookie = cookieString;
