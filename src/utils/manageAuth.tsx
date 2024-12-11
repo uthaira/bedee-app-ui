@@ -16,7 +16,7 @@ export const getCookieOptions = () => {
 
 export const saveAuthData = (oAuthData: IAuthData) => {
   const cookieOptions = getCookieOptions()
-  const options: CookieOption = { ...cookieOptions, httpOnly: true, secure: true, sameSite: 'Lax' }
+  const options: CookieOption = { ...cookieOptions, secure: true, sameSite: 'Lax' }
 
   Cookie.setCookie('accessToken', oAuthData.accessToken, options)
   Cookie.setCookie('refreshToken', oAuthData.refreshToken, options)
