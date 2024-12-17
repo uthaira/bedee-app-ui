@@ -507,6 +507,7 @@ interface Content {
     cameraOverlayFrame: JSX.Element;
 }
 interface KycCameraProps {
+    isReady: boolean;
     onTakePhoto?: (photo: string) => void;
     content?: Content;
 }
