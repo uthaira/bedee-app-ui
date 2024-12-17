@@ -1,13 +1,13 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import Webcam from 'react-webcam';
-import { Box, styled } from '@mui/material';
-import CameraFrame from './CameraFrame';
+import React, { useRef, useState, useCallback } from 'react'
+import Webcam from 'react-webcam'
+import { Box, styled } from '@mui/material'
+import CameraFrame from './CameraFrame'
 
-import { useViewportHeight, useCameraViewport } from '../../hooks';
-import { Colors } from '../../colors';
-import { H3, P1 } from '../font';
+import { useViewportHeight, useCameraViewport } from '../../hooks'
+import { Colors } from '../../colors'
+import { H3, P1 } from '../font'
 
-import IdCardFrame from './IdCardFrame';
+import IdCardFrame from './IdCardFrame'
 
 enum EFacingMode {
   USER = 'user',
@@ -15,17 +15,19 @@ enum EFacingMode {
 }
 
 interface Content {
-  captureInstruction: string;
-  placementInstruction: string;
-  cameraOverlayFrame: JSX.Element;
+  captureInstruction: string
+  placementInstruction: string
+  cameraOverlayFrame: JSX.Element
 }
 
 interface KycCameraProps {
-  onTakePhoto?: (photo: string) => void;
-  content?: Content;
+  isReady: boolean
+  onTakePhoto?: (photo: string) => void
+  content?: Content
 }
 
 const KycCamera: React.FC<KycCameraProps> = ({
+  isReady,
   onTakePhoto,
   content = {
     captureInstruction: 'ถ่ายรูปหน้า\nบัตรประชาชน',
@@ -33,70 +35,71 @@ const KycCamera: React.FC<KycCameraProps> = ({
     cameraOverlayFrame: <IdCardFrame />,
   },
 }) => {
-  const webcamRef = useRef<Webcam | null>(null);
-  const [facingMode, setFacingMode] = useState<EFacingMode>(EFacingMode.ENVIRONMENT);
+  const webcamRef = useRef<Webcam | null>(null)
+  const [facingMode, setFacingMode] = useState<EFacingMode>(EFacingMode.ENVIRONMENT)
 
-  const viewportHeight = useViewportHeight();
-  const { height: cameraViewportHeight, width: cameraViewportWidth } = useCameraViewport();
+  const viewportHeight = useViewportHeight()
+  const { height: cameraViewportHeight, width: cameraViewportWidth } = useCameraViewport()
 
   const handleCapture = useCallback(() => {
     if (webcamRef.current) {
-      const imageSrc = webcamRef.current.getScreenshot();
+      const imageSrc = webcamRef.current.getScreenshot()
       if (imageSrc) {
-        const img = new Image();
-        img.src = imageSrc;
+        const img = new Image()
+        img.src = imageSrc
 
         img.onload = () => {
-          const canvas = document.createElement('canvas');
-          const ctx = canvas.getContext('2d');
+          const canvas = document.createElement('canvas')
+          const ctx = canvas.getContext('2d')
 
           if (ctx) {
-            const zoomFactor = 1.1;
+            const zoomFactor = 1.1
 
-            canvas.width = cameraViewportWidth;
-            canvas.height = cameraViewportHeight;
+            canvas.width = cameraViewportWidth
+            canvas.height = cameraViewportHeight
 
-            const sw = cameraViewportWidth / zoomFactor;
-            const sh = cameraViewportHeight / zoomFactor;
+            const sw = cameraViewportWidth / zoomFactor
+            const sh = cameraViewportHeight / zoomFactor
 
-            const sx = (img.width - sw) / 2;
-            const sy = (img.height - sh) / 2;
+            const sx = (img.width - sw) / 2
+            const sy = (img.height - sh) / 2
 
-            ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height)
 
-            const croppedImageSrc = canvas.toDataURL('image/jpeg', 1.0);
+            const croppedImageSrc = canvas.toDataURL('image/jpeg', 1.0)
 
-            onTakePhoto?.(croppedImageSrc);
-  
+            onTakePhoto?.(croppedImageSrc)
           }
-        };
+        }
       }
     }
-  }, [cameraViewportWidth, cameraViewportHeight, webcamRef]);
+  }, [cameraViewportWidth, cameraViewportHeight, webcamRef])
 
   return (
     <StyledContainer>
-      <Webcam
-        audio={false}
-        autoPlay={true}
-        ref={webcamRef}
-        screenshotFormat="image/jpeg"
-        screenshotQuality={1}
-        videoConstraints={{
-          facingMode,
-          aspectRatio: 16 / 9,
-          width: { ideal: 1280 },
-          height: { ideal: 720 },
-        }}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          height: '100%',
-          width: '100%',
-          objectFit: 'cover',
-        }}
-      />
+      {isReady && (
+        <Webcam
+          audio={false}
+          autoPlay={true}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          screenshotQuality={1}
+          videoConstraints={{
+            facingMode,
+            aspectRatio: 16 / 9,
+            width: { ideal: 1280 },
+            height: { ideal: 720 },
+          }}
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            height: '100%',
+            width: '100%',
+            objectFit: 'cover',
+          }}
+        />
+      )}
 
       <CameraFrame
         onFacingMode={setFacingMode}
@@ -122,15 +125,15 @@ const KycCamera: React.FC<KycCameraProps> = ({
             sx={{
               whiteSpace: 'pre-wrap',
               wordBreak: 'break-word',
-              textAlign: 'center'
+              textAlign: 'center',
             }}
           />
         }
         cameraOverlayFrame={content?.cameraOverlayFrame}
       />
     </StyledContainer>
-  );
-};
+  )
+}
 
 const StyledContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
@@ -139,6 +142,6 @@ const StyledContainer = styled(Box)(({ theme }) => ({
   maxWidth: '520px',
   overflow: 'hidden',
   margin: '0 auto',
-}));
+}))
 
-export default KycCamera;
+export default KycCamera
