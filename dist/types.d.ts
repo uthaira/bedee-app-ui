@@ -1154,6 +1154,7 @@ declare namespace cookie {
 declare const checkNonProd: (url: string) => {
     isNonProd: boolean;
     isLocalhost: boolean;
+    isDevOnly: boolean;
 };
 declare const gotoLoginPhoneNumberPage: (url: string) => void;
 declare const gotoWelcomePage: (url: string) => void;
