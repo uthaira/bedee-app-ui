@@ -15,13 +15,16 @@ const getNewUrl = (url: string, path: string) => {
 
 export const checkNonProd = (url: string) => {
   const parsedUrl = new URL(url);
-  const hostMatch = /(dev|qa|uat|services)\-services\.bedee\.com/;
+  const nonProdHostMatch = /(dev-services|qa-services|uat-services)\.bedee\.com/;
+  const devHostMatch = /dev-services.bedee.com/;
 
   const isLocalhost = parsedUrl.hostname === 'localhost'
-  const isNonProd = isLocalhost || hostMatch.test(parsedUrl.hostname);
+  const isNonProd = isLocalhost || nonProdHostMatch.test(parsedUrl.hostname);
+  const isDevOnly = devHostMatch.test(parsedUrl.hostname);
   return {
     isNonProd,
-    isLocalhost
+    isLocalhost,
+    isDevOnly,
   }
 }
 
