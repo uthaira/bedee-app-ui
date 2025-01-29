@@ -29,7 +29,7 @@ const PageHeader: React.FC<PageHeaderProps> = ({
       sx={{ background: bgColor }}
     >
       {onBack && (
-        <IconButtonLeft onClick={onBack}>
+        <IconButtonLeft data-testid='page-header-back-button' onClick={onBack}>
           <ArrowLeftIcon color={color} />
         </IconButtonLeft>
       )}
