@@ -24,5 +24,6 @@ export const PhoneNumberFormTemplete: PhoneNumberFormStory = {
       console.log('mobile-->',mobile)
     },
     fontSize: '14px',
+    disabled: false,
   },
 }

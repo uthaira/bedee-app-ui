@@ -134,6 +134,7 @@ interface InternationalPhoneProps {
     defaultCountry?: ICountriesPhone;
     countryList: ICountriesPhone[];
     inputStyled?: React__default.CSSProperties;
+    disabled?: boolean;
 }
 declare const InternationalPhone: FC<InternationalPhoneProps>;
 
@@ -147,6 +148,7 @@ interface PhoneNoFormProps {
     defaultCountry?: ICountriesPhone;
     fontSize?: string;
     onBlur?: (value: string, name: string, tag?: string) => void;
+    disabled?: boolean;
 }
 declare const PhoneNoForm: React__default.FC<PhoneNoFormProps>;
 

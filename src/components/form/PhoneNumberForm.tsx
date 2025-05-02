@@ -3,6 +3,7 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import InternationalPhone, { ICountriesPhone } from '../input/InternationalPhone';
 import MobileInput from '../input/MobileInput';
+import { Colors } from '../../colors';
 
 interface PhoneNoFormProps {
   countryList: ICountriesPhone[];
@@ -14,6 +15,7 @@ interface PhoneNoFormProps {
   defaultCountry?: ICountriesPhone;
   fontSize?: string;
   onBlur?: (value: string, name: string, tag?: string) => void;
+  disabled?: boolean;
 }
 
 const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
@@ -26,7 +28,8 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
     placeholder = '',
     defaultCountry,
     fontSize,
-    onBlur
+    onBlur,
+    disabled = false,
   } = props;
 
   return (
@@ -40,6 +43,7 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
         onBlur={onBlur}
         isNumber
         invalid={isInvalid}
+        disabled={disabled}
         rightComponent={
           <Box margin='6px 0 6px -10px'>
             <InternationalPhone
@@ -49,11 +53,13 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
               inputStyled={{
                 fontSize: fontSize ?? '16px',
               }}
+              disabled={disabled}
             />
           </Box>
         }
         containerStyled={{
-          background: 'none',
+          background: disabled ? Colors.gray2 :  'none',
+          color: disabled ? 'rgba(0,0,0,0.38)' : 'unset'
         }}
         inputStyled={{
           background: 'none',

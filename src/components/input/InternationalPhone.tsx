@@ -30,6 +30,7 @@ interface InternationalPhoneProps {
   defaultCountry?: ICountriesPhone;
   countryList: ICountriesPhone[];
   inputStyled?: React.CSSProperties;
+  disabled?: boolean;
 }
 
 const SCROLL_POSITION_TO_SEE_DEFAULT_COUNTRY = 59;
@@ -38,7 +39,8 @@ const InternationalPhone: FC<InternationalPhoneProps> = ({
   onChange,
   defaultCountry = DEFAULT_COUNTRY_PHONE,
   countryList = [],
-  inputStyled
+  inputStyled,
+  disabled
 }) => {
   const [selectedCountry, setSelectedCountry] =
     useState<ICountriesPhone>(defaultCountry);
@@ -81,6 +83,7 @@ const InternationalPhone: FC<InternationalPhoneProps> = ({
   }, [isOpen, defaultCountryIndex]);
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    if(disabled) return;
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
