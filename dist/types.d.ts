@@ -149,6 +149,7 @@ interface PhoneNoFormProps {
     fontSize?: string;
     onBlur?: (value: string, name: string, tag?: string) => void;
     disabled?: boolean;
+    required?: boolean;
 }
 declare const PhoneNoForm: React__default.FC<PhoneNoFormProps>;
 
@@ -184,6 +185,7 @@ interface InputProps {
     value?: string;
     tag?: string;
     disabled?: boolean;
+    required?: boolean;
     pattern?: string;
     charPattern?: string;
     isNumber?: boolean;
