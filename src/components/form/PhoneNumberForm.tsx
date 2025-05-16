@@ -16,6 +16,7 @@ interface PhoneNoFormProps {
   fontSize?: string;
   onBlur?: (value: string, name: string, tag?: string) => void;
   disabled?: boolean;
+  required?: boolean;
 }
 
 const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
@@ -30,6 +31,7 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
     fontSize,
     onBlur,
     disabled = false,
+    required,
   } = props;
 
   return (
@@ -44,6 +46,7 @@ const PhoneNoForm: React.FC<PhoneNoFormProps> = (props: PhoneNoFormProps) => {
         isNumber
         invalid={isInvalid}
         disabled={disabled}
+        required={required}
         rightComponent={
           <Box margin='6px 0 6px -10px'>
             <InternationalPhone
