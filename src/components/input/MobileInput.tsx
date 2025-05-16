@@ -10,6 +10,7 @@ interface InputProps {
   value?: string;
   tag?: string;
   disabled?: boolean;
+  required?: boolean;
   pattern?: string;
   charPattern?: string;
   isNumber?: boolean;
@@ -30,6 +31,7 @@ const MobileInput: React.FC<InputProps> = ({
   value = '',
   tag,
   disabled = false,
+  required,
   pattern,
   charPattern,
   isNumber,
@@ -82,7 +84,7 @@ const MobileInput: React.FC<InputProps> = ({
         placeholder={label}
         type={type}
         autoComplete='off'
-        required
+        required={required}
         disabled={disabled}
         value={text}
         onChange={onValue}

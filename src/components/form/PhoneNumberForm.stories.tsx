@@ -25,5 +25,6 @@ export const PhoneNumberFormTemplete: PhoneNumberFormStory = {
     },
     fontSize: '14px',
     disabled: false,
+    required: true,
   },
 }
