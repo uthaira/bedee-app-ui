@@ -512,8 +512,11 @@ interface Content {
 }
 interface KycCameraProps {
     isReady: boolean;
-    onTakePhoto?: (photo: string) => void;
+    onTakePhoto?: (photoBase64: string) => void;
+    onSelectGallery?: (photoBase64: string, mimeType: string, extension: string) => void;
     content?: Content;
+    textGallery?: string;
+    isGallery?: boolean;
 }
 declare const KycCamera: React__default.FC<KycCameraProps>;
 
@@ -524,12 +527,15 @@ declare enum EFacingMode {
 interface CameraFrameProps {
     onFacingMode: (mode: EFacingMode) => void;
     onCapture: () => void;
+    onGallery: () => void;
     onToggleTorch?: () => void;
     cameraViewPortHeight?: number;
     viewportHeight?: number;
     cameraOverlayFrame?: React__default.ReactNode;
     captureInstruction?: React__default.ReactNode;
     placementInstruction?: React__default.ReactNode;
+    textGallery: string;
+    isGallery: boolean;
 }
 declare const CameraFrame: React__default.FC<CameraFrameProps>;
 
