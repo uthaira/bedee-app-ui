@@ -49,16 +49,16 @@ const CameraFrame: React.FC<CameraFrameProps> = ({
           <Box marginBottom="40px">{placementInstruction}</Box>
 
           <Stack direction="row" justifyContent="center" width="100%">
-            <Box flex={1} />
+            <Box flex={1} display="flex" />
             <Box flex={1} display="flex" justifyContent="center">
               <IconButton onClick={onCapture}>
                 <TakePhotoIcon />
               </IconButton>
             </Box>
             {isGallery && (
-              <Box flex={1} display={'flex'} alignItems={'center'}>
-                <Box px={4}>
-                  <SecondaryBtn text={textGallery} bdSize="md" onClick={onGallery} />
+              <Box flex={1} display={'flex'} alignItems={'center'} justifyContent={'center'}>
+                <Box>
+                  <SecondaryBtn text={textGallery} bdSize="sm" onClick={onGallery} />
                 </Box>
               </Box>
             )}
@@ -96,7 +96,7 @@ const BottomSection = styled(Stack)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'flex-end',
   height: '100%',
-  padding: theme.spacing(3, 4),
+  padding: theme.spacing(3, 2),
 }))
 
 export default CameraFrame
