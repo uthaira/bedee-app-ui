@@ -1,4 +1,7 @@
-import { Box, Button as MuiButton, ButtonProps as MuiButtonProps, Stack, Typography } from '@mui/material'
+import MuiButton, { ButtonProps as MuiButtonProps } from '@mui/material/Button'
+import Box from '@mui/material/Box'
+import Stack from '@mui/material/Stack'
+import Typography from '@mui/material/Typography'
 import { styled } from '@mui/material/styles'
 import { Colors } from '../../colors'
 

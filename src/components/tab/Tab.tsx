@@ -1,4 +1,7 @@
-import { Box, styled, Tab, Tabs } from '@mui/material';
+import Box from '@mui/material/Box';
+import { styled } from '@mui/material/styles';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
 import React from 'react';
 import { Colors } from '../../colors';
 

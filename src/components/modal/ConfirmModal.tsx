@@ -1,4 +1,7 @@
-import { Box, IconButton, Modal, Stack } from "@mui/material";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Modal from "@mui/material/Modal";
+import Stack from "@mui/material/Stack";
 import { styled } from "@mui/system";
 import { H5, P1 } from "../font";
 import { CloseIcon } from "../../icons";

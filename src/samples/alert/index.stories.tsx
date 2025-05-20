@@ -1,5 +1,6 @@
-import { useState } from "react";
-import { Box, Container, styled } from "@mui/material";
+import Box from "@mui/material/Box"
+import Container from "@mui/material/Container"
+import { styled } from '@mui/material/styles';
 import { Meta } from "@storybook/react";
 import { Alert, AlertStyle, AlertType } from "../../components/alert";
 

@@ -1,5 +1,8 @@
 import React from "react";
-import { Select, MenuItem, SelectProps, Typography, Box } from "@mui/material";
+import Select, { SelectProps } from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import { styled, SxProps, Theme } from "@mui/material/styles";
 import { Colors } from "../../colors";
 

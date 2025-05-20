@@ -1,5 +1,8 @@
 import React from "react";
-import { TextField, TextFieldProps, Typography, Box } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import { TextFieldProps } from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import { styled, SxProps, Theme } from "@mui/material/styles";
 import { Colors } from "../../colors"; // Adjust this import path as needed
 

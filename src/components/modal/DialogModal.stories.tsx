@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import DialogModal from './DialogModal';
-import { Button } from '@mui/material';
+import Button from '@mui/material/Button';
 
 const meta: Meta<typeof DialogModal> = {
   title: 'Components/DialogModal',

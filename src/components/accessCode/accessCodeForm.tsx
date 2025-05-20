@@ -1,4 +1,5 @@
-import { Box, Paper } from '@mui/material'
+import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper'
 import React, { useState } from 'react'
 import { Colors } from '../../colors'
 import { BaseText } from '../font'

@@ -1,5 +1,8 @@
 import React from 'react'
-import { Box, IconButton, Stack, styled } from '@mui/material'
+import IconButton from '@mui/material/IconButton'
+import Stack from '@mui/material/Stack'
+import Box from '@mui/material/Box'
+import { styled } from '@mui/material/styles';
 import CameraViewPort from './CameraViewPort'
 import CornerMark from './CornerMark'
 import CameraFrameOverlay from './CameraFrameOverlay'

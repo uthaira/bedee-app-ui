@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useRef, FC, useMemo } from 'react';
-import {
-  Menu,
-  Box,
-  Button,
-  Typography,
-  MenuItem,
-  MenuProps,
-} from '@mui/material';
+import Menu from '@mui/material/Menu';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import MenuItem from '@mui/material/MenuItem';
+import { MenuProps } from '@mui/material/Menu';
 import { styled } from '@mui/material/styles';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { Colors } from '../../colors';

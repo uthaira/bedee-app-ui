@@ -1,4 +1,4 @@
-import { styled } from '@mui/material'
+import { styled } from '@mui/material/styles'
 
 const Box = (props: any) => {
   const { title, children } = props
