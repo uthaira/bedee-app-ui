@@ -1,5 +1,4 @@
-import Typography from '@mui/material/Typography'
-import { styled } from '@mui/material/styles'
+import { Typography, styled } from '@mui/material'
 
 const Box = (props: any) => {
   const { title, children, color } = props

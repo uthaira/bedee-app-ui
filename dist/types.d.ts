@@ -1,17 +1,11 @@
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as React$1 from 'react';
 import React__default, { FC, ReactNode } from 'react';
-import { ButtonProps as ButtonProps$1 } from '@mui/material/Button';
-import { TypographyProps } from '@mui/material/Typography';
-import { SxProps, Theme } from '@mui/material/styles';
-import { SlideProps } from '@mui/material/Slide';
-import { TextFieldProps } from '@mui/material/TextField';
-import { SelectProps } from '@mui/material/Select';
-import { DatePickerProps } from '@mui/x-date-pickers/DatePicker';
-import { PickerValidDate } from '@mui/x-date-pickers/models/pickers';
+import { ButtonProps as ButtonProps$1, TypographyProps, SxProps, Theme, SlideProps, TextFieldProps, SelectProps } from '@mui/material';
+import { SxProps as SxProps$1, Theme as Theme$1 } from '@mui/material/styles';
+import { DatePickerProps, PickerValidDate } from '@mui/x-date-pickers';
 import { JwtPayload } from 'jwt-decode';
 import * as i18next from 'i18next';
-import { Theme as Theme$1 } from '@mui/material/styles/createTheme';
 
 interface AccessCodeProviderProps {
     children: React__default.ReactNode;
@@ -203,7 +197,7 @@ interface InputProps {
     containerStyled?: React__default.CSSProperties;
     inputStyled?: React__default.CSSProperties;
     rightComponent?: React__default.ReactNode;
-    sx?: SxProps<Theme>;
+    sx?: SxProps$1<Theme$1>;
 }
 declare const MobileInput: React__default.FC<InputProps>;
 
@@ -237,7 +231,7 @@ declare const SelectionGroupInput: React__default.FC<SelectionGroupInputProps>;
 interface TextInputProps extends Omit<TextFieldProps, "variant"> {
     label?: string;
     helperText?: string;
-    inputSx?: SxProps<Theme>;
+    inputSx?: SxProps$1<Theme$1>;
     backgroundColor?: string;
 }
 declare const TextInput: React__default.FC<TextInputProps>;
@@ -249,7 +243,7 @@ interface DropdownInputProps extends Omit<SelectProps, "variant"> {
         value: string;
         label: string;
     }[];
-    inputSx?: SxProps<Theme>;
+    inputSx?: SxProps$1<Theme$1>;
     backgroundColor?: string;
 }
 declare const DropdownInput: React__default.FC<DropdownInputProps>;
@@ -257,7 +251,7 @@ declare const DropdownInput: React__default.FC<DropdownInputProps>;
 interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' | 'onOpen' | 'onClose'> {
     label?: string;
     helperText?: string;
-    inputSx?: SxProps<Theme>;
+    inputSx?: SxProps$1<Theme$1>;
     backgroundColor?: string;
     disabled?: boolean;
     error?: boolean;
@@ -278,7 +272,7 @@ interface TextAreaProps {
     borderRadius?: string;
     placeholderColor?: string;
     rows?: number;
-    sx?: SxProps<Theme>;
+    sx?: SxProps$1<Theme$1>;
     inputProps?: React__default.InputHTMLAttributes<HTMLTextAreaElement>;
     helperText?: string;
     error?: boolean;
@@ -1450,7 +1444,7 @@ interface IToast {
     duration?: number;
     position?: ToastPosition;
     alignment?: ToastAlignment;
-    sx?: SxProps<Theme$1>;
+    sx?: SxProps<Theme>;
     onClose?: () => void;
 }
 declare const Toast: ({ text, open, type, style, alignment, showCloseButton, showBackdrop, elevation, duration, position, onClose, sx, }: IToast) => react_jsx_runtime.JSX.Element;

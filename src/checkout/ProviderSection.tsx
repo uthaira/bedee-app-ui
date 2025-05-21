@@ -1,5 +1,4 @@
-import Box from '@mui/material/Box'
-import Stack from '@mui/material/Stack'
+import { Box, Stack } from '@mui/material'
 import { H6, Lead1, P2 } from '../components'
 import React from 'react'
 import { ProviderAvatar } from '../components/avatar'

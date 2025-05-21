@@ -1,5 +1,4 @@
-import Grid from "@mui/material/Grid"
-import Stack from "@mui/material/Stack"
+import { Grid, Stack } from '@mui/material'
 import { ColumnBox } from '../layout'
 import { Meta } from '@storybook/react'
 import { Colors } from '../../colors'

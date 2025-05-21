@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Meta } from '@storybook/react'
 import { COUNTRY_LIST, DEFAULT_COUNTRY_PHONE } from '../../constanst/mockData'
-import Box from '@mui/material/Box'
+import { Box } from '@mui/material'
 import { P1 } from '../../components'
 import { styled } from '@mui/material/styles';
 import PhoneNoForm from '../../components/form/PhoneNumberForm'

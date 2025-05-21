@@ -1,6 +1,4 @@
-import TextField from "@mui/material/TextField";
-import Box from "@mui/material/Box";
-import { styled } from "@mui/material/styles";
+import { TextField, Box, styled } from "@mui/material";
 import * as React from "react";
 import { Colors } from "../../colors";
 interface IOTP {

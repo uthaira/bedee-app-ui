@@ -1,9 +1,11 @@
 import React from 'react';
-import Dialog from '@mui/material/Dialog';
-import Divider from '@mui/material/Divider';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
+import {
+  Dialog,
+  Divider,
+  List,
+  ListItem,
+  ListItemText,
+} from '@mui/material';
 import { styled } from '@mui/system';
 import { Colors } from '../../colors';
 

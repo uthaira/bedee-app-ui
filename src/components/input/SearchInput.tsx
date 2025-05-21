@@ -1,7 +1,4 @@
-import IconButton from '@mui/material/IconButton';
-import InputBase from '@mui/material/InputBase';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
+import { IconButton, InputBase, Paper, styled } from '@mui/material';
 import React, { ChangeEvent } from 'react';
 import { Colors } from '../../colors';
 import { CloseIcon, SearchIcon } from '../../icons';

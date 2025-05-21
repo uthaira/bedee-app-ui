@@ -1,27 +1,30 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import Box from '@mui/material/Box'
-import IconButton from '@mui/material/IconButton'
-import InputAdornment from '@mui/material/InputAdornment'
-import Typography from '@mui/material/Typography'
-import { DatePicker } from '@mui/x-date-pickers/DatePicker'
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { DatePickerProps } from '@mui/x-date-pickers/DatePicker'
-import { ClearIcon } from '@mui/x-date-pickers/icons'
-import { PickerValidDate } from '@mui/x-date-pickers/models/pickers'
-import { SxProps, Theme } from '@mui/material/styles'
+import React, { useCallback, useEffect, useState } from 'react';
+import { Box, IconButton, InputAdornment, Typography } from '@mui/material';
+import {
+  ClearIcon,
+  DatePicker,
+  DatePickerProps,
+  LocalizationProvider,
+  PickerValidDate,
+} from '@mui/x-date-pickers';
+import { SxProps, Theme } from '@mui/material/styles';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { CalendarIcon } from '../../icons'
-import TextInput from './TextInput'
+import { CalendarIcon } from '../../icons';
+import TextInput from './TextInput';
 
-interface DOBPickerProps extends Omit<DatePickerProps<PickerValidDate>, 'open' | 'onOpen' | 'onClose'> {
-  label?: string
-  helperText?: string
-  inputSx?: SxProps<Theme>
-  backgroundColor?: string
-  disabled?: boolean
-  error?: boolean
-  placeholder?: string
-  onBlur?: React.FocusEventHandler<HTMLInputElement>
+interface DOBPickerProps
+  extends Omit<
+    DatePickerProps<PickerValidDate>,
+    'open' | 'onOpen' | 'onClose'
+  > {
+  label?: string;
+  helperText?: string;
+  inputSx?: SxProps<Theme>;
+  backgroundColor?: string;
+  disabled?: boolean;
+  error?: boolean;
+  placeholder?: string;
+  onBlur?: React.FocusEventHandler<HTMLInputElement>;
   onClear?: () => void
 }
 
@@ -41,30 +44,32 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
   onClear,
   ...props
 }) => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedDate, handleDateChange] = useState<PickerValidDate | null>(defaultValue || null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedDate, handleDateChange] = useState<PickerValidDate | null>(
+    defaultValue || null
+  );
 
-  const handleOpen = () => setIsOpen(true)
-  const handleClose = () => setIsOpen(false)
+  const handleOpen = () => setIsOpen(true);
+  const handleClose = () => setIsOpen(false);
 
   const handleClear = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.stopPropagation() // Prevent the DatePicker from opening
-    onDateChange(null)
+    event.stopPropagation(); // Prevent the DatePicker from opening
+    onDateChange(null);
     onClear?.()
-  }
+  };
 
   const onDateChange = (date: PickerValidDate | null) => {
-    handleDateChange(date)
+    handleDateChange(date);
     if (onChange) {
-      onChange(date, { validationError: null })
+      onChange(date, { validationError: null });
     }
-  }
+  };
 
   useEffect(() => {
     if (value) {
-      handleDateChange(value)
+      handleDateChange(value);
     }
-  }, [value])
+  }, [value]);
 
   const CustomTextField = useCallback(
     (props: any) => (
@@ -80,13 +85,18 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
         InputProps={{
           ...props.InputProps,
           endAdornment: (
-            <InputAdornment position="end">
+            <InputAdornment position='end'>
               {props.value && (
-                <IconButton edge="end" onClick={handleClear} disabled={disabled} size="small">
-                  <ClearIcon fontSize="small" />
+                <IconButton
+                  edge='end'
+                  onClick={handleClear}
+                  disabled={disabled}
+                  size='small'
+                >
+                  <ClearIcon fontSize='small' />
                 </IconButton>
               )}
-              <IconButton edge="end" onClick={handleOpen} disabled={disabled}>
+              <IconButton edge='end' onClick={handleOpen} disabled={disabled}>
                 <CalendarIcon />
               </IconButton>
             </InputAdornment>
@@ -95,7 +105,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
       />
     ),
     [backgroundColor, error, disabled, helperText, onBlur, inputSx, placeholder]
-  )
+  );
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -126,7 +136,7 @@ const DOBPicker: React.FC<DOBPickerProps> = ({
         />
       </Box>
     </LocalizationProvider>
-  )
-}
+  );
+};
 
-export default DOBPicker
+export default DOBPicker;

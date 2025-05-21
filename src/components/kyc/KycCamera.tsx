@@ -1,7 +1,6 @@
 import React, { useRef, useState, useCallback } from 'react'
 import Webcam from 'react-webcam'
-import Box from '@mui/material/Box'
-import { styled } from '@mui/material/styles';
+import { Box, styled } from '@mui/material'
 import CameraFrame from './CameraFrame'
 
 import { useViewportHeight, useCameraViewport } from '../../hooks'

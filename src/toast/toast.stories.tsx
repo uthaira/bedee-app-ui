@@ -1,5 +1,4 @@
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+import { Button, Stack } from '@mui/material';
 
 import { ToastProvider, useToast } from '.';
 import { Meta } from '@storybook/react';

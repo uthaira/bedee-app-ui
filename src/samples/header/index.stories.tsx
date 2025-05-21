@@ -1,6 +1,6 @@
 import { Meta } from '@storybook/react'
 import { BdPrimaryButton, ProfileHeader } from '../../components'
-import Container from '@mui/material/Container'
+import { Container } from '@mui/material'
 import { useState } from 'react'
 import { ELanguage } from '../../components/switch/LanguageSwitch'
 

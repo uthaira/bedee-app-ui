@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react'
-import Container from '@mui/material/Container'
+import { Container } from '@mui/material'
 import { useState } from 'react'
 import LanguageSwitch, { ELanguage } from '../../components/switch/LanguageSwitch'
 import { Box } from '../layout'

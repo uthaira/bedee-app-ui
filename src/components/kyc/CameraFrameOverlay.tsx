@@ -1,6 +1,5 @@
 import React from 'react';
-import Box from '@mui/material/Box'
-import { SxProps, Theme, styled } from '@mui/material/styles';
+import { Box, SxProps, Theme, styled } from '@mui/material';
 
 interface CameraFrameOverlayProps {
   overlayPosition: 'top' | 'bottom' | 'left' | 'right';

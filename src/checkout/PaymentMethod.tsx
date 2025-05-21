@@ -1,6 +1,4 @@
-import Box from '@mui/material/Box'
-import Radio from '@mui/material/Radio'
-import Stack from '@mui/material/Stack'
+import { Box, Radio, Stack } from '@mui/material'
 import { Alert, AlertStyle, AlertType, H6, Lead2 } from '../components'
 import React from 'react'
 import { JCBIcon, MasterCardIcon, PaymentIcon, ThaiQrIcon, VisaIcon } from '../icons'

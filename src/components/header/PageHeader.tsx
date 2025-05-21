@@ -1,6 +1,5 @@
 import React from 'react';
-import Box from '@mui/material/Box'
-import IconButton from '@mui/material/IconButton'
+import { Box, IconButton } from '@mui/material';
 import { styled } from '@mui/system';
 import { Colors } from '../../colors';
 import ArrowLeftIcon from '../../icons/ArrowLeftIcon';
