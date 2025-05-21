@@ -3,15 +3,13 @@ import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import Typography from '@mui/material/Typography';
-import {
-  ClearIcon,
-  DatePicker,
-  DatePickerProps,
-  LocalizationProvider,
-  PickerValidDate,
-} from '@mui/x-date-pickers';
+import DatePicker from '@mui/x-date-pickers/DatePicker';
+import LocalizationProvider from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePickerProps } from '@mui/x-date-pickers/DatePicker';
+import { ClearIcon } from '@mui/x-date-pickers/icons';
+import { PickerValidDate } from '@mui/x-date-pickers/models/pickers';
 import { SxProps, Theme } from '@mui/material/styles';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import AdapterDayjs from '@mui/x-date-pickers/AdapterDayjs/AdapterDayjs';
 import { CalendarIcon } from '../../icons';
 import TextInput from './TextInput';
 
