@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import SelectionCard from './SelectionCard';
 import { IdCardIcon, PassportIcon } from '../../icons';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box'
 
 const meta: Meta<typeof SelectionCard> = {
   title: 'Components/SelectionCard',

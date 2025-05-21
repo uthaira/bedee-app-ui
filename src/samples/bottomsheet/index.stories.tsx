@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Typography } from '@mui/material'
+import Typography from '@mui/material/Typography'
 import { Meta } from '@storybook/react'
 import BottomSheet from '../../components/bottomsheet/BaseBottomSheet'
 import { BdPrimaryButton } from '../../components'

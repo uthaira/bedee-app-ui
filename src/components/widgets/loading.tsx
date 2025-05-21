@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
-import { Modal, Box, CircularProgress } from '@mui/material';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+import CircularProgress from '@mui/material/CircularProgress';
 import { Colors } from '../../colors';
 
 interface LoadingWidgetProps {

@@ -1,14 +1,10 @@
 import React from "react";
-import {
-  Box,
-  Radio,
-  Typography,
-  IconButton,
-  styled,
-  SxProps,
-  Theme,
-} from "@mui/material";
-import { Check as CheckIcon } from "@mui/icons-material";
+import Box from "@mui/material/Box";
+import Radio from "@mui/material/Radio";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import { styled, SxProps, Theme } from "@mui/material/styles";
+import CheckIcon from "@mui/icons-material/Check";
 import { Colors } from "../../colors";
 import { BaseText } from "../font";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box } from "@mui/material";
+import Box from "@mui/material/Box";
 import { styled } from "@mui/material/styles";
 import { Colors } from "../../colors";
 import { Lead1, P1, P2 } from "../font";

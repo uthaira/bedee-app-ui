@@ -1,4 +1,10 @@
-import { Avatar, Box, Button, CircularProgress, IconButton, LinearProgress, Stack } from "@mui/material";
+import Avatar from "@mui/material/Avatar"
+import Box from "@mui/material/Box"
+import Button from "@mui/material/Button"
+import CircularProgress from "@mui/material/CircularProgress"
+import IconButton from "@mui/material/IconButton"
+import LinearProgress from "@mui/material/LinearProgress"
+import Stack from "@mui/material/Stack"
 import ErrorIcon from '@mui/icons-material/Error';
 import TextSnippetOutlinedIcon from '@mui/icons-material/TextSnippetOutlined';
 

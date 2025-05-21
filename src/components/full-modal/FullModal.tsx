@@ -1,5 +1,8 @@
 import React from 'react'
-import { Box, Slide as MuiSlide, IconButton, SlideProps as MuiSlideProps, styled } from '@mui/material'
+import Box from '@mui/material/Box'
+import MuiSlide, { SlideProps as MuiSlideProps } from '@mui/material/Slide'
+import IconButton from '@mui/material/IconButton'
+import { styled } from '@mui/material/styles'
 import CloseIcon from '../../icons/CloseIcon'
 
 export interface FullModalProps extends MuiSlideProps {

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import DOBPicker from "./DOBPickerInput";
-import { LocalizationProvider } from "@mui/x-date-pickers";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import dayjs from "dayjs";
 

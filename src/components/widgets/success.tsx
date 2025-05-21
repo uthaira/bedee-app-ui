@@ -1,5 +1,6 @@
 import React from 'react';
-import { Modal, Box } from '@mui/material';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
 import { Colors } from '../../colors';
 import { CheckIcon } from '../../icons';
 import { Lead2 } from '../font';

@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import {
-  ToggleButtonGroup,
-  ToggleButton,
-  Typography,
-  Box,
-  SxProps,
-  Theme,
-} from "@mui/material";
-import { styled } from "@mui/material/styles";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import ToggleButton from "@mui/material/ToggleButton";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { styled, SxProps, Theme } from "@mui/material/styles";
 import { Colors } from "../../colors";
 
 const StyledToggleButtonGroup = styled(ToggleButtonGroup)(({ theme }) => ({

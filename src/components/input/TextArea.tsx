@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { styled, SxProps, Theme } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import { Box } from '@mui/material';
+import Box from '@mui/material/Box';
 import { Colors } from '../../colors';
 
 const DEFAULT_ROWS = 3;

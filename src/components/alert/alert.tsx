@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-import { Box, IconButton, Paper, Stack, SxProps, Theme } from "@mui/material";
+import IconButton from "@mui/material/IconButton";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import { SxProps, Theme } from "@mui/material/styles";
 import { AlertStyle, AlertType } from "./alert.type";
 import {
   AttentionNotificationIcon,
