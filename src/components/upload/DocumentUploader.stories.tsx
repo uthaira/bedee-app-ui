@@ -1,7 +1,7 @@
 import { Meta, StoryObj } from '@storybook/react';
 import DocumentUploader from './DocumentUploader';
 import { useFileUploader, FileWithUploadStatus } from '../../hooks/useFileUploader';
-import Box from '@mui/material/Box';
+import { Box } from '@mui/material';
 import React from 'react';
 
 const mockUploadService = (file: FileWithUploadStatus, updateProgress: (progress: number) => void) => {

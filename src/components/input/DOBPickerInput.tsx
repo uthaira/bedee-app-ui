@@ -1,8 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import Typography from '@mui/material/Typography';
+import { Box, IconButton, InputAdornment, Typography } from '@mui/material';
 import {
   ClearIcon,
   DatePicker,

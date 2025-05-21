@@ -1,6 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 import { styled, SxProps, Theme } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
+import { InputBase } from '@mui/material';
 import { Format } from '../../utils';
 import { Colors } from '../../colors';
 

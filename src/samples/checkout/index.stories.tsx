@@ -1,5 +1,5 @@
 import { Meta } from '@storybook/react'
-import Box from '@mui/material/Box'
+import { Box } from '@mui/material'
 import { styled } from '@mui/material/styles';
 import { PaymentMethod, ProviderSection } from '../../checkout'
 import { useState } from 'react';

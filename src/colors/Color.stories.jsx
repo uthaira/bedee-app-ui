@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Box from '@mui/material/Box'
+import { Box } from '@mui/material';
 
 export default {
   title: 'Colors',

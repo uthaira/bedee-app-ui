@@ -1,4 +1,4 @@
-import Box from "@mui/material/Box";
+import { Box } from "@mui/material";
 
 export default function CameraViewPort({ viewPortHeight = 234, children }: {
   viewPortHeight?: number;

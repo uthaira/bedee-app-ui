@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import Box from '@mui/material/Box'
-import MuiSlide, { SlideProps as MuiSlideProps } from '@mui/material/Slide'
-import IconButton from '@mui/material/IconButton'
+import { Box, Slide as MuiSlide, IconButton, SlideProps as MuiSlideProps } from '@mui/material';
 import CloseIcon from '../../icons/CloseIcon';
 
 export interface BottomSheetProps extends MuiSlideProps {

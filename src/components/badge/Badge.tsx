@@ -1,6 +1,5 @@
 import React from "react";
-import Box from "@mui/material/Box";
-import { styled, SxProps, Theme } from "@mui/material/styles";
+import { Box, styled, SxProps, Theme } from "@mui/material";
 
 type Variant = "default" | "outlined";
 

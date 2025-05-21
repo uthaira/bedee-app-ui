@@ -1,4 +1,4 @@
-import Grid from '@mui/material/Grid'
+import { Grid } from '@mui/material'
 import { ColumnBox } from '../layout'
 import { BdPrimaryButton, BdSecondaryButton, BdOutlinedButton, BdRemoveButton } from '../../components/button'
 import { Meta } from '@storybook/react'

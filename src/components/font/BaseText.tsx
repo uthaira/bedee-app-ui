@@ -1,4 +1,4 @@
-import Typography, { TypographyProps } from '@mui/material/Typography'
+import { Typography, TypographyProps } from '@mui/material'
 import { Colors } from '../../colors'
 
 type TextType =
