@@ -1,16 +1,6 @@
 const getNewUrl = (url: string, path: string) => {
-  const parsedUrl = new URL(url);
-  const { isNonProd, isLocalhost } = checkNonProd(url)
-
-  if (isNonProd) {
-    const environment = parsedUrl.hostname.split('-')[0];
-    if (isLocalhost) {
-      return `http://localhost:3000${path}?redirectUrl=${url}`;
-    } else {
-      return `https://${environment}-services.bedee.com${path}?redirectUrl=${url}`;
-    }
-  }
-  return ''
+  const domain = window.location.origin;
+  return `${domain}${path}?redirectUrl=${url}`;
 }
 
 export const checkNonProd = (url: string) => {
