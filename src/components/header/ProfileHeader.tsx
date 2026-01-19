@@ -20,6 +20,7 @@ export interface ProfileHeaderProps {
   onProfile?: () => void;
   onLogin?: () => void;
   onRegister?: () => void;
+  onClickLogo?: () => void;
 }
 
 const ProfileHeader = (props: ProfileHeaderProps) => {
@@ -34,6 +35,7 @@ const ProfileHeader = (props: ProfileHeaderProps) => {
     onLogin = () => {},
     onRegister = () => {},
     onCart = () => {},
+    onClickLogo,
   } = props;
 
   const isThai = localeLanguage === ELanguage.TH;
@@ -49,7 +51,15 @@ const ProfileHeader = (props: ProfileHeaderProps) => {
         paddingY='12px'
       >
         <Box>
-          <BeDeeLogo />
+          <Box
+            onClick={onClickLogo}
+            sx={{
+              cursor: onClickLogo ? 'pointer' : 'default',
+              display: 'inline-block',
+            }}
+          >
+            <BeDeeLogo />
+          </Box>
           {isLogin && (
             <Stack direction='row' gap={1} alignItems='baseline'>
               <Mini
