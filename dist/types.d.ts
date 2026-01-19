@@ -349,6 +349,7 @@ interface ProfileHeaderProps {
     onProfile?: () => void;
     onLogin?: () => void;
     onRegister?: () => void;
+    onClickLogo?: () => void;
 }
 declare const ProfileHeader: (props: ProfileHeaderProps) => react_jsx_runtime.JSX.Element;
 
