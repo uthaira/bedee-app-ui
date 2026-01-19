@@ -19,6 +19,7 @@ export const ProfileHeaderGuest: ProfileHeaderStory = {
     onProfile: action('Profile button clicked'),
     onLogin: action('Login button clicked'),
     onRegister: action('Register button clicked'),
+    onClickLogo: action('Logo clicked'),
   },
 }
 
