@@ -1359,6 +1359,7 @@ interface PaymentMethodProps {
     hideTitle?: boolean;
     alertText?: string;
     withAlert?: boolean;
+    showCloseButton?: boolean;
 }
 declare const PaymentMethod: React__default.FC<PaymentMethodProps>;
 
