@@ -25,6 +25,7 @@ interface PaymentMethodProps {
   hideTitle?: boolean
   alertText?: string
   withAlert?: boolean
+  showCloseButton?: boolean
 }
 
 const PaymentMethod: React.FC<PaymentMethodProps> = (props) => {
@@ -36,6 +37,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = (props) => {
     currentPaymentType,
     withAlert = false,
     hideTitle = false,
+    showCloseButton = true,
   } = props
   const disabledSelect = !onSelected
 
@@ -108,7 +110,7 @@ const PaymentMethod: React.FC<PaymentMethodProps> = (props) => {
                 width: '100%',
               }}
             >
-              <Alert text={alertText} type={AlertType.Info} style={AlertStyle.Fill} elevation={0} />
+              <Alert text={alertText} type={AlertType.Info} style={AlertStyle.Fill} elevation={0} showCloseButton={showCloseButton} />
             </Box>
           )}
         </Stack>
