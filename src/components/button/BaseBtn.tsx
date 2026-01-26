@@ -149,7 +149,7 @@ const Button = (props: ButtonProps) => {
     >
       <TextStyled>
         {!isRightIcon && iconImg}
-        <Box style={{ color: rest.disabled ? c.disabledColor ?? c.color : c.color, fontSize: s.fontSize, fontWeight: 600 }}>{text}</Box>
+        <Box style={{ color: rest?.disabled ? c.disabledColor ?? c.color : c.color, fontSize: s.fontSize, fontWeight: 600 }}>{text}</Box>
         {isRightIcon && iconImg}
         {displayCounter}
       </TextStyled>
