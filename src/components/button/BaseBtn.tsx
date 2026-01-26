@@ -26,6 +26,7 @@ const Button = (props: ButtonProps) => {
           color: Colors.primary001,
           borderColor: Colors.primary001,
           backgroundColor: Colors.white,
+          disabledColor: Colors.gray5,
         }
       case 'outlined':
         return {
@@ -148,7 +149,7 @@ const Button = (props: ButtonProps) => {
     >
       <TextStyled>
         {!isRightIcon && iconImg}
-        <Box style={{ color: c.color, fontSize: s.fontSize, fontWeight: 600 }}>{text}</Box>
+        <Box style={{ color: rest?.disabled ? c.disabledColor ?? c.color : c.color, fontSize: s.fontSize, fontWeight: 600 }}>{text}</Box>
         {isRightIcon && iconImg}
         {displayCounter}
       </TextStyled>
