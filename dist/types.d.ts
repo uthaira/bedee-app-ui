@@ -1247,17 +1247,22 @@ interface WithAuthOptions {
 interface AuthContextProps {
     isAuthenticated: boolean | null;
     isRequiredPin: boolean | null;
+    /** False only after cookies are read and auth flags are applied for the first time */
+    isAuthLoading: boolean;
     accessToken: string | null;
     refreshToken: string | null;
     idToken: string | null;
     otpToken: string | null;
     onRefresh: () => void;
 }
+type AuthProviderProps = {
+    children: ReactNode;
+    /** Shown until initial auth state is derived from cookies (avoids layout flash / overlap) */
+    loadingFallback?: ReactNode;
+};
 
 declare const Authentication: {
-    AuthProvider: ({ children }: {
-        children: React$1.ReactNode;
-    }) => react_jsx_runtime.JSX.Element;
+    AuthProvider: ({ children, loadingFallback, }: AuthProviderProps) => react_jsx_runtime.JSX.Element;
     useAuth: () => AuthContextProps;
     withAuth: (WrappedComponent: React$1.FC, options?: WithAuthOptions) => (props: any) => react_jsx_runtime.JSX.Element | null;
 };

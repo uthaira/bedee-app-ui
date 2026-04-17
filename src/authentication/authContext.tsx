@@ -4,12 +4,15 @@ import {
   useContext,
   ReactNode,
   useEffect,
+  useLayoutEffect,
 } from 'react';
 import { Cookie, ManageAuth, ValidateOAuthToken } from '../utils';
 
 export interface AuthContextProps {
   isAuthenticated: boolean | null;
   isRequiredPin: boolean | null;
+  /** False only after cookies are read and auth flags are applied for the first time */
+  isAuthLoading: boolean;
   accessToken: string | null;
   refreshToken: string | null;
   idToken: string | null;
@@ -19,7 +22,17 @@ export interface AuthContextProps {
 
 export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
 
-export const AuthProvider = ({ children }: { children: ReactNode }) => {
+export type AuthProviderProps = {
+  children: ReactNode;
+  /** Shown until initial auth state is derived from cookies (avoids layout flash / overlap) */
+  loadingFallback?: ReactNode;
+};
+
+export const AuthProvider = ({
+  children,
+  loadingFallback = null,
+}: AuthProviderProps) => {
+  const [isAuthLoading, setIsAuthLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [isRequiredPin, setIsRequiredPin] = useState<boolean | null>(null);
   const [accessToken, setAccessToken] = useState<string | null>(null);
@@ -35,21 +48,32 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     return { accessToken, refreshToken, idToken, otpToken };
   };
 
-  const onRefresh = (): void => {
+  const removeAuthData = () => {
+    console.log('removeAuthData');
+    ManageAuth.removeAuthData();
+  };
+
+  const syncAuthFromCookies = (): void => {
+    for (;;) {
+      const { accessToken, refreshToken, otpToken } = getCurrentAuthData();
+
+      if (otpToken && !accessToken && !refreshToken) {
+        const otpTokenExpired = ValidateOAuthToken.checkIsTokenExpired(
+          otpToken || '',
+        );
+        console.log('otpTokenExpired');
+        if (otpTokenExpired) {
+          removeAuthData();
+          continue;
+        }
+      }
+      break;
+    }
+
     const { accessToken, idToken, refreshToken, otpToken } =
       getCurrentAuthData();
 
     if (otpToken) {
-      if (!accessToken && !refreshToken) {
-        const otpTokenExpired = ValidateOAuthToken.checkIsTokenExpired(otpToken || '');
-        console.log('otpTokenExpired')
-        if (otpTokenExpired) {
-          removeAuthData()
-          onRefresh()
-          return;
-        }
-      }
-
       setIsAuthenticated(true);
       setIsRequiredPin(true);
     } else {
@@ -68,15 +92,23 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     if (otpToken) setOtpToken(otpToken);
 
     if (accessToken || refreshToken) {
-      const isAccessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(accessToken || '');
-      const refreshTokenExpired = ValidateOAuthToken.checkIsTokenExpired(refreshToken || '');
+      const isAccessTokenExpired = ValidateOAuthToken.checkIsTokenExpired(
+        accessToken || '',
+      );
+      const refreshTokenExpired = ValidateOAuthToken.checkIsTokenExpired(
+        refreshToken || '',
+      );
       if (isAccessTokenExpired || refreshTokenExpired) {
-        console.log('accessTokenExpired and refreshTokenExpired')
-        Cookie.removeCookie('accessToken' , { path: '/'});
+        console.log('accessTokenExpired and refreshTokenExpired');
+        Cookie.removeCookie('accessToken', { path: '/' });
         setIsAuthenticated(true);
         setIsRequiredPin(true);
       }
     }
+  };
+
+  const onRefresh = (): void => {
+    syncAuthFromCookies();
   };
 
   useEffect(() => {
@@ -101,15 +133,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         return;
       }
     }
-  }, [refreshToken])
+  }, [refreshToken]);
 
-  const removeAuthData = () => {
-    console.log('removeAuthData')
-    ManageAuth.removeAuthData()
-  };
-
-  useEffect(() => {
-    onRefresh();
+  useLayoutEffect(() => {
+    syncAuthFromCookies();
+    setIsAuthLoading(false);
   }, []);
 
   return (
@@ -117,6 +145,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       value={{
         isAuthenticated,
         isRequiredPin,
+        isAuthLoading,
         accessToken,
         refreshToken,
         idToken,
@@ -124,7 +153,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         onRefresh,
       }}
     >
-      {children}
+      {isAuthLoading ? loadingFallback : children}
     </AuthContext.Provider>
   );
 };

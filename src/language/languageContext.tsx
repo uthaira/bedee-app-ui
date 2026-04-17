@@ -37,17 +37,17 @@ export const LanguageProvider: React.FC<{
   // }, [lang, i18n]);
 
   useEffect(() => {
-    if (userInfo && userInfo?.preferredLanguage) {
-      if (lang !== userInfo?.preferredLanguage) {
-        changeLanguage(userInfo?.preferredLanguage);
+    const savedLang = Cookie.getCookie('i18next');
+    if (savedLang) {
+      if (savedLang !== lang) {
+        changeLanguage(savedLang);
       }
-    } else {
-      const savedLang = Cookie.getCookie('i18next');
-      if (savedLang && savedLang !== lang && i18n && i18n?.changeLanguage) {
-        i18n.changeLanguage(savedLang);
-      }
+      return;
     }
-  }, [userInfo, lang, i18n])
+    if (userInfo?.preferredLanguage && userInfo.preferredLanguage !== lang) {
+      changeLanguage(userInfo.preferredLanguage);
+    }
+  }, [userInfo, lang, i18n]);
 
   return (
     <LanguageContext.Provider value={{ lang, changeLanguage }}>

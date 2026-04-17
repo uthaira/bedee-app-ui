@@ -8,9 +8,11 @@ export interface WithAuthOptions {
 
 const withAuth = (WrappedComponent: React.FC, options?: WithAuthOptions) => {
   return (props: any) => {
-    const { isAuthenticated, isRequiredPin } = Authentication.useAuth();
+    const { isAuthenticated, isRequiredPin, isAuthLoading } =
+      Authentication.useAuth();
 
     useEffect(() => {
+      if (isAuthLoading) return;
       if (isAuthenticated == null || isRequiredPin == null) return;
       const redirectUrl = window.location.href;
 
@@ -28,9 +30,15 @@ const withAuth = (WrappedComponent: React.FC, options?: WithAuthOptions) => {
         Redirect.gotoLoginPinPage(redirectUrl)
         return;
       }
-    }, [isAuthenticated, isRequiredPin]);
+    }, [isAuthenticated, isRequiredPin, isAuthLoading]);
 
-    if (isAuthenticated == null || isRequiredPin == null || !isAuthenticated || isRequiredPin) {
+    if (
+      isAuthLoading ||
+      isAuthenticated == null ||
+      isRequiredPin == null ||
+      !isAuthenticated ||
+      isRequiredPin
+    ) {
       return null;
     }
 
