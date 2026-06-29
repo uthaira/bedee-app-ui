@@ -1,45 +1,68 @@
-import React, { useEffect } from 'react';
+import React, {
+  ComponentType,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import { Authentication } from '.';
 import { Redirect } from '../utils';
+import LoadingWidget from '../components/widgets/loading';
 
 export interface WithAuthOptions {
-  unauthenRedirectUrl : string;
+  unauthenRedirectUrl?: string;
 }
 
-const withAuth = (WrappedComponent: React.FC, options?: WithAuthOptions) => {
-  return (props: any) => {
-    const { isAuthenticated, isRequiredPin, isAuthLoading } =
-      Authentication.useAuth();
+const withAuth = <P extends object>(
+  WrappedComponent: ComponentType<P>,
+  options?: WithAuthOptions,
+) => {
+  return (props: P) => {
+    const {
+      isAuthenticated,
+      isRequiredPin,
+      isAuthLoading,
+    } = Authentication.useAuth();
+
+    const redirected = useRef(false);
+    const [ready, setReady] = useState(false);
 
     useEffect(() => {
+      if (redirected.current || ready) return;
+
       if (isAuthLoading) return;
       if (isAuthenticated == null || isRequiredPin == null) return;
+
       const redirectUrl = window.location.href;
 
       if (!isAuthenticated) {
-        if(options?.unauthenRedirectUrl){
-          Redirect.gotoCustomPage(options?.unauthenRedirectUrl)
-          return;
+        redirected.current = true;
+
+        if (options?.unauthenRedirectUrl) {
+          Redirect.gotoCustomPage(options.unauthenRedirectUrl);
+        } else {
+          Redirect.gotoWelcomePage(redirectUrl);
         }
 
-        Redirect.gotoWelcomePage(redirectUrl)
         return;
       }
 
-      if (isAuthenticated && isRequiredPin) {
-        Redirect.gotoLoginPinPage(redirectUrl)
+      if (isRequiredPin) {
+        redirected.current = true;
+        Redirect.gotoLoginPinPage(redirectUrl);
         return;
       }
-    }, [isAuthenticated, isRequiredPin, isAuthLoading]);
 
-    if (
-      isAuthLoading ||
-      isAuthenticated == null ||
-      isRequiredPin == null ||
-      !isAuthenticated ||
-      isRequiredPin
-    ) {
-      return null;
+      setReady(true);
+    }, [
+      isAuthenticated,
+      isRequiredPin,
+      isAuthLoading,
+      ready,
+      options?.unauthenRedirectUrl,
+    ]);
+
+    if (!ready) {
+      return <LoadingWidget open={true} />;
     }
 
     return <WrappedComponent {...props} />;
