@@ -1241,7 +1241,7 @@ declare namespace localStorage {
 }
 
 interface WithAuthOptions {
-    unauthenRedirectUrl: string;
+    unauthenRedirectUrl?: string;
 }
 
 interface AuthContextProps {
@@ -1264,7 +1264,7 @@ type AuthProviderProps = {
 declare const Authentication: {
     AuthProvider: ({ children, loadingFallback, }: AuthProviderProps) => react_jsx_runtime.JSX.Element;
     useAuth: () => AuthContextProps;
-    withAuth: (WrappedComponent: React$1.FC, options?: WithAuthOptions) => (props: any) => react_jsx_runtime.JSX.Element | null;
+    withAuth: <P extends object>(WrappedComponent: React$1.ComponentType<P>, options?: WithAuthOptions) => (props: P) => react_jsx_runtime.JSX.Element;
 };
 
 interface IWithConsentOptions {
