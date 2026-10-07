@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import CloseIcon from '@mui/icons-material/Close'
-import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined'
 import {
   Box,
   Button,
@@ -14,6 +12,17 @@ import {
 } from '@mui/material'
 import { SwipeableBottomSheetV2 } from '../components/bottomsheet'
 import { Colors } from '../colors'
+import { CloseIcon } from '../icons'
+
+// outlined (i), drawn inline so the sheet does not need @mui/icons-material
+// (only a peer dependency of this package)
+const InfoOutlineIcon = ({ size = 20, color = Colors.gray5 }: { size?: number; color?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="10" cy="10" r="8.25" stroke={color} strokeWidth="1.5" />
+    <path d="M10 9V14" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
+    <circle cx="10" cy="6.25" r="1" fill={color} />
+  </svg>
+)
 
 const CVV_MIN_LENGTH = 3
 const CVV_MAX_LENGTH = 4
@@ -114,7 +123,7 @@ const CvvBottomSheet = ({
       <Stack sx={{ width: '100%', padding: '8px 0 16px' }}>
         <Box display="flex" justifyContent="flex-end">
           <CloseButton aria-label="close" onClick={onClose}>
-            <CloseIcon fontSize="small" />
+            <CloseIcon width="12" height="12" color={Colors.gray7} />
           </CloseButton>
         </Box>
         <Title>{text.title}</Title>
@@ -163,7 +172,7 @@ const CvvBottomSheet = ({
                     disableTouchListener
                   >
                     <HintButton aria-label={text.cvvHint} onClick={() => setIsHintOpen((open) => !open)}>
-                      <InfoOutlinedIcon fontSize="small" />
+                      <InfoOutlineIcon />
                     </HintButton>
                   </Tooltip>
                 </ClickAwayListener>
