@@ -28,7 +28,6 @@ export const CvvBottomSheetEnglish: CvvBottomSheetStory = {
       expiryLabel: 'Expiry date',
       cvvLabel: 'CVC/CVV',
       cvvPlaceholder: '3-4 digits',
-      cvvHint: 'The 3- or 4-digit security code on your card',
       cvvError: 'Please enter CVV/CVC',
       confirmButton: 'Use the saved card',
       newCardButton: 'Use New card',
