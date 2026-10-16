@@ -2,27 +2,15 @@ import React, { useEffect, useState } from 'react'
 import {
   Box,
   Button,
-  ClickAwayListener,
   IconButton,
   InputBase,
   Stack,
-  Tooltip,
   Typography,
   styled,
 } from '@mui/material'
 import { SwipeableBottomSheetV2 } from '../components/bottomsheet'
 import { Colors } from '../colors'
 import { CloseIcon } from '../icons'
-
-// outlined (i), drawn inline so the sheet does not need @mui/icons-material
-// (only a peer dependency of this package)
-const InfoOutlineIcon = ({ size = 20, color = Colors.gray5 }: { size?: number; color?: string }) => (
-  <svg width={size} height={size} viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="10" cy="10" r="8.25" stroke={color} strokeWidth="1.5" />
-    <path d="M10 9V14" stroke={color} strokeWidth="1.5" strokeLinecap="round" />
-    <circle cx="10" cy="6.25" r="1" fill={color} />
-  </svg>
-)
 
 const CVV_MIN_LENGTH = 3
 const CVV_MAX_LENGTH = 4
@@ -40,7 +28,6 @@ export interface CvvBottomSheetTexts {
   expiryLabel: string
   cvvLabel: string
   cvvPlaceholder: string
-  cvvHint: string
   cvvError: string
   confirmButton: string
   newCardButton: string
@@ -51,8 +38,7 @@ const defaultTexts: CvvBottomSheetTexts = {
   cardNumberLabel: 'หมายเลขบัตรเครดิต/เดบิต',
   expiryLabel: 'วันหมดอายุ',
   cvvLabel: 'CVC/CVV',
-  cvvPlaceholder: 'รหัส 3-4 หลัก',
-  cvvHint: 'รหัสความปลอดภัย 3 หรือ 4 หลักบนบัตรของคุณ',
+  cvvPlaceholder: 'CVC/CVV',
   cvvError: 'กรุณากรอกรหัส CVC/CVV',
   confirmButton: 'เลือกบัตรที่บันทึกไว้',
   newCardButton: 'เลือกใช้บัตรใหม่',
@@ -93,13 +79,11 @@ const CvvBottomSheet = ({
   const text = { ...defaultTexts, ...texts }
   const [cvv, setCvv] = useState('')
   const [isTouched, setIsTouched] = useState(false)
-  const [isHintOpen, setIsHintOpen] = useState(false)
 
   useEffect(() => {
     if (!isOpen) {
       setCvv('')
       setIsTouched(false)
-      setIsHintOpen(false)
     }
   }, [isOpen])
 
@@ -161,22 +145,6 @@ const CvvBottomSheet = ({
                 maxLength: CVV_MAX_LENGTH,
                 'aria-label': text.cvvLabel,
               }}
-              endAdornment={
-                <ClickAwayListener onClickAway={() => setIsHintOpen(false)}>
-                  <Tooltip
-                    title={text.cvvHint}
-                    open={isHintOpen}
-                    placement="top-end"
-                    disableFocusListener
-                    disableHoverListener
-                    disableTouchListener
-                  >
-                    <HintButton aria-label={text.cvvHint} onClick={() => setIsHintOpen((open) => !open)}>
-                      <InfoOutlineIcon />
-                    </HintButton>
-                  </Tooltip>
-                </ClickAwayListener>
-              }
             />
           </Field>
         </Stack>
@@ -270,11 +238,6 @@ const CvvInput = styled(BaseInput)`
   & input::placeholder {
     font-size: 14px;
   }
-`
-
-const HintButton = styled(IconButton)`
-  padding: 4px;
-  color: ${Colors.gray5};
 `
 
 const ErrorText = styled(Typography)`

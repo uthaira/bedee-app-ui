@@ -1390,7 +1390,6 @@ interface CvvBottomSheetTexts {
     expiryLabel: string;
     cvvLabel: string;
     cvvPlaceholder: string;
-    cvvHint: string;
     cvvError: string;
     confirmButton: string;
     newCardButton: string;
